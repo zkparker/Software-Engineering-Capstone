@@ -17,38 +17,33 @@
 </head>
 
 <body>
-	<!-- 	<div class="jumbotron text-center" style="margin-bottom:0">
-		
-			<h1 style="font-style: italic; font-size: 60pt">El Espada</h1>
-		
-	</div>  -->
-	<div class="container">
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top">
 
-			<div class="mx-auto order-0">
-				<a class="navbar-brand mx-auto" href="index">El Espada</a>
-			</div>
-			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="about">About</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="hours">Hours</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="contact">Contact
-							Us</a></li>
-					<li class="nav-item"><a class="nav-link" href="cart">My Cart</a></li>
-					<li class="nav-item"><a class="nav-link" href="menu">Full Menu</a></li>
+	<section class="header1 cid-qyvisAZ1Bw" id="header1-7" data-rv-view="758">
 
-				</ul>
-			</div>
+    
+
+    
+
+    <div class="container">
+    <!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
+			th:replace="fragments/navigator :: navigator">
+
 		</nav>
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h2 class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">El Espada 
+                <br>Food Ordering System</h2>
+                <p class="mbr-text text-center">
+                  The El Espada food ordering system was created for the Software Engineering Capstone at UIS from students; Avinash Moram, Daniel Henderson, and
+                  Zach Parker. The system utilizes Spring Boot, Bootstrap, Thymeleaf, Maven, H2, CSS, and HTML. The purpose of this project 
+                  is to create a system ready to take online orders for a Mexican restaurant.
+                </p>
+            </div>
+        </div>
+    </div>
 
-		<h1>About information here</h1>
-
-
-
-
-	</div>
+</section>
 
 </body>
 </html>

@@ -31,24 +31,10 @@
 <body>
 
 	<div class="container" >
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top">
+	<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
+			th:replace="fragments/navigator :: navigator">
 
-			<div class="mx-auto order-0">
-				<a class="navbar-brand mx-auto" href="index">El Espada</a>
-			</div>
-			<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a class="nav-link" href="about">About</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="hours">Hours</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="contact">Contact
-							Us</a></li>
-					<li class="nav-item"><a class="nav-link" href="cart">My Cart</a></li>
-					<li class="nav-item"><a class="nav-link" href="menu">Full Menu</a></li>
-
-				</ul>
-			</div>
 		</nav>
 		
 	<p class="c28 c33">
@@ -245,7 +231,7 @@
 							sauce. Comes with flour tortillas.</span>
 					</p>
 					<h1 class="c29">
-						<span class="c14">sides</span>
+						<span class="c14">Sides</span>
 					</h1>
 					<ul class="c27 lst-kix_list_11-0 start">
 						<li class="c6"><span class="c4">Mexican Rice</span></li>
@@ -259,9 +245,6 @@
 						<li class="c6"><span class="c4">Sweet Potato Fries</span></li>
 						<li class="c5 c20"><span class="c4">Guacamole Salad</span></li>
 					</ul>
-					<h3 class="c1 c19">
-						<span class="c3"></span>
-					</h3></td>
 			</tr>
 			<tr class="c11">
 				<td class="c21" colspan="1" rowspan="1"><h1 class="c29">
