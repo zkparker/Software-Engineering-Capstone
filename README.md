@@ -10,4 +10,5 @@
  * Maven
  * HTML, CSS
  
- http://localhost:8080/h2-console/
+ Application: http://localhost:8080/index
+ DB: http://localhost:8080/h2-console/
