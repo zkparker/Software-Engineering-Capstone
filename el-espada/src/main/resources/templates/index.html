@@ -1,397 +1,108 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
 <title>El Espada</title>
 
 
 <!-- Boot strap link with thmyeleaf so that it is dynamic-->
-<link rel="stylesheet"
-	href="../static/css/bootstrap.min.css"
-		th:href="@{/css/bootstrap.min.css}"/>
-		
-<link rel="stylesheet"
-	href="../static/css/stylesheet.css"
-		th:href="@{/css/stylesheet.css}"/>
-		
-		
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+<link rel="stylesheet" href="../static/css/stylesheet.css"
+	th:href="@{/css/stylesheet.css}" />
+
+
 </head>
-
-
 
 <body>
 
-	<div class="container" >
-	
-	<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
-			th:replace="fragments/navigator :: navigator">
+	<div class="container">
 
-		</nav>
+		<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+		<nav
+			class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
+			th:replace="fragments/navigator :: navigator"></nav>
 
-		<div >
-			<div class="column" >
+		<div>
+			<div class="column">
 				<h2 class="menu-text">Menu Items</h2>
 			</div>
 		</div>
-		
-		<div >
-			<div class="column" >
+
+		<div>
+			<div class="column">
 				<h3>Lunch Menu</h3>
 				<p>Note that lunch items are only available from 11am-3pm daily.</p>
 			</div>
 		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Los Noches Cheese Steak Tacos</h5>
-					<img 
-						src="../static/images/losnochestacos.png"
-						th:src="@{images/losnochestacos.png}"
-						class="rounded"
-						alt="noches"/>
 
-				</div>
-
-				<div class="col-sm">
-					<p>One grilled flour tortilla filled with steak strips, onions, 
-					cheesy cream sauce, and topped with lettuce. Comes with two sides.
-					</p>
-					<button class="btn-success">Add to Order - $8.50</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Quesadilla Deluxe</h5>
-					<img 
-						src="../static/images/quesadilla.png"
-						th:src="@{images/quesadilla.png}"
-						class="rounded"
-						alt="quesadilla"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>One chicken quesadilla served with two sides</p>
-					<button class="btn-success">Add to Order - $8.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
+		<div class="container" th:each="m : ${menu}"
+			th:if="${m.menuType} == 'Lunch'">
 			<div class="row">
 				<div class="col-sm">
-					<h5>Tacos de Azada</h5>
-					<img 
-						src="../static/images/tacosdeazada.png"
-						th:src="@{images/tacosdeazada.png}" 
-						class="rounded"
-						alt="tacos"/>
+					<h5 th:text="${m.menuName}"></h5>
+					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
 
 				</div>
 
 				<div class="col-sm">
-					<p>Two grilled corn tortillas filled with grilled meat, onions, and cilantro. Served with one side and lime.</p>
-					<button class="btn-success">Add to Order - $9.50</button>
+					<p th:text="${m.menuDetails}"></p>
+					<button class="btn-success" th:inline="text">Add to Order
+						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
 				</div>
 			</div>
 		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Tacos Cero</h5>
-					<img 
-						src="../static/images/tacoscero.png"
-						th:src="@{images/tacoscero.png}" 
-						class="rounded"
-						alt="tacos"/>
 
-				</div>
 
-				<div class="col-sm">
-					<p>Two grilled flour tortilla filled with grilled meat, 
-					fresh Pico de Gallo, avocado, and creamy chipotle sauce. Comes with one side and lime.</p>
-					<button class="btn-success">Add to Order - $10.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Sonido</h5>
-					<img 
-						src="../static/images/sonido.png"
-						th:src="@{images/sonido.png}" 
-						class="rounded"
-						alt="tacos"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>One taco, one enchilada and choice of rice or refried beans</p>
-					<button class="btn-success">Add to Order - $7.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Burrito Specito</h5>
-					<img 
-						src="../static/images/burrito.png"
-						th:src="@{images/burrito.png}" 
-						class="rounded"
-						alt="burrito"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>A burrito filled with beef or chicken and refried beans, topped with lettuce, tomatoes, and sour cream</p>
-					<button class="btn-success">Add to Order - $6.50</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Enchiladas Blancas</h5>
-					<img 
-						src="../static/images/enchiladasblancas.png"
-						th:src="@{images/enchiladasblancas.png}" 
-						class="rounded"
-						alt="enchiladas"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>One chicken enchilada and one beef enchilada topped with our cheese sauce, lettuce, sour cream, 
-					tomatoes, and rice</p>
-					<button class="btn-success">Add to Order - $8.50</button>
-				</div>
-			</div>
-		</div>
-		
 		<div>
-			<div class="column" >
+			<div class="column">
 				<h3>Dinner Menu</h3>
 			</div>
 		</div>
-		
-		<div class="container">
-			<div class="row" >
+
+
+		<div class="container" th:each="m : ${menu}"
+			th:if="${m.menuType} == 'Dinner'">
+			<div class="row">
 				<div class="col-sm">
-					<h5>El Arrancar</h5>
-					<img 
-						src="../static/images/elarrancar.png"
-						th:src="@{images/elarrancar.png}" 
-						class="rounded"
-						alt="arrancar"/>
+					<h5 th:text="${m.menuName}"></h5>
+					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
 
 				</div>
 
 				<div class="col-sm">
-					<p>A grilled flour tortilla shell in a shape of a volcano filled with onions, bell peppers, tomatoes, 
-					steak strips or grilled chicken. 
-					Held together by a pepper ring and topped with our homemade creamy cheese sauce. Comes with two sides.</p>
-					<button class="btn-success">Add to Order - $13.00</button>
+					<p th:text="${m.menuDetails}"></p>
+					<button class="btn-success" th:inline="text">Add to Order
+						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
 				</div>
 			</div>
 		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Nachos Noches</h5>
-					<img 
-						src="../static/images/nachos.png"
-						th:src="@{images/nachos.png}" 
-						class="rounded"
-						alt="nachos"/>
 
-				</div>
-
-				<div class="col-sm">
-					<p>Chips topped with ground beef, shredded chicken, beans, cheese, lettuce, tomatoes, and sour cream.</p>
-					<button class="btn-success">Add to Order - $10.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Chimichanga</h5>
-					<img 
-						src="../static/images/chimichanga.png"
-						th:src="@{images/chimichanga.png}" 
-						class="rounded"
-						alt="chimichanga"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>Two soft or fried rolled up flour tortillas filled with chicken or beef. 
-					Topped with cheese sauce, lettuce, tomato, sour cream and guacamole, served with fried beans or rice</p>
-					<button class="btn-success">Add to Order - $10.50</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Heuco Mundo</h5>
-					<img 
-						src="../static/images/heuco.png"
-						th:src="@{images/heuco.png}" 
-						class="rounded"
-						alt="heuco"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>Grilled chicken, steak strips, shrimp, onions, bell peppers, 
-					and tomatoes over rice coved with cheese sauce. Comes with flour tortillas.</p>
-					<button class="btn-success">Add to Order - $10.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Flautas</h5>
-					<img 
-						src="../static/images/flautas.png"
-						th:src="@{images/flautas.png}" 
-						class="rounded"
-						alt="flautas"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>Three fried and rolled corn tortillas filled with chicken, 
-					topped with Chipotle cream sauce, lettuce, shredded cheese, Pico de Gallo, and rice.</p>
-					<button class="btn-success">Add to Order - $11.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Huevos con Chorizo</h5>
-					<img 
-						src="../static/images/chorizo.png"
-						th:src="@{images/chorizo.png}" 
-						class="rounded"
-						alt="chorizo"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>Three eggs scrambled with chorizo (Homemade Mexican Sausage). 
-					Comes with two sides and flour tortillas.</p>
-					<button class="btn-success">Add to Order - $9.50</button>
-				</div>
-			</div>
-		</div>
-		
 		<div>
-			<div class="column" >
+			<div class="column">
 				<h3>Dessert Menu</h3>
 			</div>
 		</div>
-		
-		<div class="container">
-			<div class="row" >
+
+		<div class="container" th:each="m : ${menu}"
+			th:if="${m.menuType} == 'Dessert'">
+			<div class="row">
 				<div class="col-sm">
-					<h5>Flan</h5>
-					<img 
-						src="../static/images/flan.png"
-						th:src="@{images/flan.png}" 
-						class="rounded"
-						alt="flan"/>
+					<h5 th:text="${m.menuName}"></h5>
+					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
 
 				</div>
 
 				<div class="col-sm">
-					<p>Mexican Custard with whipped cream and cherry on top</p>
-					<button class="btn-success">Add to Order - $3.50</button>
+					<p th:text="${m.menuDetails}"></p>
+					<button class="btn-success" th:inline="text">Add to Order
+						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
 				</div>
 			</div>
 		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Churros</h5>
-					<img 
-						src="../static/images/churros.png"
-						th:src="@{images/churros.png}" 
-						class="rounded"
-						alt="churros"/>
 
-				</div>
-
-				<div class="col-sm">
-					<p>Three flour dough sticks deep fried. Covered with cinnamon, sugar, 
-					chocolate syrup, whipped cream and cherry on top</p>
-					<button class="btn-success">Add to Order - $4.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Chimi Cheesecake</h5>
-					<img 
-						src="../static/images/cheesecake.png"
-						th:src="@{images/cheesecake.png}" 
-						class="rounded"
-						alt="cheesecake"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>A rolled-up deep fried flour tortilla filled with cheesecake. 
-					Cover with sugar cinnamon, chocolate syrup, whipped cream and cherry on top</p>
-					<button class="btn-success">Add to Order - $5.00</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="container">
-			<div class="row" >
-				<div class="col-sm">
-					<h5>Fried Ice Cream</h5>
-					<img 
-						src="../static/images/friedicecream.png"
-						th:src="@{images/friedicecream.png}" 
-						class="rounded"
-						alt="friedicecream"/>
-
-				</div>
-
-				<div class="col-sm">
-					<p>A fried flour tortilla bowl filled with a vanilla ice cream ball covered with cereal that’s deep fried.
-					 Covered with honey, cinnamon, whipped cream, chocolate syrup and cherry on top.</p>
-					<button class="btn-success">Add to Order - $4.50</button>
-				</div>
-			</div>
-		</div>
-		
-		
 
 	</div>
 
