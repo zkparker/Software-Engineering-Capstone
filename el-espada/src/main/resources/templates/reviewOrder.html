@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>El Espada</title>
+
+
+<!-- Boot strap link with thmyeleaf so that it is dynamic-->
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+<link rel="stylesheet" href="../static/css/stylesheet.css"
+	th:href="@{/css/stylesheet.css}" />
+
+</head>
+
+<body>
+	<form method="post" enctype="multipart/form-data">
+		<input type="hidden" name="menuIds" />
+		<div class="container">
+
+			<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+			<nav
+				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
+				th:replace="fragments/navigator :: navigator"></nav>
+
+			<div>
+				<div class="column">
+					<h2 class="menu-text">Review Order</h2>
+				</div>
+			</div>
+
+			<div class="container" th:each="m : ${menu}">
+				<div class="row">
+					<div class="col-sm">
+						<h5 th:text="${m.menuName}"></h5>
+						<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
+
+					</div>
+
+					<div class="col-sm">
+						<p th:text="${m.menuDetails}"></p>
+						<button type="button" class="btn-success" th:inline="text"
+							th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add
+							to Order - [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+					</div>
+				</div>
+			</div>
+
+			<button type="submit" class="btn-success">Continue To
+				Payment Summary</button>
+		</div>
+	</form>
+</body>
+</html>

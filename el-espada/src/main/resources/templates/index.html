@@ -12,12 +12,20 @@
 
 <link rel="stylesheet" href="../static/css/stylesheet.css"
 	th:href="@{/css/stylesheet.css}" />
-
+	
+<script type="text/javascript">
+var listMenuIds="";
+function addToCart(menuId) {
+	listMenuIds += menuId+",";
+  	document.getElementsByName("menuIds")[0].setAttribute("value", listMenuIds);
+}
+</script>
 
 </head>
 
 <body>
-
+<form th:action="@{/reviewOrder}" method="post" th:object="${espadaVO}">
+	<input type="hidden" th:name="menuIds" th:value="${espadaVO.menuIds}"/>
 	<div class="container">
 
 		<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
@@ -49,7 +57,7 @@
 
 				<div class="col-sm">
 					<p th:text="${m.menuDetails}"></p>
-					<button class="btn-success" th:inline="text">Add to Order
+					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
 						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
 				</div>
 			</div>
@@ -74,7 +82,7 @@
 
 				<div class="col-sm">
 					<p th:text="${m.menuDetails}"></p>
-					<button class="btn-success" th:inline="text">Add to Order
+					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
 						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
 				</div>
 			</div>
@@ -97,14 +105,16 @@
 
 				<div class="col-sm">
 					<p th:text="${m.menuDetails}"></p>
-					<button class="btn-success" th:inline="text">Add to Order
+					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
 						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
 				</div>
 			</div>
 		</div>
 
 
-	</div>
-
+			<button type="submit" class="btn-success">Continue To
+				Review Order</button>
+		</div>
+	</form>
 </body>
 </html>
