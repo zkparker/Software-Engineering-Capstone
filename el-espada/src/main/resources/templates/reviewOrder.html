@@ -35,21 +35,22 @@
 				<div class="row">
 					<div class="col-sm">
 						<h5 th:text="${m.menuName}"></h5>
-						<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
+						<img th:src="@{${'/images/' + m.menuImgSrc}}" class="rounded" /> 
 
 					</div>
 
 					<div class="col-sm">
 						<p th:text="${m.menuDetails}"></p>
-						<button type="button" class="btn-success" th:inline="text"
-							th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add
-							to Order - [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+						<p th:text="${#numbers.formatCurrency(m.menuPrice)}"></p>
+						<a class="btn-success" th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}" >Delete Item</a>
+						
 					</div>
 				</div>
 			</div>
 
 			<button type="submit" class="btn-success">Continue To
 				Payment Summary</button>
+			<a class="btn-success" th:href="@{/index}" >Start Over</a>
 		</div>
 	</form>
 </body>

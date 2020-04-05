@@ -19,10 +19,20 @@ public class MenuServiceImpl implements MenuService {
 	MenuRepository menuRepository;
 
 	@Override
-	@Transactional
 	public List<Menu> getMenuListbyIds(String menuIds) {
-		List<Long> idList = Stream.of(menuIds.split(",")).
+		List<Long> idList = convertStringToList(menuIds);
+		return getMenuListByLongIds(idList);
+	}
+	
+	@Override
+	public List<Long> convertStringToList(String menuIds){
+		return Stream.of(menuIds.split(",")).
 				map(Long::parseLong).collect(Collectors.toList());
+	}
+	
+	@Override
+	@Transactional
+	public List<Menu> getMenuListByLongIds(List<Long> idList) {
 		Iterable<Menu> itrMenuList = menuRepository.findAllById(idList);
 		List<Menu> menuList = new ArrayList<Menu>();
 		(itrMenuList).forEach(menuList::add);

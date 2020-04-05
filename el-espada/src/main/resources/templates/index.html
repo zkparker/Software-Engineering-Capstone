@@ -45,6 +45,11 @@ function addToCart(menuId) {
 				<p>Note that lunch items are only available from 11am-3pm daily.</p>
 			</div>
 		</div>
+		
+		<div class="alert alert-success alert-dismissible fade show">
+		    <button type="button" class="close" data-dismiss="alert">&times;</button>
+		    <strong>Success!</strong> Item added to order.
+		  </div>
 
 		<div class="container" th:each="m : ${menu}"
 			th:if="${m.menuType} == 'Lunch'">
