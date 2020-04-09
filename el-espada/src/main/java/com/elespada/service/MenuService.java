@@ -8,9 +8,9 @@ import com.elespada.model.Menu;
 
 @Component
 public interface MenuService {
-	public List<Menu> getMenuListbyIds(String menuIds);
+	public List<Menu> getMenuListbyIds(String menuIds) throws Exception;
 
-	List<Long> convertStringToList(String menuIds);
+	List<Long> convertStringToList(String menuIds) throws Exception;
 
-	List<Menu> getMenuListByLongIds(List<Long> idList);
+	List<Menu> getMenuListByLongIds(List<Long> idList) throws Exception;
 }

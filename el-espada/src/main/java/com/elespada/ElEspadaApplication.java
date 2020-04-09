@@ -1,5 +1,7 @@
 package com.elespada;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +12,8 @@ import com.elespada.repo.MenuRepository;
 
 @SpringBootApplication
 public class ElEspadaApplication implements CommandLineRunner {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ElEspadaApplication.class);
 
 	@Autowired
 	MenuRepository repository;
@@ -20,6 +24,7 @@ public class ElEspadaApplication implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
+		logger.debug("Loading Menu into in-memory database on application start");
 		Menu lunch1 = new Menu(11l, "Los Noches Cheese Steak Tacos", "Lunch", "One grilled flour tortilla filled with steak strips, onions, \n" + 
 				"cheesy cream sauce, and topped with lettuce. Comes with two sides.", 8.50f, "losnochestacos.png");
 		Menu lunch2 = new Menu(12l, "Quesadilla Deluxe", "Lunch", "One chicken quesadilla served with two sides", 8.00f, "quesadilla.png");

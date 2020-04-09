@@ -8,9 +8,9 @@ import com.elespada.model.Orders;
 
 @Component
 public interface OrderService {
-	public Orders createOrder();
+	public Orders createOrder() throws Exception;
 
-	void createOrderDetails(String menuIds, Long orderId);
+	void createOrderDetails(String menuIds, Long orderId) throws Exception;
 
-	List<Long> deleteItemfromOrder(Long orderId, Long menuId);
+	List<Long> deleteItemfromOrder(Long orderId, Long menuId) throws Exception;
 }

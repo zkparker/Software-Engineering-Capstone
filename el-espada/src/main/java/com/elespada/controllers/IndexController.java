@@ -6,22 +6,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.elespada.VO.EspadaVO;
+import com.elespada.model.Menu;
 import com.elespada.repo.MenuRepository;
 import com.elespada.service.MenuService;
 import com.elespada.service.OrderService;
 
 @Controller
 public class IndexController {
+
+	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
 
 	@Autowired
 	MenuRepository menuRepository;
@@ -34,24 +38,32 @@ public class IndexController {
 
 	@RequestMapping("index")
 	public String getIndex(Model model, HttpServletRequest req, HttpServletResponse res) {
+		logger.debug("Menu Display Start");
 		HttpSession session = req.getSession();
 		session.removeAttribute("orderId");
 		model.addAttribute("menu", menuRepository.findAll());
 		model.addAttribute("espadaVO", new EspadaVO());
+		logger.debug("Menu Display End");
 		return "index";
 	}
 
 	@RequestMapping(value = "/reviewOrder", method = RequestMethod.POST)
 	public String reviewOrder(@ModelAttribute("espadaVO") EspadaVO espadaVO, Model model, HttpServletRequest req,
 			HttpServletResponse res) {
-		if (!StringUtils.isEmpty(espadaVO.getMenuIds())) {
+		logger.debug("Review Order Start");
+		try {
 			Long orderId = orderService.createOrder().getOrderId();
+			logger.debug("Order Start:" + orderId);
 			HttpSession session = req.getSession();
 			session.setAttribute("orderId", orderId);
 			orderService.createOrderDetails(espadaVO.getMenuIds(), orderId);
-			model.addAttribute("menu", menuService.getMenuListbyIds(espadaVO.getMenuIds()));
+			List<Menu> menuList = menuService.getMenuListbyIds(espadaVO.getMenuIds());
+			logger.debug("Menu items in order:" + menuList);
+			model.addAttribute("menu", menuList);
+			logger.debug("Review Order End");
 			return "reviewOrder";
-		} else {
+		} catch (Exception e) {
+			logger.error("Exception during Review Order:" + e);
 			return "index";
 		}
 	}
@@ -59,13 +71,17 @@ public class IndexController {
 	@RequestMapping("/deleteItem/{menuId}")
 	public String deleteItem(@PathVariable("menuId") Long menuId, Model model, HttpServletRequest req,
 			HttpServletResponse res) {
-		HttpSession session = req.getSession();
-		Long orderId = (Long) session.getAttribute("orderId");
-		if (!StringUtils.isEmpty(orderId) || !StringUtils.isEmpty(menuId)) {
+		logger.debug("Delete Item Start");
+		try {
+			HttpSession session = req.getSession();
+			Long orderId = (Long) session.getAttribute("orderId");
+			logger.debug("Deleting menu from order with id:"+orderId+", item:"+menuRepository.findById(menuId));
 			List<Long> menuIds = orderService.deleteItemfromOrder(orderId, menuId);
 			model.addAttribute("menu", menuService.getMenuListByLongIds(menuIds));
+			logger.debug("Review Order End");
 			return "reviewOrder";
-		} else {
+		} catch(Exception e) {
+			logger.error("Exception during Delete Item:" + e);
 			return "index";
 		}
 	}
