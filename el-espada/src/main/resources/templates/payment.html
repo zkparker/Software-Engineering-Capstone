@@ -15,24 +15,25 @@
 
 <body>
 
-	<div class="container" style="border-bottom:none">
+	<div class="container" style="border-bottom: none">
 		<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
 		<nav
 			class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 			th:replace="fragments/navigator :: navigator"></nav>
 
-		<div class="row justify-content-md-center" style="border-bottom:none">
+		<div class="row justify-content-md-center" style="border-bottom: none">
 			<div class="mbr-white col-md-10">
 				<h2
 					class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">Checkout</h2>
 				<div class="container">
 					<div class="row justify-content-md-center">
-						<div class="row justify-content-md-center" style="border-bottom:none">
+						<div class="row justify-content-md-center"
+							style="border-bottom: none">
 
-							<form class="needs-validation">
+							<form class="was-validated">
 								<div class="row">
 									<div class="col-sm">
-										<label for="firstName">First name</label> <input type="text"
+										<label for="validationTextarea">First name</label> <input type="text"
 											class="form-control" id="firstName" placeholder="John"
 											value="" required>
 										<div class="invalid-feedback">Valid first name is
@@ -140,18 +141,19 @@
 
 								<h4 class="mb-3">Payment Details</h4>
 
-								<div class="col-sm">
-									<div class="custom-control custom-radio">
-										<input id="credit" type="radio" class="custom-control-input"
-											checked required> <label class="custom-control-label"
-											for="credit">Credit card</label>
-									</div>
-									<div class="custom-control custom-radio">
-										<input id="cash" type="radio" class="custom-control-input"
-											required> <label class="custom-control-label"
-											for="cash">Cash</label>
-									</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio"
+										name="payment-type" id="cash" value="cash"
+										checked> <label class="form-check-label"
+										for="cash"> Cash </label>
 								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio"
+										name="payment-type" id="card" value="card">
+									<label class="form-check-label" for="card">
+										Card </label>
+								</div>
+
 								<div class="row">
 									<div class="col-sm">
 										<label for="cc-name">Name on card</label> <input type="text"
@@ -168,27 +170,30 @@
 											required</div>
 									</div>
 								</div>
-								<div class="row" style="border-bottom:none">
+								<div class="row" style="border-bottom: none">
 									<div class="col-sm">
 										<label for="cc-expiration">Expiration Date</label> <input
 											type="text" class="form-control" id="cc-expiration"
 											placeholder="01/2020" required>
 										<div class="invalid-feedback">Expiration date required</div>
 									</div>
-									<div class="col-sm" >
+									<div class="col-sm">
 										<label for="cc-expiration">CVV</label> <input type="text"
 											class="form-control" id="cc-cvv" placeholder="123" required>
 										<div class="invalid-feedback">Security code required</div>
 									</div>
-									
 
-									
+
+
 								</div>
-								
-								<div class="row" style="border-bottom:none">
-								<a class="btn btn-primary btn-lg btn-block" type="submit" 
+
+								<div class="row" style="border-bottom: none">
+									<a class="btn btn-primary btn-lg btn-block" type="submit"
 										th:href="@{/final}">Submit Order</a>
-										</div>
+								</div>
+							
+								
+								
 
 
 							</form>

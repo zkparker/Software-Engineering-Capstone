@@ -12,7 +12,8 @@ body{
 }
 
 .menu-text{
-	text-align: center;
+	text-align: left;
+	font-weight: bold;
 }
 
 .column{
@@ -24,5 +25,7 @@ img{
 	height: 225px;
 }
 
-
+.sticky-offset{
+	top:60px;
+}
 

@@ -26,28 +26,28 @@ public class ElEspadaApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		logger.debug("Loading Menu into in-memory database on application start");
 		Menu lunch1 = new Menu(11l, "Los Noches Cheese Steak Tacos", "Lunch", "One grilled flour tortilla filled with steak strips, onions, \n" + 
-				"cheesy cream sauce, and topped with lettuce. Comes with two sides.", 8.50f, "losnochestacos.png");
-		Menu lunch2 = new Menu(12l, "Quesadilla Deluxe", "Lunch", "One chicken quesadilla served with two sides", 8.00f, "quesadilla.png");
+				"cheesy cream sauce, and topped with lettuce.", 8.50f, "losnochestacos.png");
+		Menu lunch2 = new Menu(12l, "Quesadilla Deluxe", "Lunch", "One chicken quesadilla", 8.00f, "quesadilla.png");
 		Menu lunch3 = new Menu(13l, "Tacos de Azada", "Lunch", "Two grilled corn tortillas filled with grilled meat, onions, and cilantro. "
-				+ "Served with one side and lime.", 9.50f, "tacosdeazada.png");
+				, 9.50f, "tacosdeazada.png");
 		Menu lunch4 = new Menu(14l, "Tacos Cero", "Lunch", "Two grilled flour tortilla filled with grilled meat, \n" + 
-				"					fresh Pico de Gallo, avocado, and creamy chipotle sauce. Comes with one side and lime.", 10.00f, "tacoscero.png");
-		Menu lunch5 = new Menu(15l, "Sonido", "Lunch", "One taco, one enchilada and choice of rice or refried beans", 7.00f, "sonido.png");
-		Menu lunch6 = new Menu(16l, "Burrito Specito", "Lunch", "A burrito filled with beef or chicken and refried beans, topped with lettuce, tomatoes, and sour cream", 6.50f, "burrito.png");
+				"					fresh Pico de Gallo, avocado, and creamy chipotle sauce.", 10.00f, "tacoscero.png");
+		Menu lunch5 = new Menu(15l, "Sonido", "Lunch", "One taco, one enchilada", 7.00f, "sonido.png");
+		Menu lunch6 = new Menu(16l, "Burrito Specito", "Lunch", "A burrito filled with beef and refried beans, topped with lettuce, tomatoes, and sour cream.", 6.50f, "burrito.png");
 		Menu lunch7 = new Menu(17l, "Enchiladas Blancas", "Lunch", "One chicken enchilada and one beef enchilada topped with our cheese sauce, lettuce, sour cream, \n" + 
-				"					tomatoes, and rice", 8.50f, "enchiladasblancas.png");
+				"					tomatoes, and rice.", 8.50f, "enchiladasblancas.png");
 		Menu dinner1 = new Menu(41l, "El Arrancar", "Dinner", "A grilled flour tortilla shell in a shape of a volcano filled with onions, bell peppers, tomatoes, \n" + 
-				"					steak strips or grilled chicken. \n" + 
-				"					Held together by a pepper ring and topped with our homemade creamy cheese sauce. Comes with two sides.", 13.00f, "elarrancar.png");
+				"					steak strips. \n" + 
+				"					Held together by a pepper ring and topped with our homemade creamy cheese sauce.", 13.00f, "elarrancar.png");
 		Menu dinner2 = new Menu(42l, "Nachos Noches", "Dinner", "Chips topped with ground beef, shredded chicken, beans, cheese, lettuce, tomatoes, and sour cream.", 10.00f, "nachos.png");
-		Menu dinner3 = new Menu(43l, "Chimichanga", "Dinner", "Two soft or fried rolled up flour tortillas filled with chicken or beef. \n" + 
-				"					Topped with cheese sauce, lettuce, tomato, sour cream and guacamole, served with fried beans or rice.", 10.50f, "chimichanga.png");
+		Menu dinner3 = new Menu(43l, "Chimichanga", "Dinner", "Two fried rolled up flour tortillas filled with chicken. \n" + 
+				"					Topped with cheese sauce, lettuce, tomato, sour cream and guacamole.", 10.50f, "chimichanga.png");
 		Menu dinner4 = new Menu(44l, "Heuco Mundo", "Dinner", "Grilled chicken, steak strips, shrimp, onions, bell peppers, \n" + 
 				"					and tomatoes over rice coved with cheese sauce. Comes with flour tortillas.", 10.00f, "heuco.png");
 		Menu dinner5 = new Menu(45l, "Flautas", "Dinner", "Three fried and rolled corn tortillas filled with chicken, \n" + 
 				"					topped with Chipotle cream sauce, lettuce, shredded cheese, Pico de Gallo, and rice.", 11.00f, "flautas.png");
 		Menu dinner6 = new Menu(46l, "Huevos con Chorizo", "Dinner", "Three eggs scrambled with chorizo (Homemade Mexican Sausage). \n" + 
-				"					Comes with two sides and flour tortillas.", 9.50f, "chorizo.png");
+				"					Comes with flour tortillas.", 9.50f, "chorizo.png");
 		Menu dessert1 = new Menu(81l, "Flan", "Dessert", "Mexican Custard with whipped cream and cherry on top.", 3.50f, "flan.png");
 		Menu dessert2 = new Menu(82l, "Churros", "Dessert", "Three flour dough sticks deep fried. Covered with cinnamon, sugar, \n" + 
 				"					chocolate syrup, whipped cream and cherry on top.", 4.00f, "churros.png");

@@ -25,6 +25,8 @@ function addToCart(menuId) {
 
 <body>
 <form th:action="@{/reviewOrder}" method="post" th:object="${espadaVO}">
+
+
 	<input type="hidden" th:name="menuIds" th:value="${espadaVO.menuIds}"/>
 	<div class="container">
 
@@ -32,12 +34,20 @@ function addToCart(menuId) {
 		<nav
 			class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 			th:replace="fragments/navigator :: navigator"></nav>
+			<button type="submit" class="btn-success float-right sticky-top sticky-offset btn-lg" style="margin-top:100px">Continue to
+				Place Order</button>
+			
 
 		<div>
 			<div class="column">
-				<h2 class="menu-text">Menu Items</h2>
+				<h1 class="menu-text">Menu Items</h1>
+				
 			</div>
+			
+			
 		</div>
+		
+		
 		
 		<div class="alert alert-success alert-dismissible fade show">
 		    <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -47,7 +57,6 @@ function addToCart(menuId) {
 		<div>
 			<div class="column">
 				<h3>Lunch Menu</h3>
-				<p>Note that lunch items are only available from 11am-3pm daily.</p>
 			</div>
 		</div>
 		
@@ -117,8 +126,7 @@ function addToCart(menuId) {
 		</div>
 
 
-			<button type="submit" class="btn-success" style="position:sticky; top:0">Continue To
-				Review Order</button>
+			
 		</div>
 	</form>
 </body>
