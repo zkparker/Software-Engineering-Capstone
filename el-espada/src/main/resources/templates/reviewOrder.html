@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<form method="post" enctype="multipart/form-data">
+	<form method="post" enctype="multipart/form-data" th:action="@{/payment}">
 		<input type="hidden" name="menuIds" />
 		<div class="container">
 
@@ -24,6 +24,8 @@
 			<nav
 				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 				th:replace="fragments/navigator :: navigator"></nav>
+				<button type="submit" class="btn-success float-right sticky-top sticky-offset btn-lg" style="margin-top:20px;">Continue to Payment</button>
+			<button type="submit" class="btn-success float-right sticky-top sticky-offset btn-lg"  style="margin-top:20px;" th:formaction="@{/index}" >Start Over</button>
 
 			<div>
 				<div class="column">
@@ -48,8 +50,7 @@
 				</div>
 			</div>
 
-			<a class="btn-success" th:href="@{/payment}" >Continue to Payment</a>
-			<a class="btn-success" th:href="@{/index}" >Start Over</a>
+			
 		</div>
 	</form>
 </body>

@@ -77,9 +77,15 @@ public class IndexController {
 			Long orderId = (Long) session.getAttribute("orderId");
 			logger.debug("Deleting menu from order with id:"+orderId+", item:"+menuRepository.findById(menuId));
 			List<Long> menuIds = orderService.deleteItemfromOrder(orderId, menuId);
-			model.addAttribute("menu", menuService.getMenuListByLongIds(menuIds));
-			logger.debug("Review Order End");
-			return "reviewOrder";
+			List<Menu> remainingItems = menuService.getMenuListByLongIds(menuIds);
+			if(!remainingItems.isEmpty()) {
+				model.addAttribute("menu", remainingItems);
+				logger.debug("Review Order End");
+				return "reviewOrder";
+			} else {
+				logger.debug("No items remaining in order, returning to Menu");
+				return "index";
+			}
 		} catch(Exception e) {
 			logger.error("Exception during Delete Item:" + e);
 			return "index";

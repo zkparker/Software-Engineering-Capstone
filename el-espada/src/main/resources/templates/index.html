@@ -18,14 +18,28 @@ var listMenuIds="";
 function addToCart(menuId) {
 	listMenuIds += menuId+",";
   	document.getElementsByName("menuIds")[0].setAttribute("value", listMenuIds);
+  	document.getElementById("success_msg").style.display = "block";
+  	myVar = setTimeout(close_successMsg, 3000);
+  	runOnLoad();
+}
+
+function runOnLoad() {
+	if(listMenuIds == ""){
+  		document.getElementById("continueToPlaceOrder").style.display = "none";
+  	}else{
+  		document.getElementById("continueToPlaceOrder").style.display = "block";
+  	}
+}
+
+function close_successMsg(){
+	document.getElementById("success_msg").style.display = "none";
 }
 </script>
 
 </head>
 
-<body>
+<body onload="runOnLoad();">
 <form th:action="@{/reviewOrder}" method="post" th:object="${espadaVO}">
-
 
 	<input type="hidden" th:name="menuIds" th:value="${espadaVO.menuIds}"/>
 	<div class="container">
@@ -34,25 +48,20 @@ function addToCart(menuId) {
 		<nav
 			class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 			th:replace="fragments/navigator :: navigator"></nav>
-			<button type="submit" class="btn-success float-right sticky-top sticky-offset btn-lg" style="margin-top:100px">Continue to
-				Place Order</button>
+			<button type="submit" id="continueToPlaceOrder" class="btn-success float-right sticky-top sticky-offset btn-lg" 
+				style="display:none;margin-top:20px;">Continue to Place Order</button>
 			
-
 		<div>
 			<div class="column">
 				<h1 class="menu-text">Menu Items</h1>
 				
 			</div>
-			
-			
 		</div>
 		
-		
-		
-		<div class="alert alert-success alert-dismissible fade show">
-		    <button type="button" class="close" data-dismiss="alert">&times;</button>
+		<div id="success_msg" style="display:none;" class="alert alert-success alert-dismissible fade show">
+		    <button type="button" class="close" data-dismiss="alert" onclick="close_successMsg();">&times;</button>
 		    <strong>Success!</strong> Item added to order.
-		  </div>
+		</div>
 
 		<div>
 			<div class="column">
@@ -66,9 +75,7 @@ function addToCart(menuId) {
 				<div class="col-sm">
 					<h5 th:text="${m.menuName}"></h5>
 					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
-
 				</div>
-
 				<div class="col-sm">
 					<p th:text="${m.menuDetails}"></p>
 					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
@@ -91,9 +98,7 @@ function addToCart(menuId) {
 				<div class="col-sm">
 					<h5 th:text="${m.menuName}"></h5>
 					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
-
 				</div>
-
 				<div class="col-sm">
 					<p th:text="${m.menuDetails}"></p>
 					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
@@ -114,7 +119,6 @@ function addToCart(menuId) {
 				<div class="col-sm">
 					<h5 th:text="${m.menuName}"></h5>
 					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
-
 				</div>
 
 				<div class="col-sm">
@@ -124,8 +128,6 @@ function addToCart(menuId) {
 				</div>
 			</div>
 		</div>
-
-
 			
 		</div>
 	</form>
