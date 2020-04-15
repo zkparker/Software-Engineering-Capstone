@@ -1,0 +1,943 @@
+2020-04-14 20:02:10,563 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Starting ElEspadaApplication on Zachs-MacBook-Pro.local with PID 767 (/Users/zkparker1/Documents/GitHub/Software-Engineering-Capstone/el-espada/target/classes started by zkparker1 in /Users/zkparker1/Documents/GitHub/Software-Engineering-Capstone/el-espada)
+2020-04-14 20:02:10,566 DEBUG org.springframework.boot.StartupInfoLogger [restartedMain] Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-04-14 20:02:10,566 INFO org.springframework.boot.SpringApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-04-14 20:02:10,670 INFO org.springframework.boot.logging.DeferredLog [restartedMain] The Class-Path manifest attribute in /Users/zkparker1/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/Users/zkparker1/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/Users/zkparker1/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/Users/zkparker1/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/Users/zkparker1/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/Users/zkparker1/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/Users/zkparker1/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-04-14 20:02:10,672 INFO org.springframework.boot.logging.DeferredLog [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 20:02:10,672 INFO org.springframework.boot.logging.DeferredLog [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 20:02:11,308 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-04-14 20:02:11,386 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 66ms. Found 3 JPA repository interfaces.
+2020-04-14 20:02:11,905 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2020-04-14 20:02:11,911 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-14 20:02:11,912 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting service [Tomcat]
+2020-04-14 20:02:11,912 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-04-14 20:02:11,960 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-04-14 20:02:11,961 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1288 ms
+2020-04-14 20:02:12,000 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-04-14 20:02:12,162 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-04-14 20:02:12,169 INFO org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration [restartedMain] H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:~/h2/elspada'
+2020-04-14 20:02:12,377 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-04-14 20:02:12,464 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-04-14 20:02:12,552 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-04-14 20:02:12,569 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration boolean -> org.hibernate.type.BooleanType@2d4269a3
+2020-04-14 20:02:12,569 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration boolean -> org.hibernate.type.BooleanType@2d4269a3
+2020-04-14 20:02:12,569 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Boolean -> org.hibernate.type.BooleanType@2d4269a3
+2020-04-14 20:02:12,570 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration numeric_boolean -> org.hibernate.type.NumericBooleanType@4f687d7e
+2020-04-14 20:02:12,570 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration true_false -> org.hibernate.type.TrueFalseType@73da1057
+2020-04-14 20:02:12,570 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration yes_no -> org.hibernate.type.YesNoType@3804aebb
+2020-04-14 20:02:12,571 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration byte -> org.hibernate.type.ByteType@67b0232e
+2020-04-14 20:02:12,572 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration byte -> org.hibernate.type.ByteType@67b0232e
+2020-04-14 20:02:12,572 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Byte -> org.hibernate.type.ByteType@67b0232e
+2020-04-14 20:02:12,572 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration character -> org.hibernate.type.CharacterType@51dba2cf
+2020-04-14 20:02:12,573 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration char -> org.hibernate.type.CharacterType@51dba2cf
+2020-04-14 20:02:12,573 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Character -> org.hibernate.type.CharacterType@51dba2cf
+2020-04-14 20:02:12,573 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration short -> org.hibernate.type.ShortType@6a9bf54b
+2020-04-14 20:02:12,574 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration short -> org.hibernate.type.ShortType@6a9bf54b
+2020-04-14 20:02:12,574 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Short -> org.hibernate.type.ShortType@6a9bf54b
+2020-04-14 20:02:12,574 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration integer -> org.hibernate.type.IntegerType@17745958
+2020-04-14 20:02:12,575 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration int -> org.hibernate.type.IntegerType@17745958
+2020-04-14 20:02:12,575 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Integer -> org.hibernate.type.IntegerType@17745958
+2020-04-14 20:02:12,576 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration long -> org.hibernate.type.LongType@213959ea
+2020-04-14 20:02:12,576 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration long -> org.hibernate.type.LongType@213959ea
+2020-04-14 20:02:12,576 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Long -> org.hibernate.type.LongType@213959ea
+2020-04-14 20:02:12,577 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration float -> org.hibernate.type.FloatType@6609abd9
+2020-04-14 20:02:12,577 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration float -> org.hibernate.type.FloatType@6609abd9
+2020-04-14 20:02:12,577 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Float -> org.hibernate.type.FloatType@6609abd9
+2020-04-14 20:02:12,578 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration double -> org.hibernate.type.DoubleType@70be8ea5
+2020-04-14 20:02:12,578 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration double -> org.hibernate.type.DoubleType@70be8ea5
+2020-04-14 20:02:12,578 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Double -> org.hibernate.type.DoubleType@70be8ea5
+2020-04-14 20:02:12,579 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration big_decimal -> org.hibernate.type.BigDecimalType@2d038dbd
+2020-04-14 20:02:12,579 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.math.BigDecimal -> org.hibernate.type.BigDecimalType@2d038dbd
+2020-04-14 20:02:12,580 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration big_integer -> org.hibernate.type.BigIntegerType@4f3e8fb1
+2020-04-14 20:02:12,580 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.math.BigInteger -> org.hibernate.type.BigIntegerType@4f3e8fb1
+2020-04-14 20:02:12,581 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration string -> org.hibernate.type.StringType@6ab63bb1
+2020-04-14 20:02:12,581 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.String -> org.hibernate.type.StringType@6ab63bb1
+2020-04-14 20:02:12,581 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration nstring -> org.hibernate.type.StringNVarcharType@39dc52af
+2020-04-14 20:02:12,582 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration ncharacter -> org.hibernate.type.CharacterNCharType@7273bba7
+2020-04-14 20:02:12,583 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration url -> org.hibernate.type.UrlType@3b5fc37a
+2020-04-14 20:02:12,583 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.net.URL -> org.hibernate.type.UrlType@3b5fc37a
+2020-04-14 20:02:12,584 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration Duration -> org.hibernate.type.DurationType@58fa4316
+2020-04-14 20:02:12,585 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.Duration -> org.hibernate.type.DurationType@58fa4316
+2020-04-14 20:02:12,586 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration Instant -> org.hibernate.type.InstantType@2b2ca38a
+2020-04-14 20:02:12,586 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.Instant -> org.hibernate.type.InstantType@2b2ca38a
+2020-04-14 20:02:12,587 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration LocalDateTime -> org.hibernate.type.LocalDateTimeType@78fb9609
+2020-04-14 20:02:12,587 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.LocalDateTime -> org.hibernate.type.LocalDateTimeType@78fb9609
+2020-04-14 20:02:12,588 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration LocalDate -> org.hibernate.type.LocalDateType@6129a246
+2020-04-14 20:02:12,588 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.LocalDate -> org.hibernate.type.LocalDateType@6129a246
+2020-04-14 20:02:12,589 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration LocalTime -> org.hibernate.type.LocalTimeType@7a7fd113
+2020-04-14 20:02:12,589 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.LocalTime -> org.hibernate.type.LocalTimeType@7a7fd113
+2020-04-14 20:02:12,589 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@4091440d
+2020-04-14 20:02:12,590 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.OffsetDateTime -> org.hibernate.type.OffsetDateTimeType@4091440d
+2020-04-14 20:02:12,590 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration OffsetTime -> org.hibernate.type.OffsetTimeType@1f78c92f
+2020-04-14 20:02:12,591 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.OffsetTime -> org.hibernate.type.OffsetTimeType@1f78c92f
+2020-04-14 20:02:12,593 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@5e5a8d69
+2020-04-14 20:02:12,593 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.time.ZonedDateTime -> org.hibernate.type.ZonedDateTimeType@5e5a8d69
+2020-04-14 20:02:12,595 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration date -> org.hibernate.type.DateType@78b82dc6
+2020-04-14 20:02:12,595 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.sql.Date -> org.hibernate.type.DateType@78b82dc6
+2020-04-14 20:02:12,596 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration time -> org.hibernate.type.TimeType@80e0493
+2020-04-14 20:02:12,596 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.sql.Time -> org.hibernate.type.TimeType@80e0493
+2020-04-14 20:02:12,598 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration timestamp -> org.hibernate.type.TimestampType@26d16ad8
+2020-04-14 20:02:12,598 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.sql.Timestamp -> org.hibernate.type.TimestampType@26d16ad8
+2020-04-14 20:02:12,598 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.util.Date -> org.hibernate.type.TimestampType@26d16ad8
+2020-04-14 20:02:12,600 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration dbtimestamp -> org.hibernate.type.DbTimestampType@39104460
+2020-04-14 20:02:12,601 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration calendar -> org.hibernate.type.CalendarType@6500f6ed
+2020-04-14 20:02:12,601 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.util.Calendar -> org.hibernate.type.CalendarType@6500f6ed
+2020-04-14 20:02:12,601 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.util.GregorianCalendar -> org.hibernate.type.CalendarType@6500f6ed
+2020-04-14 20:02:12,601 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration calendar_date -> org.hibernate.type.CalendarDateType@16345030
+2020-04-14 20:02:12,602 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration calendar_time -> org.hibernate.type.CalendarTimeType@6c1109e2
+2020-04-14 20:02:12,603 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration locale -> org.hibernate.type.LocaleType@489340aa
+2020-04-14 20:02:12,603 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.util.Locale -> org.hibernate.type.LocaleType@489340aa
+2020-04-14 20:02:12,603 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration currency -> org.hibernate.type.CurrencyType@3813955
+2020-04-14 20:02:12,603 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.util.Currency -> org.hibernate.type.CurrencyType@3813955
+2020-04-14 20:02:12,604 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration timezone -> org.hibernate.type.TimeZoneType@257ecc7f
+2020-04-14 20:02:12,604 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.util.TimeZone -> org.hibernate.type.TimeZoneType@257ecc7f
+2020-04-14 20:02:12,605 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration class -> org.hibernate.type.ClassType@400795cc
+2020-04-14 20:02:12,605 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Class -> org.hibernate.type.ClassType@400795cc
+2020-04-14 20:02:12,606 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration uuid-binary -> org.hibernate.type.UUIDBinaryType@4c70144
+2020-04-14 20:02:12,606 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.util.UUID -> org.hibernate.type.UUIDBinaryType@4c70144
+2020-04-14 20:02:12,606 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration uuid-char -> org.hibernate.type.UUIDCharType@25e0d176
+2020-04-14 20:02:12,607 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration binary -> org.hibernate.type.BinaryType@61932382
+2020-04-14 20:02:12,607 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration byte[] -> org.hibernate.type.BinaryType@61932382
+2020-04-14 20:02:12,608 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration [B -> org.hibernate.type.BinaryType@61932382
+2020-04-14 20:02:12,608 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration wrapper-binary -> org.hibernate.type.WrapperBinaryType@49a7a5c0
+2020-04-14 20:02:12,608 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration Byte[] -> org.hibernate.type.WrapperBinaryType@49a7a5c0
+2020-04-14 20:02:12,609 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration [Ljava.lang.Byte; -> org.hibernate.type.WrapperBinaryType@49a7a5c0
+2020-04-14 20:02:12,609 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration row_version -> org.hibernate.type.RowVersionType@4a1b45df
+2020-04-14 20:02:12,610 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration image -> org.hibernate.type.ImageType@29256ed1
+2020-04-14 20:02:12,611 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration characters -> org.hibernate.type.CharArrayType@5b729e97
+2020-04-14 20:02:12,611 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration char[] -> org.hibernate.type.CharArrayType@5b729e97
+2020-04-14 20:02:12,611 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration [C -> org.hibernate.type.CharArrayType@5b729e97
+2020-04-14 20:02:12,612 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration wrapper-characters -> org.hibernate.type.CharacterArrayType@58b40195
+2020-04-14 20:02:12,613 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration [Ljava.lang.Character; -> org.hibernate.type.CharacterArrayType@58b40195
+2020-04-14 20:02:12,613 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration Character[] -> org.hibernate.type.CharacterArrayType@58b40195
+2020-04-14 20:02:12,613 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration text -> org.hibernate.type.TextType@2a49c42d
+2020-04-14 20:02:12,614 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration ntext -> org.hibernate.type.NTextType@7813b591
+2020-04-14 20:02:12,615 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration blob -> org.hibernate.type.BlobType@2de3368e
+2020-04-14 20:02:12,615 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.sql.Blob -> org.hibernate.type.BlobType@2de3368e
+2020-04-14 20:02:12,615 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration materialized_blob -> org.hibernate.type.MaterializedBlobType@17bba011
+2020-04-14 20:02:12,616 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration clob -> org.hibernate.type.ClobType@2d09d4fd
+2020-04-14 20:02:12,617 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.sql.Clob -> org.hibernate.type.ClobType@2d09d4fd
+2020-04-14 20:02:12,617 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration nclob -> org.hibernate.type.NClobType@3da6f57a
+2020-04-14 20:02:12,618 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.sql.NClob -> org.hibernate.type.NClobType@3da6f57a
+2020-04-14 20:02:12,618 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration materialized_clob -> org.hibernate.type.MaterializedClobType@78ff910d
+2020-04-14 20:02:12,619 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration materialized_nclob -> org.hibernate.type.MaterializedNClobType@655e5315
+2020-04-14 20:02:12,619 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration serializable -> org.hibernate.type.SerializableType@3e187190
+2020-04-14 20:02:12,621 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration object -> org.hibernate.type.ObjectType@40344c3f
+2020-04-14 20:02:12,621 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration java.lang.Object -> org.hibernate.type.ObjectType@40344c3f
+2020-04-14 20:02:12,622 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_date -> org.hibernate.type.AdaptedImmutableType@2080ca31
+2020-04-14 20:02:12,622 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_time -> org.hibernate.type.AdaptedImmutableType@42373faa
+2020-04-14 20:02:12,622 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_timestamp -> org.hibernate.type.AdaptedImmutableType@7a5b94cc
+2020-04-14 20:02:12,622 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_dbtimestamp -> org.hibernate.type.AdaptedImmutableType@30dcf9e1
+2020-04-14 20:02:12,622 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_calendar -> org.hibernate.type.AdaptedImmutableType@16ab6c89
+2020-04-14 20:02:12,622 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_calendar_date -> org.hibernate.type.AdaptedImmutableType@6d9adb99
+2020-04-14 20:02:12,623 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_binary -> org.hibernate.type.AdaptedImmutableType@4bc1df12
+2020-04-14 20:02:12,623 DEBUG org.hibernate.type.BasicTypeRegistry [restartedMain] Adding type registration imm_serializable -> org.hibernate.type.AdaptedImmutableType@1c05247a
+2020-04-14 20:02:12,653 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-04-14 20:02:12,714 DEBUG org.hibernate.type.spi.TypeConfiguration [restartedMain] Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@15fd67c2] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@22e8e538]
+2020-04-14 20:02:12,885 DEBUG org.hibernate.type.spi.TypeConfiguration [restartedMain] Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@15fd67c2] to SessionFactoryImpl [org.hibernate.internal.SessionFactoryImpl@4240520b]
+2020-04-14 20:02:13,150 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] create table menu (menu_id bigint not null, menu_details varchar(255), menu_img_src varchar(255), menu_name varchar(255), menu_price float, menu_type varchar(255), primary key (menu_id))
+2020-04-14 20:02:13,158 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] create table order_details (id bigint not null, menu_id bigint, order_id bigint, quantity bigint, unit_price float, primary key (id))
+2020-04-14 20:02:13,159 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] create table orders (order_id bigint not null, address varchar(255), customer_name varchar(255), date date, payment_details varchar(255), payment_type varchar(255), total float, primary key (order_id))
+2020-04-14 20:02:13,160 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] create sequence hibernate_sequence start with 1 increment by 1
+2020-04-14 20:02:13,162 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-04-14 20:02:13,167 TRACE org.hibernate.type.spi.TypeConfiguration [restartedMain] Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@4240520b] for TypeConfiguration
+2020-04-14 20:02:13,168 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-04-14 20:02:13,195 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2020-04-14 20:02:13,618 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-04-14 20:02:13,734 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 20:02:13,814 INFO org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping [restartedMain] Adding welcome page template: index
+2020-04-14 20:02:13,968 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2020-04-14 20:02:13,991 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2020-04-14 20:02:13,994 INFO org.springframework.boot.StartupInfoLogger [restartedMain] Started ElEspadaApplication in 3.875 seconds (JVM running for 4.742)
+2020-04-14 20:02:13,995 DEBUG com.elespada.ElEspadaApplication [restartedMain] Loading Menu into in-memory database on application start
+2020-04-14 20:02:14,021 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,026 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [11]
+2020-04-14 20:02:14,050 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,052 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [One grilled flour tortilla filled with steak strips, onions, 
+cheesy cream sauce, and topped with lettuce.]
+2020-04-14 20:02:14,052 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [losnochestacos.png]
+2020-04-14 20:02:14,053 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Los Noches Cheese Steak Tacos]
+2020-04-14 20:02:14,053 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [8.5]
+2020-04-14 20:02:14,054 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Lunch]
+2020-04-14 20:02:14,054 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [11]
+2020-04-14 20:02:14,058 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,058 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [12]
+2020-04-14 20:02:14,059 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,060 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [One chicken quesadilla]
+2020-04-14 20:02:14,060 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [quesadilla.png]
+2020-04-14 20:02:14,060 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Quesadilla Deluxe]
+2020-04-14 20:02:14,061 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [8.0]
+2020-04-14 20:02:14,061 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Lunch]
+2020-04-14 20:02:14,061 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [12]
+2020-04-14 20:02:14,062 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,062 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [13]
+2020-04-14 20:02:14,063 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,063 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Two grilled corn tortillas filled with grilled meat, onions, and cilantro. ]
+2020-04-14 20:02:14,064 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [tacosdeazada.png]
+2020-04-14 20:02:14,064 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Tacos de Azada]
+2020-04-14 20:02:14,064 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [9.5]
+2020-04-14 20:02:14,064 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Lunch]
+2020-04-14 20:02:14,065 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [13]
+2020-04-14 20:02:14,066 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,066 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [14]
+2020-04-14 20:02:14,067 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,068 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Two grilled flour tortilla filled with grilled meat, 
+					fresh Pico de Gallo, avocado, and creamy chipotle sauce.]
+2020-04-14 20:02:14,068 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [tacoscero.png]
+2020-04-14 20:02:14,068 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Tacos Cero]
+2020-04-14 20:02:14,068 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [10.0]
+2020-04-14 20:02:14,068 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Lunch]
+2020-04-14 20:02:14,069 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [14]
+2020-04-14 20:02:14,070 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,070 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [15]
+2020-04-14 20:02:14,071 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,071 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [One taco, one enchilada]
+2020-04-14 20:02:14,072 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [sonido.png]
+2020-04-14 20:02:14,072 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Sonido]
+2020-04-14 20:02:14,072 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [7.0]
+2020-04-14 20:02:14,072 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Lunch]
+2020-04-14 20:02:14,073 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [15]
+2020-04-14 20:02:14,074 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,074 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [16]
+2020-04-14 20:02:14,075 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,075 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [A burrito filled with beef and refried beans, topped with lettuce, tomatoes, and sour cream.]
+2020-04-14 20:02:14,075 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [burrito.png]
+2020-04-14 20:02:14,076 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Burrito Specito]
+2020-04-14 20:02:14,076 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [6.5]
+2020-04-14 20:02:14,076 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Lunch]
+2020-04-14 20:02:14,076 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [16]
+2020-04-14 20:02:14,077 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,078 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [17]
+2020-04-14 20:02:14,078 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,079 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [One chicken enchilada and one beef enchilada topped with our cheese sauce, lettuce, sour cream, 
+					tomatoes, and rice.]
+2020-04-14 20:02:14,079 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [enchiladasblancas.png]
+2020-04-14 20:02:14,079 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Enchiladas Blancas]
+2020-04-14 20:02:14,079 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [8.5]
+2020-04-14 20:02:14,080 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Lunch]
+2020-04-14 20:02:14,080 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [17]
+2020-04-14 20:02:14,081 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,082 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [41]
+2020-04-14 20:02:14,082 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,083 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [A grilled flour tortilla shell in a shape of a volcano filled with onions, bell peppers, tomatoes, 
+					steak strips. 
+					Held together by a pepper ring and topped with our homemade creamy cheese sauce.]
+2020-04-14 20:02:14,083 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [elarrancar.png]
+2020-04-14 20:02:14,083 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [El Arrancar]
+2020-04-14 20:02:14,083 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [13.0]
+2020-04-14 20:02:14,084 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dinner]
+2020-04-14 20:02:14,084 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [41]
+2020-04-14 20:02:14,085 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,085 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [42]
+2020-04-14 20:02:14,086 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,086 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Chips topped with ground beef, shredded chicken, beans, cheese, lettuce, tomatoes, and sour cream.]
+2020-04-14 20:02:14,086 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [nachos.png]
+2020-04-14 20:02:14,086 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Nachos Noches]
+2020-04-14 20:02:14,086 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [10.0]
+2020-04-14 20:02:14,087 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dinner]
+2020-04-14 20:02:14,087 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [42]
+2020-04-14 20:02:14,088 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,088 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [43]
+2020-04-14 20:02:14,089 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,090 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Two fried rolled up flour tortillas filled with chicken. 
+					Topped with cheese sauce, lettuce, tomato, sour cream and guacamole.]
+2020-04-14 20:02:14,090 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [chimichanga.png]
+2020-04-14 20:02:14,090 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Chimichanga]
+2020-04-14 20:02:14,090 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [10.5]
+2020-04-14 20:02:14,090 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dinner]
+2020-04-14 20:02:14,090 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [43]
+2020-04-14 20:02:14,091 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,092 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [44]
+2020-04-14 20:02:14,093 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,093 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Grilled chicken, steak strips, shrimp, onions, bell peppers, 
+					and tomatoes over rice coved with cheese sauce. Comes with flour tortillas.]
+2020-04-14 20:02:14,093 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [heuco.png]
+2020-04-14 20:02:14,093 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Heuco Mundo]
+2020-04-14 20:02:14,093 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [10.0]
+2020-04-14 20:02:14,093 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dinner]
+2020-04-14 20:02:14,094 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [44]
+2020-04-14 20:02:14,095 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,095 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [45]
+2020-04-14 20:02:14,096 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,096 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Three fried and rolled corn tortillas filled with chicken, 
+					topped with Chipotle cream sauce, lettuce, shredded cheese, Pico de Gallo, and rice.]
+2020-04-14 20:02:14,096 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [flautas.png]
+2020-04-14 20:02:14,097 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Flautas]
+2020-04-14 20:02:14,097 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [11.0]
+2020-04-14 20:02:14,097 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dinner]
+2020-04-14 20:02:14,097 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [45]
+2020-04-14 20:02:14,099 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,099 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [46]
+2020-04-14 20:02:14,100 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,100 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Three eggs scrambled with chorizo (Homemade Mexican Sausage). 
+					Comes with flour tortillas.]
+2020-04-14 20:02:14,100 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [chorizo.png]
+2020-04-14 20:02:14,100 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Huevos con Chorizo]
+2020-04-14 20:02:14,100 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [9.5]
+2020-04-14 20:02:14,101 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dinner]
+2020-04-14 20:02:14,101 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [46]
+2020-04-14 20:02:14,102 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,102 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [81]
+2020-04-14 20:02:14,103 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,103 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Mexican Custard with whipped cream and cherry on top.]
+2020-04-14 20:02:14,103 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [flan.png]
+2020-04-14 20:02:14,103 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Flan]
+2020-04-14 20:02:14,104 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [3.5]
+2020-04-14 20:02:14,104 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dessert]
+2020-04-14 20:02:14,104 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [81]
+2020-04-14 20:02:14,105 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,106 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [82]
+2020-04-14 20:02:14,107 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,107 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [Three flour dough sticks deep fried. Covered with cinnamon, sugar, 
+					chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:02:14,107 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [churros.png]
+2020-04-14 20:02:14,107 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Churros]
+2020-04-14 20:02:14,108 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [4.0]
+2020-04-14 20:02:14,108 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dessert]
+2020-04-14 20:02:14,108 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [82]
+2020-04-14 20:02:14,110 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,110 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [83]
+2020-04-14 20:02:14,111 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,112 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [A rolled-up deep fried flour tortilla filled with cheesecake. 
+					Cover with sugar cinnamon, chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:02:14,112 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [cheesecake.png]
+2020-04-14 20:02:14,112 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Chimi Cheesecake]
+2020-04-14 20:02:14,112 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [5.0]
+2020-04-14 20:02:14,112 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dessert]
+2020-04-14 20:02:14,112 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [83]
+2020-04-14 20:02:14,114 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:14,114 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [BIGINT] - [84]
+2020-04-14 20:02:14,115 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [restartedMain] insert into menu (menu_details, menu_img_src, menu_name, menu_price, menu_type, menu_id) values (?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:14,115 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [1] as [VARCHAR] - [A fried flour tortilla bowl filled with a vanilla ice cream ball covered with cereal that’s deep fried.
+					 Covered with honey, cinnamon, whipped cream, chocolate syrup and cherry on top.]
+2020-04-14 20:02:14,115 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [2] as [VARCHAR] - [friedicecream.png]
+2020-04-14 20:02:14,115 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [3] as [VARCHAR] - [Fried Ice Cream]
+2020-04-14 20:02:14,116 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [4] as [FLOAT] - [4.5]
+2020-04-14 20:02:14,116 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [5] as [VARCHAR] - [Dessert]
+2020-04-14 20:02:14,116 TRACE org.hibernate.type.descriptor.sql.BasicBinder [restartedMain] binding parameter [6] as [BIGINT] - [84]
+2020-04-14 20:02:24,420 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-04-14 20:02:24,420 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-04-14 20:02:24,428 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 8 ms
+2020-04-14 20:02:24,457 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-1] Menu Display Start
+2020-04-14 20:02:24,481 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-1] select menu0_.menu_id as menu_id1_0_, menu0_.menu_details as menu_det2_0_, menu0_.menu_img_src as menu_img3_0_, menu0_.menu_name as menu_nam4_0_, menu0_.menu_price as menu_pri5_0_, menu0_.menu_type as menu_typ6_0_ from menu menu0_
+2020-04-14 20:02:24,483 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [11]
+2020-04-14 20:02:24,485 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [One grilled flour tortilla filled with steak strips, onions, 
+cheesy cream sauce, and topped with lettuce.]
+2020-04-14 20:02:24,485 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [losnochestacos.png]
+2020-04-14 20:02:24,485 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Los Noches Cheese Steak Tacos]
+2020-04-14 20:02:24,486 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.5]
+2020-04-14 20:02:24,486 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:24,486 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [12]
+2020-04-14 20:02:24,487 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [One chicken quesadilla]
+2020-04-14 20:02:24,487 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [quesadilla.png]
+2020-04-14 20:02:24,487 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Quesadilla Deluxe]
+2020-04-14 20:02:24,488 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.0]
+2020-04-14 20:02:24,488 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:24,488 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [13]
+2020-04-14 20:02:24,488 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two grilled corn tortillas filled with grilled meat, onions, and cilantro. ]
+2020-04-14 20:02:24,489 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [tacosdeazada.png]
+2020-04-14 20:02:24,489 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Tacos de Azada]
+2020-04-14 20:02:24,489 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [9.5]
+2020-04-14 20:02:24,489 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:24,489 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [14]
+2020-04-14 20:02:24,490 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two grilled flour tortilla filled with grilled meat, 
+					fresh Pico de Gallo, avocado, and creamy chipotle sauce.]
+2020-04-14 20:02:24,490 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [tacoscero.png]
+2020-04-14 20:02:24,490 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Tacos Cero]
+2020-04-14 20:02:24,490 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:02:24,491 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:24,491 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [15]
+2020-04-14 20:02:24,491 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [One taco, one enchilada]
+2020-04-14 20:02:24,491 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [sonido.png]
+2020-04-14 20:02:24,491 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Sonido]
+2020-04-14 20:02:24,492 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [7.0]
+2020-04-14 20:02:24,492 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:24,492 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [16]
+2020-04-14 20:02:24,492 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [A burrito filled with beef and refried beans, topped with lettuce, tomatoes, and sour cream.]
+2020-04-14 20:02:24,493 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [burrito.png]
+2020-04-14 20:02:24,493 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Burrito Specito]
+2020-04-14 20:02:24,493 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [6.5]
+2020-04-14 20:02:24,494 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:24,494 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [17]
+2020-04-14 20:02:24,494 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [One chicken enchilada and one beef enchilada topped with our cheese sauce, lettuce, sour cream, 
+					tomatoes, and rice.]
+2020-04-14 20:02:24,495 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [enchiladasblancas.png]
+2020-04-14 20:02:24,495 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Enchiladas Blancas]
+2020-04-14 20:02:24,495 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.5]
+2020-04-14 20:02:24,496 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:24,496 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [41]
+2020-04-14 20:02:24,497 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [A grilled flour tortilla shell in a shape of a volcano filled with onions, bell peppers, tomatoes, 
+					steak strips. 
+					Held together by a pepper ring and topped with our homemade creamy cheese sauce.]
+2020-04-14 20:02:24,497 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [elarrancar.png]
+2020-04-14 20:02:24,498 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [El Arrancar]
+2020-04-14 20:02:24,498 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [13.0]
+2020-04-14 20:02:24,499 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:02:24,500 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [42]
+2020-04-14 20:02:24,501 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Chips topped with ground beef, shredded chicken, beans, cheese, lettuce, tomatoes, and sour cream.]
+2020-04-14 20:02:24,501 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [nachos.png]
+2020-04-14 20:02:24,502 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Nachos Noches]
+2020-04-14 20:02:24,502 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:02:24,502 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:02:24,503 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [43]
+2020-04-14 20:02:24,503 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two fried rolled up flour tortillas filled with chicken. 
+					Topped with cheese sauce, lettuce, tomato, sour cream and guacamole.]
+2020-04-14 20:02:24,504 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [chimichanga.png]
+2020-04-14 20:02:24,504 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Chimichanga]
+2020-04-14 20:02:24,504 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.5]
+2020-04-14 20:02:24,505 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:02:24,505 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [44]
+2020-04-14 20:02:24,505 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Grilled chicken, steak strips, shrimp, onions, bell peppers, 
+					and tomatoes over rice coved with cheese sauce. Comes with flour tortillas.]
+2020-04-14 20:02:24,506 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [heuco.png]
+2020-04-14 20:02:24,506 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Heuco Mundo]
+2020-04-14 20:02:24,506 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:02:24,506 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:02:24,506 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [45]
+2020-04-14 20:02:24,507 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three fried and rolled corn tortillas filled with chicken, 
+					topped with Chipotle cream sauce, lettuce, shredded cheese, Pico de Gallo, and rice.]
+2020-04-14 20:02:24,507 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [flautas.png]
+2020-04-14 20:02:24,507 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Flautas]
+2020-04-14 20:02:24,507 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [11.0]
+2020-04-14 20:02:24,507 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:02:24,507 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [46]
+2020-04-14 20:02:24,508 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three eggs scrambled with chorizo (Homemade Mexican Sausage). 
+					Comes with flour tortillas.]
+2020-04-14 20:02:24,508 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [chorizo.png]
+2020-04-14 20:02:24,508 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Huevos con Chorizo]
+2020-04-14 20:02:24,508 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [9.5]
+2020-04-14 20:02:24,509 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:02:24,509 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [81]
+2020-04-14 20:02:24,509 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Mexican Custard with whipped cream and cherry on top.]
+2020-04-14 20:02:24,509 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [flan.png]
+2020-04-14 20:02:24,510 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Flan]
+2020-04-14 20:02:24,510 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [3.5]
+2020-04-14 20:02:24,511 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:02:24,511 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [82]
+2020-04-14 20:02:24,511 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three flour dough sticks deep fried. Covered with cinnamon, sugar, 
+					chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:02:24,512 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [churros.png]
+2020-04-14 20:02:24,512 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Churros]
+2020-04-14 20:02:24,512 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [4.0]
+2020-04-14 20:02:24,512 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:02:24,513 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [83]
+2020-04-14 20:02:24,513 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [A rolled-up deep fried flour tortilla filled with cheesecake. 
+					Cover with sugar cinnamon, chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:02:24,513 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [cheesecake.png]
+2020-04-14 20:02:24,513 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Chimi Cheesecake]
+2020-04-14 20:02:24,514 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [5.0]
+2020-04-14 20:02:24,514 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:02:24,514 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_id1_0_] : [BIGINT]) - [84]
+2020-04-14 20:02:24,514 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_det2_0_] : [VARCHAR]) - [A fried flour tortilla bowl filled with a vanilla ice cream ball covered with cereal that’s deep fried.
+					 Covered with honey, cinnamon, whipped cream, chocolate syrup and cherry on top.]
+2020-04-14 20:02:24,514 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_img3_0_] : [VARCHAR]) - [friedicecream.png]
+2020-04-14 20:02:24,515 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Fried Ice Cream]
+2020-04-14 20:02:24,515 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_pri5_0_] : [FLOAT]) - [4.5]
+2020-04-14 20:02:24,515 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-1] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:02:24,521 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-1] Menu Display End
+2020-04-14 20:02:29,975 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-8] Review Order Start
+2020-04-14 20:02:29,979 DEBUG com.elespada.service.OrderServiceImpl [http-nio-8080-exec-8] Creating New Order start
+2020-04-14 20:02:29,983 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-8] call next value for hibernate_sequence
+2020-04-14 20:02:29,985 DEBUG com.elespada.service.OrderServiceImpl [http-nio-8080-exec-8] Creating New Order end
+2020-04-14 20:02:29,986 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-8] insert into orders (address, customer_name, date, payment_details, payment_type, total, order_id) values (?, ?, ?, ?, ?, ?, ?)
+2020-04-14 20:02:29,987 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [1] as [VARCHAR] - [null]
+2020-04-14 20:02:29,987 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [2] as [VARCHAR] - [New Customer]
+2020-04-14 20:02:29,988 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [3] as [DATE] - [null]
+2020-04-14 20:02:29,988 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [4] as [VARCHAR] - [null]
+2020-04-14 20:02:29,988 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [5] as [VARCHAR] - [null]
+2020-04-14 20:02:29,988 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [6] as [FLOAT] - [null]
+2020-04-14 20:02:29,989 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [7] as [BIGINT] - [1]
+2020-04-14 20:02:29,989 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-8] Order Start:1
+2020-04-14 20:02:29,990 DEBUG com.elespada.service.OrderServiceImpl [http-nio-8080-exec-8] Creating order details for order #:1
+2020-04-14 20:02:29,990 DEBUG com.elespada.service.OrderServiceImpl [http-nio-8080-exec-8] Adding items #:[11]
+2020-04-14 20:02:29,991 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-8] select menu0_.menu_id as menu_id1_0_0_, menu0_.menu_details as menu_det2_0_0_, menu0_.menu_img_src as menu_img3_0_0_, menu0_.menu_name as menu_nam4_0_0_, menu0_.menu_price as menu_pri5_0_0_, menu0_.menu_type as menu_typ6_0_0_ from menu menu0_ where menu0_.menu_id=?
+2020-04-14 20:02:29,992 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [1] as [BIGINT] - [11]
+2020-04-14 20:02:29,995 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-8] extracted value ([menu_det2_0_0_] : [VARCHAR]) - [One grilled flour tortilla filled with steak strips, onions, 
+cheesy cream sauce, and topped with lettuce.]
+2020-04-14 20:02:29,995 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-8] extracted value ([menu_img3_0_0_] : [VARCHAR]) - [losnochestacos.png]
+2020-04-14 20:02:29,996 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-8] extracted value ([menu_nam4_0_0_] : [VARCHAR]) - [Los Noches Cheese Steak Tacos]
+2020-04-14 20:02:29,996 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-8] extracted value ([menu_pri5_0_0_] : [FLOAT]) - [8.5]
+2020-04-14 20:02:29,996 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-8] extracted value ([menu_typ6_0_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:02:29,999 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-8] call next value for hibernate_sequence
+2020-04-14 20:02:29,999 DEBUG com.elespada.service.OrderServiceImpl [http-nio-8080-exec-8] Creating order details end
+2020-04-14 20:02:30,000 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-8] insert into order_details (menu_id, order_id, quantity, unit_price, id) values (?, ?, ?, ?, ?)
+2020-04-14 20:02:30,000 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [1] as [BIGINT] - [11]
+2020-04-14 20:02:30,000 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [2] as [BIGINT] - [1]
+2020-04-14 20:02:30,000 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [3] as [BIGINT] - [1]
+2020-04-14 20:02:30,001 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [4] as [FLOAT] - [8.5]
+2020-04-14 20:02:30,001 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [5] as [BIGINT] - [2]
+2020-04-14 20:02:30,006 DEBUG com.elespada.service.MenuServiceImpl [http-nio-8080-exec-8] getMenuListbyIds
+2020-04-14 20:02:30,006 DEBUG com.elespada.service.MenuServiceImpl [http-nio-8080-exec-8] convertStringToList
+2020-04-14 20:02:30,007 DEBUG com.elespada.service.MenuServiceImpl [http-nio-8080-exec-8] getMenuListByLongIds start
+2020-04-14 20:02:30,015 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-8] select menu0_.menu_id as menu_id1_0_, menu0_.menu_details as menu_det2_0_, menu0_.menu_img_src as menu_img3_0_, menu0_.menu_name as menu_nam4_0_, menu0_.menu_price as menu_pri5_0_, menu0_.menu_type as menu_typ6_0_ from menu menu0_ where menu0_.menu_id in (?)
+2020-04-14 20:02:30,016 TRACE org.hibernate.type.descriptor.sql.BasicBinder [http-nio-8080-exec-8] binding parameter [1] as [BIGINT] - [11]
+2020-04-14 20:02:30,017 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-8] extracted value ([menu_id1_0_] : [BIGINT]) - [11]
+2020-04-14 20:02:30,018 DEBUG com.elespada.service.MenuServiceImpl [http-nio-8080-exec-8] getMenuListByLongIds end
+2020-04-14 20:02:30,018 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-8] Menu items in order:[Menu [menuId=11, menuName=Los Noches Cheese Steak Tacos, menuType=Lunch, menuDetails=One grilled flour tortilla filled with steak strips, onions, 
+cheesy cream sauce, and topped with lettuce., menuPrice=8.5, menuImgSrc=losnochestacos.png]]
+2020-04-14 20:02:30,018 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-8] Review Order End
+2020-04-14 20:02:32,789 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:06:15,790 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-1] Contact Us
+2020-04-14 20:07:30,334 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-9] Contact Us
+2020-04-14 20:07:42,910 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-2] Contact Us
+2020-04-14 20:08:06,719 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-4] Menu Display Start
+2020-04-14 20:08:06,720 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-4] select menu0_.menu_id as menu_id1_0_, menu0_.menu_details as menu_det2_0_, menu0_.menu_img_src as menu_img3_0_, menu0_.menu_name as menu_nam4_0_, menu0_.menu_price as menu_pri5_0_, menu0_.menu_type as menu_typ6_0_ from menu menu0_
+2020-04-14 20:08:06,721 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [11]
+2020-04-14 20:08:06,721 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [One grilled flour tortilla filled with steak strips, onions, 
+cheesy cream sauce, and topped with lettuce.]
+2020-04-14 20:08:06,722 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [losnochestacos.png]
+2020-04-14 20:08:06,722 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Los Noches Cheese Steak Tacos]
+2020-04-14 20:08:06,722 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.5]
+2020-04-14 20:08:06,722 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:08:06,723 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [12]
+2020-04-14 20:08:06,723 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [One chicken quesadilla]
+2020-04-14 20:08:06,723 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [quesadilla.png]
+2020-04-14 20:08:06,723 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Quesadilla Deluxe]
+2020-04-14 20:08:06,724 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.0]
+2020-04-14 20:08:06,724 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:08:06,724 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [13]
+2020-04-14 20:08:06,724 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two grilled corn tortillas filled with grilled meat, onions, and cilantro. ]
+2020-04-14 20:08:06,725 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [tacosdeazada.png]
+2020-04-14 20:08:06,725 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Tacos de Azada]
+2020-04-14 20:08:06,725 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [9.5]
+2020-04-14 20:08:06,725 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:08:06,725 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [14]
+2020-04-14 20:08:06,725 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two grilled flour tortilla filled with grilled meat, 
+					fresh Pico de Gallo, avocado, and creamy chipotle sauce.]
+2020-04-14 20:08:06,726 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [tacoscero.png]
+2020-04-14 20:08:06,726 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Tacos Cero]
+2020-04-14 20:08:06,726 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:08:06,726 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:08:06,727 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [15]
+2020-04-14 20:08:06,727 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [One taco, one enchilada]
+2020-04-14 20:08:06,727 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [sonido.png]
+2020-04-14 20:08:06,728 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Sonido]
+2020-04-14 20:08:06,728 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [7.0]
+2020-04-14 20:08:06,728 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:08:06,729 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [16]
+2020-04-14 20:08:06,729 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [A burrito filled with beef and refried beans, topped with lettuce, tomatoes, and sour cream.]
+2020-04-14 20:08:06,729 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [burrito.png]
+2020-04-14 20:08:06,730 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Burrito Specito]
+2020-04-14 20:08:06,730 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [6.5]
+2020-04-14 20:08:06,730 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:08:06,730 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [17]
+2020-04-14 20:08:06,731 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [One chicken enchilada and one beef enchilada topped with our cheese sauce, lettuce, sour cream, 
+					tomatoes, and rice.]
+2020-04-14 20:08:06,731 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [enchiladasblancas.png]
+2020-04-14 20:08:06,732 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Enchiladas Blancas]
+2020-04-14 20:08:06,732 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.5]
+2020-04-14 20:08:06,732 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:08:06,733 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [41]
+2020-04-14 20:08:06,733 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [A grilled flour tortilla shell in a shape of a volcano filled with onions, bell peppers, tomatoes, 
+					steak strips. 
+					Held together by a pepper ring and topped with our homemade creamy cheese sauce.]
+2020-04-14 20:08:06,733 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [elarrancar.png]
+2020-04-14 20:08:06,734 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [El Arrancar]
+2020-04-14 20:08:06,734 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [13.0]
+2020-04-14 20:08:06,734 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:08:06,734 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [42]
+2020-04-14 20:08:06,734 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Chips topped with ground beef, shredded chicken, beans, cheese, lettuce, tomatoes, and sour cream.]
+2020-04-14 20:08:06,734 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [nachos.png]
+2020-04-14 20:08:06,735 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Nachos Noches]
+2020-04-14 20:08:06,735 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:08:06,735 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:08:06,735 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [43]
+2020-04-14 20:08:06,735 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two fried rolled up flour tortillas filled with chicken. 
+					Topped with cheese sauce, lettuce, tomato, sour cream and guacamole.]
+2020-04-14 20:08:06,736 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [chimichanga.png]
+2020-04-14 20:08:06,736 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Chimichanga]
+2020-04-14 20:08:06,736 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.5]
+2020-04-14 20:08:06,736 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:08:06,736 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [44]
+2020-04-14 20:08:06,737 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Grilled chicken, steak strips, shrimp, onions, bell peppers, 
+					and tomatoes over rice coved with cheese sauce. Comes with flour tortillas.]
+2020-04-14 20:08:06,737 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [heuco.png]
+2020-04-14 20:08:06,737 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Heuco Mundo]
+2020-04-14 20:08:06,737 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:08:06,737 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:08:06,737 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [45]
+2020-04-14 20:08:06,738 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three fried and rolled corn tortillas filled with chicken, 
+					topped with Chipotle cream sauce, lettuce, shredded cheese, Pico de Gallo, and rice.]
+2020-04-14 20:08:06,738 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [flautas.png]
+2020-04-14 20:08:06,738 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Flautas]
+2020-04-14 20:08:06,738 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [11.0]
+2020-04-14 20:08:06,738 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:08:06,739 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [46]
+2020-04-14 20:08:06,739 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three eggs scrambled with chorizo (Homemade Mexican Sausage). 
+					Comes with flour tortillas.]
+2020-04-14 20:08:06,739 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [chorizo.png]
+2020-04-14 20:08:06,739 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Huevos con Chorizo]
+2020-04-14 20:08:06,739 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [9.5]
+2020-04-14 20:08:06,739 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:08:06,740 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [81]
+2020-04-14 20:08:06,740 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Mexican Custard with whipped cream and cherry on top.]
+2020-04-14 20:08:06,740 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [flan.png]
+2020-04-14 20:08:06,740 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Flan]
+2020-04-14 20:08:06,740 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [3.5]
+2020-04-14 20:08:06,740 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:08:06,741 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [82]
+2020-04-14 20:08:06,741 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three flour dough sticks deep fried. Covered with cinnamon, sugar, 
+					chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:08:06,741 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [churros.png]
+2020-04-14 20:08:06,741 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Churros]
+2020-04-14 20:08:06,741 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [4.0]
+2020-04-14 20:08:06,741 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:08:06,742 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [83]
+2020-04-14 20:08:06,742 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [A rolled-up deep fried flour tortilla filled with cheesecake. 
+					Cover with sugar cinnamon, chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:08:06,742 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [cheesecake.png]
+2020-04-14 20:08:06,742 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Chimi Cheesecake]
+2020-04-14 20:08:06,742 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [5.0]
+2020-04-14 20:08:06,742 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:08:06,743 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_id1_0_] : [BIGINT]) - [84]
+2020-04-14 20:08:06,743 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_det2_0_] : [VARCHAR]) - [A fried flour tortilla bowl filled with a vanilla ice cream ball covered with cereal that’s deep fried.
+					 Covered with honey, cinnamon, whipped cream, chocolate syrup and cherry on top.]
+2020-04-14 20:08:06,743 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_img3_0_] : [VARCHAR]) - [friedicecream.png]
+2020-04-14 20:08:06,743 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Fried Ice Cream]
+2020-04-14 20:08:06,743 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_pri5_0_] : [FLOAT]) - [4.5]
+2020-04-14 20:08:06,744 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-4] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:08:06,745 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-4] Menu Display End
+2020-04-14 20:09:11,422 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-7] Menu Display Start
+2020-04-14 20:09:11,429 DEBUG org.hibernate.engine.jdbc.spi.SqlStatementLogger [http-nio-8080-exec-7] select menu0_.menu_id as menu_id1_0_, menu0_.menu_details as menu_det2_0_, menu0_.menu_img_src as menu_img3_0_, menu0_.menu_name as menu_nam4_0_, menu0_.menu_price as menu_pri5_0_, menu0_.menu_type as menu_typ6_0_ from menu menu0_
+2020-04-14 20:09:11,430 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [11]
+2020-04-14 20:09:11,431 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [One grilled flour tortilla filled with steak strips, onions, 
+cheesy cream sauce, and topped with lettuce.]
+2020-04-14 20:09:11,431 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [losnochestacos.png]
+2020-04-14 20:09:11,431 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Los Noches Cheese Steak Tacos]
+2020-04-14 20:09:11,431 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.5]
+2020-04-14 20:09:11,431 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:09:11,431 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [12]
+2020-04-14 20:09:11,432 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [One chicken quesadilla]
+2020-04-14 20:09:11,432 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [quesadilla.png]
+2020-04-14 20:09:11,432 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Quesadilla Deluxe]
+2020-04-14 20:09:11,432 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.0]
+2020-04-14 20:09:11,432 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:09:11,433 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [13]
+2020-04-14 20:09:11,433 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two grilled corn tortillas filled with grilled meat, onions, and cilantro. ]
+2020-04-14 20:09:11,433 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [tacosdeazada.png]
+2020-04-14 20:09:11,433 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Tacos de Azada]
+2020-04-14 20:09:11,433 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [9.5]
+2020-04-14 20:09:11,434 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:09:11,434 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [14]
+2020-04-14 20:09:11,434 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two grilled flour tortilla filled with grilled meat, 
+					fresh Pico de Gallo, avocado, and creamy chipotle sauce.]
+2020-04-14 20:09:11,434 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [tacoscero.png]
+2020-04-14 20:09:11,435 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Tacos Cero]
+2020-04-14 20:09:11,435 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:09:11,436 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:09:11,436 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [15]
+2020-04-14 20:09:11,437 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [One taco, one enchilada]
+2020-04-14 20:09:11,437 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [sonido.png]
+2020-04-14 20:09:11,437 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Sonido]
+2020-04-14 20:09:11,438 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [7.0]
+2020-04-14 20:09:11,438 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:09:11,438 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [16]
+2020-04-14 20:09:11,438 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [A burrito filled with beef and refried beans, topped with lettuce, tomatoes, and sour cream.]
+2020-04-14 20:09:11,438 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [burrito.png]
+2020-04-14 20:09:11,438 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Burrito Specito]
+2020-04-14 20:09:11,439 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [6.5]
+2020-04-14 20:09:11,439 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:09:11,439 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [17]
+2020-04-14 20:09:11,439 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [One chicken enchilada and one beef enchilada topped with our cheese sauce, lettuce, sour cream, 
+					tomatoes, and rice.]
+2020-04-14 20:09:11,439 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [enchiladasblancas.png]
+2020-04-14 20:09:11,439 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Enchiladas Blancas]
+2020-04-14 20:09:11,440 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [8.5]
+2020-04-14 20:09:11,441 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Lunch]
+2020-04-14 20:09:11,441 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [41]
+2020-04-14 20:09:11,441 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [A grilled flour tortilla shell in a shape of a volcano filled with onions, bell peppers, tomatoes, 
+					steak strips. 
+					Held together by a pepper ring and topped with our homemade creamy cheese sauce.]
+2020-04-14 20:09:11,442 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [elarrancar.png]
+2020-04-14 20:09:11,442 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [El Arrancar]
+2020-04-14 20:09:11,443 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [13.0]
+2020-04-14 20:09:11,443 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:09:11,443 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [42]
+2020-04-14 20:09:11,443 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Chips topped with ground beef, shredded chicken, beans, cheese, lettuce, tomatoes, and sour cream.]
+2020-04-14 20:09:11,443 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [nachos.png]
+2020-04-14 20:09:11,444 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Nachos Noches]
+2020-04-14 20:09:11,444 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:09:11,444 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:09:11,444 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [43]
+2020-04-14 20:09:11,444 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Two fried rolled up flour tortillas filled with chicken. 
+					Topped with cheese sauce, lettuce, tomato, sour cream and guacamole.]
+2020-04-14 20:09:11,445 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [chimichanga.png]
+2020-04-14 20:09:11,445 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Chimichanga]
+2020-04-14 20:09:11,445 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.5]
+2020-04-14 20:09:11,445 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:09:11,445 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [44]
+2020-04-14 20:09:11,446 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Grilled chicken, steak strips, shrimp, onions, bell peppers, 
+					and tomatoes over rice coved with cheese sauce. Comes with flour tortillas.]
+2020-04-14 20:09:11,446 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [heuco.png]
+2020-04-14 20:09:11,446 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Heuco Mundo]
+2020-04-14 20:09:11,446 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [10.0]
+2020-04-14 20:09:11,446 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:09:11,447 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [45]
+2020-04-14 20:09:11,447 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three fried and rolled corn tortillas filled with chicken, 
+					topped with Chipotle cream sauce, lettuce, shredded cheese, Pico de Gallo, and rice.]
+2020-04-14 20:09:11,447 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [flautas.png]
+2020-04-14 20:09:11,447 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Flautas]
+2020-04-14 20:09:11,447 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [11.0]
+2020-04-14 20:09:11,447 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:09:11,448 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [46]
+2020-04-14 20:09:11,448 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three eggs scrambled with chorizo (Homemade Mexican Sausage). 
+					Comes with flour tortillas.]
+2020-04-14 20:09:11,448 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [chorizo.png]
+2020-04-14 20:09:11,448 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Huevos con Chorizo]
+2020-04-14 20:09:11,448 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [9.5]
+2020-04-14 20:09:11,448 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dinner]
+2020-04-14 20:09:11,449 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [81]
+2020-04-14 20:09:11,449 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Mexican Custard with whipped cream and cherry on top.]
+2020-04-14 20:09:11,449 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [flan.png]
+2020-04-14 20:09:11,449 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Flan]
+2020-04-14 20:09:11,449 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [3.5]
+2020-04-14 20:09:11,449 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:09:11,450 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [82]
+2020-04-14 20:09:11,450 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [Three flour dough sticks deep fried. Covered with cinnamon, sugar, 
+					chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:09:11,450 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [churros.png]
+2020-04-14 20:09:11,450 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Churros]
+2020-04-14 20:09:11,450 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [4.0]
+2020-04-14 20:09:11,451 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:09:11,451 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [83]
+2020-04-14 20:09:11,451 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [A rolled-up deep fried flour tortilla filled with cheesecake. 
+					Cover with sugar cinnamon, chocolate syrup, whipped cream and cherry on top.]
+2020-04-14 20:09:11,451 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [cheesecake.png]
+2020-04-14 20:09:11,451 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Chimi Cheesecake]
+2020-04-14 20:09:11,452 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [5.0]
+2020-04-14 20:09:11,452 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:09:11,452 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_id1_0_] : [BIGINT]) - [84]
+2020-04-14 20:09:11,452 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_det2_0_] : [VARCHAR]) - [A fried flour tortilla bowl filled with a vanilla ice cream ball covered with cereal that’s deep fried.
+					 Covered with honey, cinnamon, whipped cream, chocolate syrup and cherry on top.]
+2020-04-14 20:09:11,453 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_img3_0_] : [VARCHAR]) - [friedicecream.png]
+2020-04-14 20:09:11,453 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_nam4_0_] : [VARCHAR]) - [Fried Ice Cream]
+2020-04-14 20:09:11,453 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_pri5_0_] : [FLOAT]) - [4.5]
+2020-04-14 20:09:11,454 TRACE org.hibernate.type.descriptor.sql.BasicExtractor [http-nio-8080-exec-7] extracted value ([menu_typ6_0_] : [VARCHAR]) - [Dessert]
+2020-04-14 20:09:11,456 DEBUG com.elespada.controllers.IndexController [http-nio-8080-exec-7] Menu Display End
+2020-04-14 20:09:12,348 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:09:57,460 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-1] Contact Us
+2020-04-14 20:10:28,017 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:10:28,735 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-1] Contact Us
+2020-04-14 20:10:29,269 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-5] Contact Us
+2020-04-14 20:10:50,267 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-6] Contact Us
+2020-04-14 20:10:50,928 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-8] Contact Us
+2020-04-14 20:10:51,222 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-7] Contact Us
+2020-04-14 20:10:51,361 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-2] Contact Us
+2020-04-14 20:10:58,577 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:11:07,214 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-10] Contact Us
+2020-04-14 20:12:03,334 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-5] Contact Us
+2020-04-14 20:12:32,967 ERROR org.thymeleaf.TemplateEngine [http-nio-8080-exec-9] [THYMELEAF][http-nio-8080-exec-9] Exception processing template "index": An error happened during template parsing (template: "class path resource [templates/index.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "espadaVO.menuIds" (template: "index" - line 44, col 41)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "espadaVO.menuIds" (template: "index" - line 44, col 41)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:290)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'menuIds' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	... 69 common frames omitted
+2020-04-14 20:12:32,970 ERROR org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-9] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/index.html]")] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'menuIds' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:213)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:104)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.access$000(PropertyOrFieldReference.java:51)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorLValue.getValue(PropertyOrFieldReference.java:406)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:92)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:112)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:337)
+	at org.thymeleaf.spring5.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:263)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleStandaloneElementEnd(TemplateHandlerAdapterMarkupHandler.java:260)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:256)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleStandaloneElementEnd(OutputExpressionInlinePreProcessorHandler.java:169)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleStandaloneElementEnd(InlinedOutputExpressionMarkupHandler.java:104)
+	at org.attoparser.HtmlElement.handleStandaloneElementEnd(HtmlElement.java:79)
+	at org.attoparser.HtmlMarkupHandler.handleStandaloneElementEnd(HtmlMarkupHandler.java:241)
+	at org.attoparser.MarkupEventProcessorHandler.handleStandaloneElementEnd(MarkupEventProcessorHandler.java:327)
+	at org.attoparser.ParsingElementMarkupUtil.parseStandaloneElement(ParsingElementMarkupUtil.java:96)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:706)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2020-04-14 20:13:58,273 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-1] Contact Us
+2020-04-14 20:14:13,421 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-7] Contact Us
+2020-04-14 20:14:25,319 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-6] Contact Us
+2020-04-14 20:15:12,410 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:15:13,441 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-8] Contact Us
+2020-04-14 20:15:13,803 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-5] Contact Us
+2020-04-14 20:15:14,296 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-2] Contact Us
+2020-04-14 20:16:18,412 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-3] Contact Us
+2020-04-14 20:16:57,102 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-6] Contact Us
+2020-04-14 20:17:14,083 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-10] Contact Us
+2020-04-14 20:17:35,974 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-1] Contact Us
+2020-04-14 20:18:30,946 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-7] Contact Us
+2020-04-14 20:18:31,765 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-2] Contact Us
+2020-04-14 20:18:32,018 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:18:32,170 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-5] Contact Us
+2020-04-14 20:19:10,004 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-9] Contact Us
+2020-04-14 20:19:10,563 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-10] Contact Us
+2020-04-14 20:19:26,999 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-3] Contact Us
+2020-04-14 20:20:29,556 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-2] Contact Us
+2020-04-14 20:21:06,277 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:21:48,192 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-6] Contact Us
+2020-04-14 20:21:48,691 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-9] Contact Us
+2020-04-14 20:21:48,969 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-10] Contact Us
+2020-04-14 20:22:19,367 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-3] Contact Us
+2020-04-14 20:22:27,538 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-7] Contact Us
+2020-04-14 20:22:43,739 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-2] Contact Us
+2020-04-14 20:22:44,585 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-1] Contact Us
+2020-04-14 20:22:49,798 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-5] Contact Us
+2020-04-14 20:23:08,652 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-8] Contact Us
+2020-04-14 20:23:27,181 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-10] Contact Us
+2020-04-14 20:23:27,673 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-3] Contact Us
+2020-04-14 20:23:35,384 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-9] Contact Us
+2020-04-14 20:23:45,241 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:24:21,876 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-6] Contact Us
+2020-04-14 20:26:46,355 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-2] Contact Us
+2020-04-14 20:27:01,931 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-10] Contact Us
+2020-04-14 20:27:16,170 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-5] Contact Us
+2020-04-14 20:27:24,626 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-9] Contact Us
+2020-04-14 20:27:25,210 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
+2020-04-14 20:27:25,354 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-6] Contact Us
+2020-04-14 20:27:30,126 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-3] Contact Us
+2020-04-14 20:27:47,673 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(38)-127.0.0.1] Application shutdown requested.
+2020-04-14 20:27:47,676 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(38)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 20:27:47,676 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(38)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-14 20:27:47,677 TRACE org.hibernate.type.spi.TypeConfiguration [RMI TCP Connection(38)-127.0.0.1] Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@4240520b] for TypeConfiguration
+2020-04-14 20:27:47,677 DEBUG org.hibernate.type.spi.TypeConfiguration$Scope [RMI TCP Connection(38)-127.0.0.1] Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@21836593] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@4240520b]
+2020-04-14 20:27:47,888 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [RMI TCP Connection(38)-127.0.0.1] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2020-04-14 20:27:47,889 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(38)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-14 20:27:47,891 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(38)-127.0.0.1] HikariPool-1 - Shutdown completed.

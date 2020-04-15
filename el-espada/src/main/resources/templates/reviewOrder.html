@@ -16,7 +16,8 @@
 </head>
 
 <body>
-	<form method="post" enctype="multipart/form-data" th:action="@{/payment}">
+	<form method="post" enctype="multipart/form-data"
+		th:action="@{/payment}">
 		<input type="hidden" name="menuIds" />
 		<div class="container">
 
@@ -24,8 +25,23 @@
 			<nav
 				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 				th:replace="fragments/navigator :: navigator"></nav>
-				<button type="submit" class="btn-success float-right sticky-top sticky-offset btn-lg" style="margin-top:20px;">Continue to Payment</button>
-			<button type="submit" class="btn-success float-right sticky-top sticky-offset btn-lg"  style="margin-top:20px;" th:formaction="@{/index}" >Start Over</button>
+
+
+
+			<button type="submit"
+				class="btn-danger float-right sticky-top sticky-offset btn-lg"
+				style="margin-top: 20px;" th:formaction="@{/index}">Start
+				Over</button>
+
+			<button type="submit"
+				class="btn-success float-right sticky-top sticky-offset btn-lg"
+				style="margin-top: 20px; margin: 20px; margin-bottom: 0px">Continue
+				to Payment</button>
+
+
+
+
+
 
 			<div>
 				<div class="column">
@@ -34,23 +50,26 @@
 			</div>
 
 			<div class="container" th:each="m : ${menu}">
+
 				<div class="row">
 					<div class="col-sm">
 						<h5 th:text="${m.menuName}"></h5>
-						<img th:src="@{${'/images/' + m.menuImgSrc}}" class="rounded" /> 
+						<img th:src="@{${'/images/' + m.menuImgSrc}}" class="rounded" />
 
 					</div>
 
 					<div class="col-sm">
 						<p th:text="${m.menuDetails}"></p>
 						<p th:text="${#numbers.formatCurrency(m.menuPrice)}"></p>
-						<a class="btn-success" th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}" >Delete Item</a>
-						
+						<a class="btn-success btn" role="button"
+							th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}">Delete
+							Item</a>
+
 					</div>
 				</div>
 			</div>
 
-			
+
 		</div>
 	</form>
 </body>
