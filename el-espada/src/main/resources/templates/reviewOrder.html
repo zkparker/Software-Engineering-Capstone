@@ -46,8 +46,8 @@
 			<div>
 				<div class="column">
 					<h2 class="menu-text">Review Order </h2>
-					Order Id:<label th:text="${session.orderId}" th:unless="${session == null}" />
-					Order Total:<label th:text="${session.orderTotal}" th:unless="${session == null}" />
+					<strong>Order Id:<label th:text="${session.orderId}" th:unless="${session == null}" />
+					<p>Order Total:<label th:text="${#numbers.formatCurrency(session.orderTotal)}" th:unless="${session == null}" /></p></strong>
 				</div>
 			</div>
 

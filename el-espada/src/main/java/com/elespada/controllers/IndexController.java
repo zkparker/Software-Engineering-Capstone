@@ -57,10 +57,10 @@ public class IndexController {
 			logger.debug("Order Start:" + orderId);
 			HttpSession session = req.getSession();
 			session.setAttribute("orderId", orderId);
+			orderService.createOrderDetails(espadaVO.getMenuIds(), orderId);
 			Float orderTotal = orderService.computeOrderTotal(orderService.findOrderById(orderId));
 			logger.debug("orderTotal::"+orderTotal);
 			session.setAttribute("orderTotal", orderTotal);
-			orderService.createOrderDetails(espadaVO.getMenuIds(), orderId);
 			List<Menu> menuList = menuService.getMenuListbyIds(espadaVO.getMenuIds());
 			logger.debug("Menu items in order:" + menuList);
 			model.addAttribute("menu", menuList);

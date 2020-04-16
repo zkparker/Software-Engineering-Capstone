@@ -13,6 +13,9 @@
 	th:href="@{/css/stylesheet.css}" />
 	
 <script>
+	/**
+	 * Toggles between Payment types Cash or Card 
+	 */
 	function togglePayment(){
 		if(document.getElementById("card").checked == true){
 			document.getElementById("cardDetails").style.display = "block";
@@ -26,6 +29,81 @@
 			document.getElementById("cc-number").required = false;
 			document.getElementById("cc-expiration").required = false;
 			document.getElementById("cc-cvv").required = false;
+		}
+	}
+	
+	/**
+	 * Form validations on submit
+	 */
+	function validate(){
+		// validate zip code
+		var zip = document.getElementById("zip").value;
+		if(zip.length != 5){
+			alert('Zip: "'+zip+'", must be 5 digits, please verify!');
+			document.getElementById("zip").focus();
+			return false;
+		}
+		// validate Payment type
+		var card = document.getElementById("card").checked;
+		var cash = document.getElementById("cash").checked;
+		if(!card && !cash){
+			alert('Payment Type: Card or Cash must be selected, please verify!');
+			document.getElementById("pay").focus();
+			return false;
+		}
+		//validate card type payment
+		if(document.getElementById("card").checked == true){
+			// validate card number
+			var cardNum = document.getElementById("cc-number").value;
+			cardNum = cardNum.replace(/\s/g,'');
+			if(cardNum.length != 16){
+				alert('Credit/Debit card number: "'+cardNum+'", must be 16 digits, please verify!');
+				document.getElementById("cc-number").focus();
+				return false;
+			}
+			//validate for visa or master card
+			if(cardNum.charAt(0) != '4' && cardNum.charAt(0) != '5'){
+				alert('We are only accepting visa/mastercard at this time, please verify!');
+				document.getElementById("cc-number").focus();
+				return false;
+			}
+			//validate card expiration date and year
+			var cardExpiry = document.getElementById("cc-expiration").value;
+			if(cardExpiry.length != 7){
+				alert('Expiration Date: "'+cardExpiry+'", must be 7 digits (including /) and in mm/yyyy format, please verify!');
+				document.getElementById("cc-expiration").focus();
+				return false;
+			}
+			var pattern = /^(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
+			if(pattern.test(cardExpiry) == false){
+				alert('Expiration Date: "'+cardExpiry+'", must be in mm/yyyy format and month cannot be greater than 12, please verify!');
+				document.getElementById("cc-expiration").focus();
+				return false;
+			}
+			var d = new Date();
+			var curr_date = d.getDate();
+			var curr_year = d.getFullYear();
+			var date = cardExpiry.split("/");
+			if(date[1] == curr_year){
+				if(date[0] <= curr_date){
+					alert('Expiration Date: "'+cardExpiry+'", must be greater than today, please verify!');
+					document.getElementById("cc-expiration").focus();
+					return false;
+				}
+			}
+			if(date[1] < curr_year){
+				alert('Expiration Date: "'+cardExpiry+'", year must be greater than or equal to current year, please verify!');
+				document.getElementById("cc-expiration").focus();
+				return false;
+			}
+			//validate cvv
+			var cvv = document.getElementById("cc-cvv").value;
+			if(cvv.length != 3){
+				alert('CVV: "'+cvv+'" must be 3 digits, please verify!');
+				document.getElementById("cc-cvv").focus();
+				return false;
+			}
+			return true;
 		}
 	}
 </script>
@@ -47,10 +125,11 @@
 					<div class="row justify-content-md-center">
 						<div class="row justify-content-md-center"
 							style="border-bottom: none">
-							Order Id:<label th:text="${session.orderId}" th:unless="${session == null}" />
-							Order Total:<label th:text="${session.orderTotal}" th:unless="${session == null}" />
+							<strong>Order Id:<label th:text="${session.orderId}" th:unless="${session == null}" />
+							<p>Order Total:<label th:text="${#numbers.formatCurrency(session.orderTotal)}" th:unless="${session == null}" /></p></strong>
 
-							<form th:action="@{/final}" method="post" class="was-validated" th:object="${paymentVO}">
+							<form th:action="@{/final}" method="post" class="was-validated" th:object="${paymentVO}"
+								onsubmit="return validate();">
 								<div class="row">
 									<div class="col-sm">
 										<label for="validationTextarea">First name</label> 
@@ -154,7 +233,7 @@
 
 									<div class="col-sm">
 										<label for="zip">Zip</label> 
-										<input type="text" th:value="${paymentVO.addressZip}"
+										<input type="number" th:value="${paymentVO.addressZip}"
 											class="form-control" id="zip" placeholder="12345"
 											 th:name="addressZip" required>
 										<div class="invalid-feedback">Zip code required.</div>
@@ -163,36 +242,32 @@
 
 								<h4 class="mb-3">Payment Details</h4>
 
-							
-								<div class="form-check">
+								<div class="form-check" id="pay">
+									<label>Payment Type:</label>
 									<input class="form-check-input" type="radio"
 										name="payment-type" id="cash" value="CASH"
-										th:field="*{paymentType}" onclick="togglePayment();" required> 
+										th:field="*{paymentType}" onclick="togglePayment();"> 
 									<label class="form-check-label" for="cash"> Cash </label>
-								</div>
-								<div class="form-check">
 									<input class="form-check-input" type="radio"
 										name="payment-type" id="card" value="CARD" 
-										checked th:field="*{paymentType}"  onclick="togglePayment();">
+										th:field="*{paymentType}"  onclick="togglePayment();">
 									<label class="form-check-label" for="card"> Card </label>
-									
 								</div>
 								
-								
-								
 								<div id="cardDetails" style="display:none;">
+									<strong><label>*We are only accepting visa/mastercard at this time, we apologize for any inconvenience this may have caused.</label></strong>
 									<div class="row">
 										<div class="col-sm">
 											<label for="cc-name">Name on card</label> <input type="text"
 												class="form-control" id="cc-name" placeholder="John Doe"
-												required th:value="${paymentVO.nameOnCard}" th:name="nameOnCard"> <small class="text-muted">Full name
+												th:value="${paymentVO.nameOnCard}" th:name="nameOnCard"> <small class="text-muted">Full name
 												as displayed on card</small>
 											<div class="invalid-feedback">Name on card is required</div>
 										</div>
 										<div class="col-sm">
-											<label for="cc-number">Credit card number</label> <input
-												type="text" class="form-control" id="cc-number"
-												placeholder="1234 5678 9012 3456" required 
+											<label for="cc-number">Credit/Debit card number</label> <input
+												type="number" class="form-control" id="cc-number"
+												placeholder="4444 4444 4444 4444"
 												th:value="${paymentVO.cardNumber}" th:name="cardNumber">
 											<div class="invalid-feedback">Credit card number is
 												required</div>
@@ -202,13 +277,13 @@
 										<div class="col-sm">
 											<label for="cc-expiration">Expiration Date</label> <input
 												type="text" class="form-control" id="cc-expiration"
-												placeholder="01/2023" required th:value="${paymentVO.cardExpiry}"
+												placeholder="01/2023"  th:value="${paymentVO.cardExpiry}"
 												 th:name="cardExpiry">
 											<div class="invalid-feedback">Expiration date required</div>
 										</div>
 										<div class="col-sm">
-											<label for="cc-expiration">CVV</label> <input type="text" th:value="${paymentVO.cvv}"
-												class="form-control" id="cc-cvv" placeholder="123"  th:name="cvv"required>
+											<label for="cc-expiration">CVV</label> <input type="number" th:value="${paymentVO.cvv}"
+												class="form-control" id="cc-cvv" placeholder="123"  th:name="cvv">
 											<div class="invalid-feedback">Security code required</div>
 										</div>
 	
@@ -216,8 +291,7 @@
 								</div>
 
 								<div class="row" style="border-bottom: none">
-									<button class="btn btn-primary btn-lg btn-block" type="submit"
-										>Submit Order</button>
+									<button class="btn btn-primary btn-lg btn-block" type="submit">Submit Order</button>
 								</div>
 							</form>
 
