@@ -45,12 +45,13 @@
 
 			<div>
 				<div class="column">
-					<h2 class="menu-text">Review Order</h2>
+					<h2 class="menu-text">Review Order </h2>
+					Order Id:<label th:text="${session.orderId}" th:unless="${session == null}" />
+					Order Total:<label th:text="${session.orderTotal}" th:unless="${session == null}" />
 				</div>
 			</div>
 
 			<div class="container" th:each="m : ${menu}">
-
 				<div class="row">
 					<div class="col-sm">
 						<h5 th:text="${m.menuName}"></h5>
@@ -62,9 +63,7 @@
 						<p th:text="${m.menuDetails}"></p>
 						<p th:text="${#numbers.formatCurrency(m.menuPrice)}"></p>
 						<a class="btn-success btn" role="button"
-							th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}">Delete
-							Item</a>
-
+							th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}">Delete Item</a>
 					</div>
 				</div>
 			</div>

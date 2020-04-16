@@ -18,7 +18,7 @@ public class PaymentController {
 	public String getPayment(Model model) {
 		logger.debug("Payment Details");
 		model.addAttribute("paymentVO", new PaymentVO());
-		return "payment";
+		return "/payment";
 	}
 
 }

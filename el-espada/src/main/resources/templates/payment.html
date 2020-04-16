@@ -11,6 +11,25 @@
 
 <link rel="stylesheet" href="../static/css/stylesheet.css"
 	th:href="@{/css/stylesheet.css}" />
+	
+<script>
+	function togglePayment(){
+		if(document.getElementById("card").checked == true){
+			document.getElementById("cardDetails").style.display = "block";
+			document.getElementById("cc-name").required = true;
+			document.getElementById("cc-number").required = true;
+			document.getElementById("cc-expiration").required = true;
+			document.getElementById("cc-cvv").required = true;
+		}else {
+			document.getElementById("cardDetails").style.display = "none";
+			document.getElementById("cc-name").required = false;
+			document.getElementById("cc-number").required = false;
+			document.getElementById("cc-expiration").required = false;
+			document.getElementById("cc-cvv").required = false;
+		}
+	}
+</script>
+
 </head>
 
 
@@ -28,6 +47,8 @@
 					<div class="row justify-content-md-center">
 						<div class="row justify-content-md-center"
 							style="border-bottom: none">
+							Order Id:<label th:text="${session.orderId}" th:unless="${session == null}" />
+							Order Total:<label th:text="${session.orderTotal}" th:unless="${session == null}" />
 
 							<form th:action="@{/final}" method="post" class="was-validated" th:object="${paymentVO}">
 								<div class="row">
@@ -144,51 +165,50 @@
 
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
-										name="payment-type" id="cash" value="cash"
-										checked th:value="${paymentVO.paymentType}"
-										 th:name="paymentType"> <label class="form-check-label"
-										for="cash"> Cash </label>
+										name="payment-type" id="cash" value="CASH"
+										th:field="*{paymentType}" onclick="togglePayment();"> 
+									<label class="form-check-label" for="cash"> Cash </label>
 								</div>
 								<div class="form-check">
 									<input class="form-check-input" type="radio"
-										name="payment-type" id="card" value="card" 
-										th:value="${paymentVO.paymentType}"  th:name="paymentType">
-									<label class="form-check-label" for="card">
-										Card </label>
+										name="payment-type" id="card" value="CARD" 
+										checked th:field="*{paymentType}"  onclick="togglePayment();">
+									<label class="form-check-label" for="card"> Card </label>
 								</div>
 								
-								
-								<div class="row">
-									<div class="col-sm">
-										<label for="cc-name">Name on card</label> <input type="text"
-											class="form-control" id="cc-name" placeholder="John Doe"
-											required th:value="${paymentVO.nameOnCard}" th:name="nameOnCard"> <small class="text-muted">Full name
-											as displayed on card</small>
-										<div class="invalid-feedback">Name on card is required</div>
+								<div id="cardDetails" style="display:none;">
+									<div class="row">
+										<div class="col-sm">
+											<label for="cc-name">Name on card</label> <input type="text"
+												class="form-control" id="cc-name" placeholder="John Doe"
+												required th:value="${paymentVO.nameOnCard}" th:name="nameOnCard"> <small class="text-muted">Full name
+												as displayed on card</small>
+											<div class="invalid-feedback">Name on card is required</div>
+										</div>
+										<div class="col-sm">
+											<label for="cc-number">Credit card number</label> <input
+												type="text" class="form-control" id="cc-number"
+												placeholder="1234 5678 9012 3456" required 
+												th:value="${paymentVO.cardNumber}" th:name="cardNumber">
+											<div class="invalid-feedback">Credit card number is
+												required</div>
+										</div>
 									</div>
-									<div class="col-sm">
-										<label for="cc-number">Credit card number</label> <input
-											type="text" class="form-control" id="cc-number"
-											placeholder="1234 5678 9012 3456" required 
-											th:value="${paymentVO.cardNumber}" th:name="cardNumber">
-										<div class="invalid-feedback">Credit card number is
-											required</div>
+									<div class="row" style="border-bottom: none">
+										<div class="col-sm">
+											<label for="cc-expiration">Expiration Date</label> <input
+												type="text" class="form-control" id="cc-expiration"
+												placeholder="01/2023" required th:value="${paymentVO.cardExpiry}"
+												 th:name="cardExpiry">
+											<div class="invalid-feedback">Expiration date required</div>
+										</div>
+										<div class="col-sm">
+											<label for="cc-expiration">CVV</label> <input type="text" th:value="${paymentVO.cvv}"
+												class="form-control" id="cc-cvv" placeholder="123"  th:name="cvv"required>
+											<div class="invalid-feedback">Security code required</div>
+										</div>
+	
 									</div>
-								</div>
-								<div class="row" style="border-bottom: none">
-									<div class="col-sm">
-										<label for="cc-expiration">Expiration Date</label> <input
-											type="text" class="form-control" id="cc-expiration"
-											placeholder="01/2020" required th:value="${paymentVO.cardExpiry}"
-											 th:name="cardExpiry">
-										<div class="invalid-feedback">Expiration date required</div>
-									</div>
-									<div class="col-sm">
-										<label for="cc-expiration">CVV</label> <input type="text" th:value="${paymentVO.cvv}"
-											class="form-control" id="cc-cvv" placeholder="123"  th:name="cvv"required>
-										<div class="invalid-feedback">Security code required</div>
-									</div>
-
 								</div>
 
 								<div class="row" style="border-bottom: none">

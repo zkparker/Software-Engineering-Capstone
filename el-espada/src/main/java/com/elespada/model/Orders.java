@@ -1,6 +1,6 @@
 package com.elespada.model;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,21 +9,22 @@ import javax.persistence.Id;
 
 @Entity
 public class Orders {
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long orderId;
 	private String customerName;
 	private String address;
 	private String paymentType;
 	private String paymentDetails;
 	private Float total;
-	private Date date;
+	private Timestamp timestamp;
 
 	public Orders() {
 		super();
 	}
 
 	public Orders(Long orderId, String customerName, String address, String paymentType, String paymentDetails,
-			Float total, Date date) {
+			Float total, Timestamp timestamp) {
 		super();
 		this.orderId = orderId;
 		this.customerName = customerName;
@@ -31,7 +32,7 @@ public class Orders {
 		this.paymentType = paymentType;
 		this.paymentDetails = paymentDetails;
 		this.total = total;
-		this.date = date;
+		this.timestamp = timestamp;
 	}
 
 	public Long getOrderId() {
@@ -50,12 +51,12 @@ public class Orders {
 		this.customerName = customerName;
 	}
 
-	public Date getDate() {
-		return date;
+	public Timestamp getTimestamp() {
+		return timestamp;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setTimestamp(Timestamp timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	public String getAddress() {
@@ -96,7 +97,7 @@ public class Orders {
 		int result = 1;
 		result = prime * result + ((address == null) ? 0 : address.hashCode());
 		result = prime * result + ((customerName == null) ? 0 : customerName.hashCode());
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + ((timestamp == null) ? 0 : timestamp.hashCode());
 		result = prime * result + ((orderId == null) ? 0 : orderId.hashCode());
 		result = prime * result + ((paymentDetails == null) ? 0 : paymentDetails.hashCode());
 		result = prime * result + ((paymentType == null) ? 0 : paymentType.hashCode());
@@ -123,10 +124,10 @@ public class Orders {
 				return false;
 		} else if (!customerName.equals(other.customerName))
 			return false;
-		if (date == null) {
-			if (other.date != null)
+		if (timestamp == null) {
+			if (other.timestamp != null)
 				return false;
-		} else if (!date.equals(other.date))
+		} else if (!timestamp.equals(other.timestamp))
 			return false;
 		if (orderId == null) {
 			if (other.orderId != null)
@@ -166,8 +167,8 @@ public class Orders {
 		builder.append(paymentDetails);
 		builder.append(", total=");
 		builder.append(total);
-		builder.append(", date=");
-		builder.append(date);
+		builder.append(", timestamp=");
+		builder.append(timestamp);
 		builder.append("]");
 		return builder.toString();
 	}

@@ -13,6 +13,6 @@ public class AboutUsController {
 	@RequestMapping("/about")
 	public String getAbout() {
 		logger.debug("About Us");
-		return "about";
+		return "/about";
 	}
 }

@@ -13,6 +13,6 @@ public class Contact {
 	@RequestMapping("/contact")
 	public String getContact() {
 		logger.debug("Contact Us");
-		return "contact";
+		return "/contact";
 	}
 }

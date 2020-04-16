@@ -18,7 +18,6 @@ public class OrderDetails {
 	private Float unitPrice;
 	public OrderDetails() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public OrderDetails(Long id, Long orderId, Long menuId, Long quantity, Float unitPrice) {
 		super();

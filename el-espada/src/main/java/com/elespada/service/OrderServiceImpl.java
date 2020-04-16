@@ -1,5 +1,6 @@
 package com.elespada.service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.elespada.VO.PaymentVO;
 import com.elespada.model.Menu;
 import com.elespada.model.OrderDetails;
 import com.elespada.model.Orders;
@@ -32,6 +34,8 @@ public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	OrderDetailsRepository orderDetailsRepository;
+	
+	public static final String DELIMITER = ", ";
 
 	@Override
 	@Transactional
@@ -40,6 +44,7 @@ public class OrderServiceImpl implements OrderService {
 		Orders order = new Orders();
 		order.setCustomerName("New Customer");
 		Orders newOrder = ordersRepository.save(order);
+		logger.debug("New Order:"+newOrder);
 		logger.debug("Creating New Order end");
 		return newOrder;
 	}
@@ -79,6 +84,80 @@ public class OrderServiceImpl implements OrderService {
 		orderDetailsRepository.deleteById(odsId);
 		logger.debug("Deleting item end");
 		return menuIds;
+	}
+	
+	@Override
+	@Transactional
+	public Orders updatePaymentDetails(Long orderId, PaymentVO paymentDetails) throws Exception {
+		logger.debug("Updating payment details of order # "+orderId+" start");
+		Orders existingOrder = findOrderById(orderId);
+		populatePaymentDetails(paymentDetails, existingOrder);
+		logger.debug("Saving above details into Order_Details start");
+		Orders updatedOrder =ordersRepository.save(existingOrder);
+		logger.debug("Saving above details into Order_Details end");
+		logger.debug("Updating payment details end");
+		return updatedOrder;
+	}
+
+	@Override
+	public Orders findOrderById(Long orderId) {
+		Optional<Orders> Order = ordersRepository.findById(orderId);
+		Orders existingOrder = Order.get();
+		return existingOrder;
+	}
+
+	private void populatePaymentDetails(PaymentVO paymentDetails, Orders existingOrder) throws Exception{
+		logger.debug("Populating Payment Details start");
+		String paymentType = paymentDetails.getPaymentType();
+		String fullName = paymentDetails.getFirstName()+DELIMITER+paymentDetails.getLastName();
+		StringBuilder sb = new StringBuilder();
+		sb.append(paymentDetails.getAddressStreet())
+			.append(DELIMITER).append(paymentDetails.getAddressCity())
+			.append(DELIMITER).append(paymentDetails.getAddressState())
+			.append(DELIMITER).append(paymentDetails.getAddressZip());
+		String fullAddress = sb.toString();
+		long millis=System.currentTimeMillis();
+		Timestamp dateAndTime = new Timestamp(millis);
+		float orderTotal = computeOrderTotal(existingOrder);
+		logger.debug("Customer Name:"+fullName);
+		logger.debug("Customer Address:"+fullAddress);
+		logger.debug("Payment Type:"+paymentType);
+		logger.debug("Date and Time:"+dateAndTime);
+		logger.debug("Order Total:"+orderTotal);
+		logger.debug("Setting above details into order_details start");
+		existingOrder.setCustomerName(fullName);
+		existingOrder.setAddress(fullAddress);
+		existingOrder.setPaymentType(paymentType);
+		existingOrder.setTimestamp(dateAndTime);
+		existingOrder.setTotal(orderTotal);
+		if(paymentType.equalsIgnoreCase("CARD")) {
+			logger.debug("Setting Payment Detail start as payment type is :"+paymentType);
+			//store only last 4 digits of the card due to security reasons
+			String paymentDetail = paymentDetails.getCardNumber() != null ? paymentDetails.getCardNumber().substring(12):"CASH";
+			logger.debug("Payment Detail:"+paymentDetail);
+			existingOrder.setPaymentDetails(paymentDetail);
+		}
+		logger.debug("Order Details:"+existingOrder);
+		logger.debug("Setting above details into Order_Details end");
+		logger.debug("Populating Payment Details end");
+	}
+
+	@Override
+	public float computeOrderTotal(Orders order) {
+		Float orderTotal = 0f;
+		List<OrderDetails> orderDetails = orderDetailsRepository.findByOrderId(order.getOrderId());
+		for(OrderDetails item : orderDetails) {
+			orderTotal += item.getUnitPrice();
+		}
+		return orderTotal;
+	}
+	
+	@Override
+	@Transactional
+	public void deleteOrder(Long orderId) {
+		logger.debug("Delete Order Start:"+orderId);
+		ordersRepository.deleteById(orderId);
+		logger.debug("Delete Order End");
 	}
 
 }

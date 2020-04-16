@@ -13,6 +13,6 @@ public class Hours {
 	@RequestMapping("/hours")
 	public String getHours() {
 		logger.debug("Hours of Operation");
-		return "hours";
+		return "/hours";
 	}
 }

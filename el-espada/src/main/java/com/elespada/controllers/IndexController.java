@@ -41,10 +41,11 @@ public class IndexController {
 		logger.debug("Menu Display Start");
 		HttpSession session = req.getSession();
 		session.removeAttribute("orderId");
+		session.removeAttribute("orderTotal");
 		model.addAttribute("menu", menuRepository.findAll());
 		model.addAttribute("espadaVO", new EspadaVO());
 		logger.debug("Menu Display End");
-		return "index";
+		return "/index";
 	}
 
 	@RequestMapping(value = "/reviewOrder", method = RequestMethod.POST)
@@ -56,6 +57,9 @@ public class IndexController {
 			logger.debug("Order Start:" + orderId);
 			HttpSession session = req.getSession();
 			session.setAttribute("orderId", orderId);
+			Float orderTotal = orderService.computeOrderTotal(orderService.findOrderById(orderId));
+			logger.debug("orderTotal::"+orderTotal);
+			session.setAttribute("orderTotal", orderTotal);
 			orderService.createOrderDetails(espadaVO.getMenuIds(), orderId);
 			List<Menu> menuList = menuService.getMenuListbyIds(espadaVO.getMenuIds());
 			logger.debug("Menu items in order:" + menuList);
@@ -64,7 +68,7 @@ public class IndexController {
 			return "reviewOrder";
 		} catch (Exception e) {
 			logger.error("Exception during Review Order:" + e);
-			return "index";
+			return "/index";
 		}
 	}
 
@@ -79,16 +83,24 @@ public class IndexController {
 			List<Long> menuIds = orderService.deleteItemfromOrder(orderId, menuId);
 			List<Menu> remainingItems = menuService.getMenuListByLongIds(menuIds);
 			if(!remainingItems.isEmpty()) {
+				Float orderTotal = orderService.computeOrderTotal(orderService.findOrderById(orderId));
+				logger.debug("orderTotal::"+orderTotal);
+				session.setAttribute("orderTotal", orderTotal);
 				model.addAttribute("menu", remainingItems);
 				logger.debug("Review Order End");
-				return "reviewOrder";
+				return "/reviewOrder";
 			} else {
-				logger.debug("No items remaining in order, returning to Menu");
-				return "index";
+				logger.debug("No items remaining in order, deleting order and returning to Menu");
+				orderService.deleteOrder(orderId);
+				session.removeAttribute("orderId");
+				session.removeAttribute("orderTotal");
+				model.addAttribute("espadaVO", new EspadaVO());
+				model.addAttribute("menu", menuRepository.findAll());
+				return "redirect:/index";
 			}
 		} catch(Exception e) {
 			logger.error("Exception during Delete Item:" + e);
-			return "index";
+			return "/index";
 		}
 	}
 

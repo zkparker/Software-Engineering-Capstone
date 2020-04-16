@@ -22,7 +22,6 @@ public class MenuServiceImpl implements MenuService {
 	@Autowired
 	MenuRepository menuRepository;
 
-	//TODO move to EspadaUtil?
 	@Override
 	public List<Menu> getMenuListbyIds(String menuIds) throws Exception {
 		logger.debug("getMenuListbyIds");
@@ -30,7 +29,6 @@ public class MenuServiceImpl implements MenuService {
 		return getMenuListByLongIds(idList);
 	}
 
-	//TODO move to EspadaUtil?
 	@Override
 	public List<Long> convertStringToList(String menuIds) throws Exception {
 		logger.debug("convertStringToList");

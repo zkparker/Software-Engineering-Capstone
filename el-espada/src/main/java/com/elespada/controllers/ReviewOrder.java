@@ -10,10 +10,9 @@ public class ReviewOrder {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ReviewOrder.class);
 	
-	@RequestMapping("reviewOrder")
-	public String getReviewOrder() {
-		logger.debug("Review Order Details");
-		return "reviewOrder";
-	}
+	/*
+	 * @RequestMapping("reviewOrder") public String getReviewOrder() {
+	 * logger.debug("Review Order Details"); return "/reviewOrder"; }
+	 */
 
 }

@@ -13,7 +13,7 @@ public class MenuController {
 	@RequestMapping("menu")
 	public String getMenu() {
 		logger.debug("Full Menu");
-		return "menu";
+		return "/menu";
 	}
 
 }
