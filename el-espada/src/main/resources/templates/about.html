@@ -17,7 +17,7 @@
 </head>
 
 <body>
-
+<form th:action="@{/index}">
 	<section class="header1 cid-qyvisAZ1Bw" id="header1-7" data-rv-view="758">
 
     
@@ -30,6 +30,9 @@
 			th:replace="fragments/navigator :: navigator">
 
 		</nav>
+		
+		<button type="submit" id="continueToPlaceOrder" class="btn-success sticky-top sticky-offset btn-lg" 
+				style="margin-top:20px;">Start Ordering</button>
         <div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
                 <h2 class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">El Espada 
@@ -44,6 +47,6 @@
     </div>
 
 </section>
-
+</form>
 </body>
 </html>

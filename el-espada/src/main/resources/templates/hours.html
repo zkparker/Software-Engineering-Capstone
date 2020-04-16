@@ -16,13 +16,16 @@
 </head>
 
 <body>
-
-	<div class="container">
+<form th:action="@{/index}">
+	<div class="container" th:action="@{/index}">
 	<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
 			th:replace="fragments/navigator :: navigator">
 
 		</nav>
+		
+		<button type="submit" id="continueToPlaceOrder" class="btn-success sticky-top sticky-offset btn-lg" 
+				style="margin-top:20px;">Start Ordering</button>
 
 		<div class="row justify-content-md-center">
             <div class="mbr-white col-md-10">
@@ -53,6 +56,6 @@
 
 
 	</div>
-
+</form>
 </body>
 </html>

@@ -11927,3 +11927,11 @@ cheesy cream sauce, and topped with lettuce.]
 2020-04-14 22:12:18,877 DEBUG com.elespada.controllers.Hours [http-nio-8080-exec-1] Hours of Operation
 2020-04-14 22:12:20,181 DEBUG com.elespada.controllers.Contact [http-nio-8080-exec-4] Contact Us
 2020-04-14 22:12:21,066 DEBUG com.elespada.controllers.AboutUsController [http-nio-8080-exec-3] About Us
+2020-04-14 22:14:28,439 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin [RMI TCP Connection(75)-127.0.0.1] Application shutdown requested.
+2020-04-14 22:14:28,442 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [RMI TCP Connection(75)-127.0.0.1] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:14:28,443 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [RMI TCP Connection(75)-127.0.0.1] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-04-14 22:14:28,443 TRACE org.hibernate.type.spi.TypeConfiguration [RMI TCP Connection(75)-127.0.0.1] Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@d483887] for TypeConfiguration
+2020-04-14 22:14:28,444 DEBUG org.hibernate.type.spi.TypeConfiguration$Scope [RMI TCP Connection(75)-127.0.0.1] Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@16ba6f43] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@d483887]
+2020-04-14 22:14:28,653 WARN org.springframework.beans.factory.support.DisposableBeanAdapter [RMI TCP Connection(75)-127.0.0.1] Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2020-04-14 22:14:28,653 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(75)-127.0.0.1] HikariPool-1 - Shutdown initiated...
+2020-04-14 22:14:28,656 INFO com.zaxxer.hikari.HikariDataSource [RMI TCP Connection(75)-127.0.0.1] HikariPool-1 - Shutdown completed.
