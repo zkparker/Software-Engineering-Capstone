@@ -28,7 +28,7 @@
 
 
 
-			<button type="submit"
+			<!-- <button type="submit"
 				class="btn-danger float-right sticky-top sticky-offset btn-lg"
 				style="margin-top: 20px;" th:formaction="@{/index}">Start
 				Over</button>
@@ -36,7 +36,7 @@
 			<button type="submit"
 				class="btn-success float-right sticky-top sticky-offset btn-lg"
 				style="margin-top: 20px; margin: 20px; margin-bottom: 0px">Continue
-				to Payment</button>
+				to Payment</button> -->
 
 
 
@@ -45,9 +45,8 @@
 
 			<div>
 				<div class="column">
-					<h2 class="menu-text">Review Order </h2>
-					<strong>Order Id:<label th:text="${session.orderId}" th:unless="${session == null}" />
-					<p>Order Total:<label th:text="${#numbers.formatCurrency(session.orderTotal)}" th:unless="${session == null}" /></p></strong>
+					<h2 class="menu-text">Review Order</h2>
+
 				</div>
 			</div>
 
@@ -63,13 +62,43 @@
 						<p th:text="${m.menuDetails}"></p>
 						<p th:text="${#numbers.formatCurrency(m.menuPrice)}"></p>
 						<a class="btn-success btn" role="button"
-							th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}">Delete Item</a>
+							th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}">Delete
+							Item</a>
 					</div>
 				</div>
 			</div>
 
 
-		</div>
+			<div class="totals">
+				<div class="totals-item">
+					<label>Order ID</label>
+					<div class="totals-value" id="cart-subtotal">
+						<label th:text="${session.orderId}" th:unless="${session == null}"></label>
+					</div>
+				</div>
+
+				<div class="totals-item totals-item-total">
+					<label>Order Total</label>
+					<div class="totals-value" id="cart-total">
+						<label th:text="${#numbers.formatCurrency(session.orderTotal)}"
+							th:unless="${session == null}"></label>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="float-right sticky-top sticky-offset ">
+					<button type="submit"
+						class="btn-danger btn-lg sticky-top sticky-offset"
+						style="margin-top: 20px; margin-bottom: 20px"
+						th:formaction="@{/index}">Start Over</button>
+
+					<button type="submit"
+						class="btn-success btn-lg sticky-top sticky-offset"
+						style="margin-top: 20px; margin: 20px; margin-bottom: 20px">Continue
+						to Payment</button>
+				</div>
+			</div>
 	</form>
 </body>
 </html>
