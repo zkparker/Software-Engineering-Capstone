@@ -15,6 +15,9 @@
 	
 <script type="text/javascript">
 var listMenuIds="";
+/**
+ * Generates a comma separated string of all menu id's that the user added to order 
+ */
 function addToCart(menuId) {
 	listMenuIds += menuId+",";
   	document.getElementsByName("menuIds")[0].setAttribute("value", listMenuIds);
@@ -23,6 +26,9 @@ function addToCart(menuId) {
   	runOnLoad();
 }
 
+/**
+ * Show the Continue to Place Order button only when there are items in order
+ */
 function runOnLoad() {
 	if(listMenuIds == ""){
   		document.getElementById("continueToPlaceOrder").style.display = "none";
@@ -31,6 +37,9 @@ function runOnLoad() {
   	}
 }
 
+/**
+ * Close the sucess notification after 3 seconds
+ */
 function close_successMsg(){
 	document.getElementById("success_msg").style.display = "none";
 }
@@ -68,7 +77,7 @@ function close_successMsg(){
 				<h3>Lunch Menu</h3>
 			</div>
 		</div>
-		
+		<!-- Display the menu by menu type -->
 		<div class="container" th:each="m : ${menu}"
 			th:if="${m.menuType} == 'Lunch'">
 			<div class="row">

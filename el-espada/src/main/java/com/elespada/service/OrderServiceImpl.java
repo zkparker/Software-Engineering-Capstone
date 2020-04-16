@@ -1,3 +1,21 @@
+/*
+ * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
+ * 
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.elespada.service;
 
 import java.sql.Timestamp;
@@ -21,6 +39,10 @@ import com.elespada.repo.MenuRepository;
 import com.elespada.repo.OrderDetailsRepository;
 import com.elespada.repo.OrdersRepository;
 
+/**
+ * Service class to create, update, delete orders and order_details
+ *
+ */
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -37,6 +59,9 @@ public class OrderServiceImpl implements OrderService {
 	
 	public static final String DELIMITER = ", ";
 
+	/**
+	 * Creates a new order
+	 */
 	@Override
 	@Transactional
 	public Orders createOrder() throws Exception {
@@ -49,6 +74,12 @@ public class OrderServiceImpl implements OrderService {
 		return newOrder;
 	}
 
+	/**
+	 * Create new order details and persist items into order details
+	 * 
+	 * @param menuIds
+	 * @param orderId
+	 */
 	@Override
 	@Transactional
 	public void createOrderDetails(String menuIds, Long orderId) throws Exception {
@@ -67,6 +98,13 @@ public class OrderServiceImpl implements OrderService {
 		logger.debug("Creating order details end");
 	}
 
+	/**
+	 * Deletes an item from existing order by menu id
+	 * 
+	 * @param orderId
+	 * @param menuId
+	 * @return List<Long>
+	 */
 	@Override
 	@Transactional
 	public List<Long> deleteItemfromOrder(Long orderId, Long menuId) throws Exception {
@@ -86,6 +124,13 @@ public class OrderServiceImpl implements OrderService {
 		return menuIds;
 	}
 	
+	/**
+	 * Updates payment details
+	 * 
+	 * @param orderId
+	 * @param paymentDetails
+	 * @return Orders
+	 */
 	@Override
 	@Transactional
 	public Orders updatePaymentDetails(Long orderId, PaymentVO paymentDetails) throws Exception {
@@ -93,12 +138,18 @@ public class OrderServiceImpl implements OrderService {
 		Orders existingOrder = findOrderById(orderId);
 		populatePaymentDetails(paymentDetails, existingOrder);
 		logger.debug("Saving above details into Order_Details start");
-		Orders updatedOrder =ordersRepository.save(existingOrder);
+		Orders updatedOrder = ordersRepository.save(existingOrder);
 		logger.debug("Saving above details into Order_Details end");
 		logger.debug("Updating payment details end");
 		return updatedOrder;
 	}
 
+	/**
+	 * Fetches an order by id
+	 * 
+	 * @param orderId
+	 * @return Orders
+	 */
 	@Override
 	public Orders findOrderById(Long orderId) {
 		Optional<Orders> Order = ordersRepository.findById(orderId);
@@ -106,6 +157,13 @@ public class OrderServiceImpl implements OrderService {
 		return existingOrder;
 	}
 
+	/**
+	 * Populates the payment details from web form into DB related columns for an existing order
+	 * 
+	 * @param paymentDetails
+	 * @param existingOrder
+	 * @throws Exception
+	 */
 	private void populatePaymentDetails(PaymentVO paymentDetails, Orders existingOrder) throws Exception{
 		logger.debug("Populating Payment Details start");
 		String paymentType = paymentDetails.getPaymentType();
@@ -142,6 +200,12 @@ public class OrderServiceImpl implements OrderService {
 		logger.debug("Populating Payment Details end");
 	}
 
+	/**
+	 * Computes the order total
+	 * 
+	 * @param order
+	 * @return float sum
+	 */
 	@Override
 	public float computeOrderTotal(Orders order) {
 		Float orderTotal = 0f;
@@ -152,6 +216,9 @@ public class OrderServiceImpl implements OrderService {
 		return orderTotal;
 	}
 	
+	/**
+	 * Deletes an order by id
+	 */
 	@Override
 	@Transactional
 	public void deleteOrder(Long orderId) {

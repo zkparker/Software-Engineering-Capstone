@@ -1,3 +1,21 @@
+/*
+ * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
+ * 
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.elespada.controllers;
 
 import java.util.List;
@@ -17,15 +35,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.elespada.VO.EspadaVO;
+import com.elespada.VO.PaymentVO;
 import com.elespada.model.Menu;
 import com.elespada.repo.MenuRepository;
 import com.elespada.service.MenuService;
 import com.elespada.service.OrderService;
 
 @Controller
-public class IndexController {
+public class MainController {
 
-	private static final Logger logger = LoggerFactory.getLogger(IndexController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
 	@Autowired
 	MenuRepository menuRepository;
@@ -36,7 +55,15 @@ public class IndexController {
 	@Autowired
 	OrderService orderService;
 
-	@RequestMapping("index")
+	/**
+	 * Controller method for start ordering
+	 * 
+	 * @param model
+	 * @param req
+	 * @param res
+	 * @return String view
+	 */
+	@RequestMapping(value = {"index", "", "/"})
 	public String getIndex(Model model, HttpServletRequest req, HttpServletResponse res) {
 		logger.debug("Menu Display Start");
 		HttpSession session = req.getSession();
@@ -48,6 +75,15 @@ public class IndexController {
 		return "/index";
 	}
 
+	/**
+	 * Controller method for Order Review, computes orderTotal, generates orderId
+	 * 
+	 * @param espadaVO
+	 * @param model
+	 * @param req
+	 * @param res
+	 * @return String view
+	 */
 	@RequestMapping(value = "/reviewOrder", method = RequestMethod.POST)
 	public String reviewOrder(@ModelAttribute("espadaVO") EspadaVO espadaVO, Model model, HttpServletRequest req,
 			HttpServletResponse res) {
@@ -72,6 +108,15 @@ public class IndexController {
 		}
 	}
 
+	/**
+	 * Controller method to delete an item from existing order 
+	 * 
+	 * @param menuId
+	 * @param model
+	 * @param req
+	 * @param res
+	 * @return
+	 */
 	@RequestMapping("/deleteItem/{menuId}")
 	public String deleteItem(@PathVariable("menuId") Long menuId, Model model, HttpServletRequest req,
 			HttpServletResponse res) {
@@ -102,6 +147,31 @@ public class IndexController {
 			logger.error("Exception during Delete Item:" + e);
 			return "/index";
 		}
+	}
+	
+	/**
+	 * Controller method to process payment and finalize the order
+	 * 
+	 * @param paymentVO
+	 * @param model
+	 * @param req
+	 * @param res
+	 * @return
+	 */
+	@RequestMapping(value="/final", method = RequestMethod.POST)
+	public String getFinalPage(@ModelAttribute("paymentVO") PaymentVO paymentVO, Model model, HttpServletRequest req,
+			HttpServletResponse res) {
+		logger.debug("Final - Processing Payment start");
+		try {
+		HttpSession session = req.getSession();
+		Long orderId = (Long) session.getAttribute("orderId");
+		logger.debug("Order id:"+orderId);
+		orderService.updatePaymentDetails(orderId, paymentVO);
+		logger.debug("Final - Processing Payment end");
+		}catch(Exception e) {
+			logger.error("Exception during processing payment:" + e);
+		}
+		return "/final";
 	}
 
 }

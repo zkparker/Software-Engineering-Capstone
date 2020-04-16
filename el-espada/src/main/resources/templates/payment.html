@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="../static/css/stylesheet.css"
 	th:href="@{/css/stylesheet.css}" />
 	
-<script>
+<script type="text/javascript">
 	/**
 	 * Toggles between Payment types Cash or Card 
 	 */
@@ -63,7 +63,7 @@
 			}
 			//validate for visa or master card
 			if(cardNum.charAt(0) != '4' && cardNum.charAt(0) != '5'){
-				alert('We are only accepting visa/mastercard at this time, please verify!');
+				alert('We are only accepting visa/mastercard at this time; \n visa starts with 4, mastercard starts with 5, please verify!');
 				document.getElementById("cc-number").focus();
 				return false;
 			}
@@ -81,12 +81,12 @@
 				return false;
 			}
 			var d = new Date();
-			var curr_date = d.getDate();
+			var curr_month = d.getMonth();
 			var curr_year = d.getFullYear();
 			var date = cardExpiry.split("/");
 			if(date[1] == curr_year){
-				if(date[0] <= curr_date){
-					alert('Expiration Date: "'+cardExpiry+'", must be greater than today, please verify!');
+				if(date[0] <= curr_month){
+					alert('Expiration month: "'+cardExpiry+'", must be greater than current month, please verify!');
 					document.getElementById("cc-expiration").focus();
 					return false;
 				}
