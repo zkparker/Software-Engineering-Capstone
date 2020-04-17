@@ -20,9 +20,7 @@ and 'Continue to Payment' button is selected. -->
 </head>
 
 <body>
-	<form method="post" enctype="multipart/form-data"
-		th:action="@{/payment}">
-		<input type="hidden" name="menuIds" />
+	<form method="post" enctype="multipart/form-data" th:action="@{/payment}" >
 		<div class="container">
 
 			<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->

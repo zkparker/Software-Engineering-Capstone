@@ -13,6 +13,7 @@
 	<artifactId>el-espada</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>el-espada</name>
+	<packaging>jar</packaging>
 	<description>Software Capstone Project</description>
 
 	<properties>
@@ -66,6 +67,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

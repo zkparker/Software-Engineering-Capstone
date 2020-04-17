@@ -38,7 +38,7 @@ public class CommonController {
 	@RequestMapping("/about")
 	public String getAbout() {
 		logger.debug("About Us");
-		return "/about";
+		return "about";
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class CommonController {
 	@RequestMapping("/contact")
 	public String getContact() {
 		logger.debug("Contact Us");
-		return "/contact";
+		return "contact";
 	}
 	
 	/**
@@ -58,7 +58,7 @@ public class CommonController {
 	@RequestMapping("/hours")
 	public String getHours() {
 		logger.debug("Hours of Operation");
-		return "/hours";
+		return "hours";
 	}
 	
 	/**
@@ -68,7 +68,7 @@ public class CommonController {
 	@RequestMapping("menu")
 	public String getMenu() {
 		logger.debug("Full Menu");
-		return "/menu";
+		return "menu";
 	}
 	
 	/**
@@ -79,6 +79,6 @@ public class CommonController {
 	public String getPayment(Model model) {
 		logger.debug("Payment Details");
 		model.addAttribute("paymentVO", new PaymentVO());
-		return "/payment";
+		return "payment";
 	}
 }

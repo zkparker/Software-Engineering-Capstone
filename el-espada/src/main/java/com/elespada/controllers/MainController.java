@@ -63,7 +63,7 @@ public class MainController {
 	 * @param res
 	 * @return String view
 	 */
-	@RequestMapping(value = {"index", "", "/"})
+	@RequestMapping(value = {"/index", "", "/"})
 	public String getIndex(Model model, HttpServletRequest req, HttpServletResponse res) {
 		logger.debug("Menu Display Start");
 		HttpSession session = req.getSession();
@@ -72,7 +72,7 @@ public class MainController {
 		model.addAttribute("menu", menuRepository.findAll());
 		model.addAttribute("espadaVO", new EspadaVO());
 		logger.debug("Menu Display End");
-		return "/index";
+		return "index";
 	}
 
 	/**
@@ -88,10 +88,11 @@ public class MainController {
 	public String reviewOrder(@ModelAttribute("espadaVO") EspadaVO espadaVO, Model model, HttpServletRequest req,
 			HttpServletResponse res) {
 		logger.debug("Review Order Start");
+		Long orderId = null;
+		HttpSession session = req.getSession();
 		try {
-			Long orderId = orderService.createOrder().getOrderId();
 			logger.debug("Order Start:" + orderId);
-			HttpSession session = req.getSession();
+			orderId = orderService.createOrder().getOrderId();
 			session.setAttribute("orderId", orderId);
 			orderService.createOrderDetails(espadaVO.getMenuIds(), orderId);
 			Float orderTotal = orderService.computeOrderTotal(orderService.findOrderById(orderId));
@@ -104,7 +105,12 @@ public class MainController {
 			return "reviewOrder";
 		} catch (Exception e) {
 			logger.error("Exception during Review Order:" + e);
-			return "/index";
+			orderService.deleteOrder(orderId);
+			session.removeAttribute("orderId");
+			session.removeAttribute("orderTotal");
+			model.addAttribute("espadaVO", new EspadaVO());
+			model.addAttribute("menu", menuRepository.findAll());
+			return "index";
 		}
 	}
 
@@ -121,9 +127,9 @@ public class MainController {
 	public String deleteItem(@PathVariable("menuId") Long menuId, Model model, HttpServletRequest req,
 			HttpServletResponse res) {
 		logger.debug("Delete Item Start");
+		HttpSession session = req.getSession();
+		Long orderId = (Long) session.getAttribute("orderId");
 		try {
-			HttpSession session = req.getSession();
-			Long orderId = (Long) session.getAttribute("orderId");
 			logger.debug("Deleting menu from order with id:"+orderId+", item:"+menuRepository.findById(menuId));
 			List<Long> menuIds = orderService.deleteItemfromOrder(orderId, menuId);
 			List<Menu> remainingItems = menuService.getMenuListByLongIds(menuIds);
@@ -133,7 +139,7 @@ public class MainController {
 				session.setAttribute("orderTotal", orderTotal);
 				model.addAttribute("menu", remainingItems);
 				logger.debug("Review Order End");
-				return "/reviewOrder";
+				return "reviewOrder";
 			} else {
 				logger.debug("No items remaining in order, deleting order and returning to Menu");
 				orderService.deleteOrder(orderId);
@@ -141,11 +147,16 @@ public class MainController {
 				session.removeAttribute("orderTotal");
 				model.addAttribute("espadaVO", new EspadaVO());
 				model.addAttribute("menu", menuRepository.findAll());
-				return "redirect:/index";
+				return "index";
 			}
 		} catch(Exception e) {
 			logger.error("Exception during Delete Item:" + e);
-			return "/index";
+			orderService.deleteOrder(orderId);
+			session.removeAttribute("orderId");
+			session.removeAttribute("orderTotal");
+			model.addAttribute("espadaVO", new EspadaVO());
+			model.addAttribute("menu", menuRepository.findAll());
+			return "index";
 		}
 	}
 	
@@ -163,15 +174,18 @@ public class MainController {
 			HttpServletResponse res) {
 		logger.debug("Final - Processing Payment start");
 		try {
-		HttpSession session = req.getSession();
-		Long orderId = (Long) session.getAttribute("orderId");
-		logger.debug("Order id:"+orderId);
-		orderService.updatePaymentDetails(orderId, paymentVO);
-		logger.debug("Final - Processing Payment end");
+			HttpSession session = req.getSession();
+			Long orderId = (Long) session.getAttribute("orderId");
+			logger.debug("Order id:"+orderId);
+			orderService.updatePaymentDetails(orderId, paymentVO);
+			logger.debug("Final - Processing Payment end");
+			return "final";
 		}catch(Exception e) {
 			logger.error("Exception during processing payment:" + e);
+			model.addAttribute("espadaVO", new EspadaVO());
+			model.addAttribute("menu", menuRepository.findAll());
+			return "index";
 		}
-		return "/final";
 	}
 
 }

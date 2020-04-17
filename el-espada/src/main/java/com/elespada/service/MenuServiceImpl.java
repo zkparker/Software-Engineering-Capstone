@@ -19,7 +19,9 @@
 package com.elespada.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -78,9 +80,11 @@ public class MenuServiceImpl implements MenuService {
 	@Transactional
 	public List<Menu> getMenuListByLongIds(List<Long> idList) throws Exception {
 		logger.debug("getMenuListByLongIds start");
-		Iterable<Menu> itrMenuList = menuRepository.findAllById(idList);
 		List<Menu> menuList = new ArrayList<Menu>();
-		(itrMenuList).forEach(menuList::add);
+		for(Long id: idList) {
+			Optional<Menu> menuItem = menuRepository.findById(id);
+			menuList.add(menuItem.get());
+		}
 		logger.debug("getMenuListByLongIds end");
 		return menuList;
 	}

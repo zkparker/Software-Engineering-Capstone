@@ -24,12 +24,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 import com.elespada.model.Menu;
 import com.elespada.repo.MenuRepository;
 
 @SpringBootApplication
-public class ElEspadaApplication implements CommandLineRunner {
+public class ElEspadaApplication extends SpringBootServletInitializer implements CommandLineRunner {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ElEspadaApplication.class);
 
@@ -38,6 +40,11 @@ public class ElEspadaApplication implements CommandLineRunner {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ElEspadaApplication.class, args);
+	}
+	
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(ElEspadaApplication.class);
 	}
 	
 	/**

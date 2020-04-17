@@ -20,6 +20,7 @@ package com.elespada.service;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -112,14 +113,19 @@ public class OrderServiceImpl implements OrderService {
 		List<OrderDetails> orderDetailsList = orderDetailsRepository.findByOrderId(orderId);
 		Long odsId = null;
 		List<Long> menuIds = new ArrayList<>();
-		for (OrderDetails od : orderDetailsList) {
-			if (od.getMenuId().equals(menuId)) {
-				odsId = od.getId();
-			} else {
-				menuIds.add(od.getMenuId());
-			}
+		Iterator<OrderDetails> iterator = orderDetailsList.iterator();
+		while (iterator.hasNext()) {
+			OrderDetails od = iterator.next();
+		    if (od.getMenuId().equals(menuId)) {
+		    	odsId = od.getId();
+		        iterator.remove();
+		        break;
+		    }
 		}
 		orderDetailsRepository.deleteById(odsId);
+		for (OrderDetails od: orderDetailsList) {
+			menuIds.add(od.getMenuId());
+		}
 		logger.debug("Deleting item end");
 		return menuIds;
 	}
