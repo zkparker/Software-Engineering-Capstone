@@ -4,11 +4,15 @@
  
  ## Tools Used
  * Spring Boot
+ * JPA with Hibernate
+ * Tomcat
  * Bootstrap
  * Thymeleaf
  * H2 Database
  * Maven
- * HTML, CSS
+ * HTML
+ * JavaScript
+ * CSS
  
- Application: http://localhost:8080/index
+ Application: http://localhost:8080/
  DB: http://localhost:8080/h2-console/
