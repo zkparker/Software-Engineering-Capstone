@@ -1,3 +1,7 @@
+<!-- UIS Avengers
+review order page - displays once items are added to cart 
+and 'Continue to Payment' button is selected. -->
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -25,23 +29,6 @@
 			<nav
 				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 				th:replace="fragments/navigator :: navigator"></nav>
-
-
-
-			<!-- <button type="submit"
-				class="btn-danger float-right sticky-top sticky-offset btn-lg"
-				style="margin-top: 20px;" th:formaction="@{/index}">Start
-				Over</button>
-
-			<button type="submit"
-				class="btn-success float-right sticky-top sticky-offset btn-lg"
-				style="margin-top: 20px; margin: 20px; margin-bottom: 0px">Continue
-				to Payment</button> -->
-
-
-
-
-
 
 			<div>
 				<div class="column">
@@ -99,6 +86,7 @@
 						to Payment</button>
 				</div>
 			</div>
+		</div>
 	</form>
 </body>
 </html>

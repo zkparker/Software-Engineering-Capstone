@@ -1,3 +1,7 @@
+<!-- UIS Avengers
+final page - displays once user inputs all information and hits 'Submit Order'
+button on payment page.  -->
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -31,8 +35,8 @@
             <div class="mbr-white col-md-10">
                 <h2 class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">Order Received</h2>
                 <p class="mbr-text text-center">
-                  Payment Successful for <strong><label th:text="${#numbers.formatCurrency(session.orderTotal)}" th:unless="${session == null}" /></strong>. Thank you for your order!
-                  <br>Your order id is: <strong><label th:text="${session.orderId}" th:unless="${session == null}" /></strong>
+                  Payment Successful for <strong><label th:text="${#numbers.formatCurrency(session.orderTotal)}" th:unless="${session == null}"></label></strong>. Thank you for your order!
+                  <br>Your order id is: <strong><label th:text="${session.orderId}" th:unless="${session == null}"></label></strong>
                   <br>Estimated wait time of order is 20 minutes. 
                 </p>
             </div>

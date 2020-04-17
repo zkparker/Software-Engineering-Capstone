@@ -1,3 +1,7 @@
+<!-- UIS Avengers
+index page - 'home page' displays all menu items
+and allows user to select what they would like to order.  -->
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -12,132 +16,141 @@
 
 <link rel="stylesheet" href="../static/css/stylesheet.css"
 	th:href="@{/css/stylesheet.css}" />
-	
+
 <script type="text/javascript">
-var listMenuIds="";
-/**
- * Generates a comma separated string of all menu id's that the user added to order 
- */
-function addToCart(menuId) {
-	listMenuIds += menuId+",";
-  	document.getElementsByName("menuIds")[0].setAttribute("value", listMenuIds);
-  	document.getElementById("success_msg").style.display = "block";
-  	myVar = setTimeout(close_successMsg, 3000);
-  	runOnLoad();
-}
+	var listMenuIds = "";
+	/**
+	 * Generates a comma separated string of all menu id's that the user added to order 
+	 */
+	function addToCart(menuId) {
+		listMenuIds += menuId + ",";
+		document.getElementsByName("menuIds")[0].setAttribute("value",
+				listMenuIds);
+		document.getElementById("success_msg").style.display = "block";
+		myVar = setTimeout(close_successMsg, 3000);
+		runOnLoad();
+	}
 
-/**
- * Show the Continue to Place Order button only when there are items in order
- */
-function runOnLoad() {
-	if(listMenuIds == ""){
-  		document.getElementById("continueToPlaceOrder").style.display = "none";
-  	}else{
-  		document.getElementById("continueToPlaceOrder").style.display = "block";
-  	}
-}
+	/**
+	 * Show the Continue to Place Order button only when there are items in order
+	 */
+	function runOnLoad() {
+		if (listMenuIds == "") {
+			document.getElementById("continueToPlaceOrder").style.display = "none";
+		} else {
+			document.getElementById("continueToPlaceOrder").style.display = "block";
+		}
+	}
 
-/**
- * Close the sucess notification after 3 seconds
- */
-function close_successMsg(){
-	document.getElementById("success_msg").style.display = "none";
-}
+	/**
+	 * Close the sucess notification after 3 seconds
+	 */
+	function close_successMsg() {
+		document.getElementById("success_msg").style.display = "none";
+	}
 </script>
 
 </head>
 
 <body onload="runOnLoad();">
-<form th:action="@{/reviewOrder}" method="post" th:object="${espadaVO}">
+	<form th:action="@{/reviewOrder}" method="post" th:object="${espadaVO}">
 
-	<input type="hidden" th:name="menuIds" th:value="${espadaVO.menuIds}"/>
-	<div class="container">
+		<input type="hidden" th:name="menuIds" th:value="${espadaVO.menuIds}" />
+		<div class="container">
 
-		<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
-		<nav
-			class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
-			th:replace="fragments/navigator :: navigator"></nav>
-			<button type="submit" id="continueToPlaceOrder" class="btn-success float-right sticky-top sticky-offset btn-lg" 
-				style="display:none;margin-top:20px;">Continue to Place Order</button>
-			
-		<div>
-			<div class="column">
-				<h1 class="menu-text">Menu Items</h1>
-				
-			</div>
-		</div>
-		
-		<div id="success_msg" style="display:none; margin-top:20px" class="alert alert-success alert-dismissible fade show sticky-top btn-lg">
-		    <button type="button" style="display:none; margin-top:20px" class="close float-right sticky-top sticky-offset btn-lg" data-dismiss="alert" onclick="close_successMsg();">&times;</button>
-		    <strong>Success!</strong> Item added to order.
-		</div>
+			<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+			<nav
+				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
+				th:replace="fragments/navigator :: navigator"></nav>
+			<button type="submit" id="continueToPlaceOrder"
+				class="btn-success float-right sticky-top sticky-offset btn-lg"
+				style="display: none; margin-top: 20px;">Continue to Place
+				Order</button>
 
-		<div>
-			<div class="column">
-				<h3>Lunch Menu</h3>
-			</div>
-		</div>
-		<!-- Display the menu by menu type -->
-		<div class="container" th:each="m : ${menu}"
-			th:if="${m.menuType} == 'Lunch'">
-			<div class="row">
-				<div class="col-sm">
-					<h5 th:text="${m.menuName}"></h5>
-					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
-				</div>
-				<div class="col-sm">
-					<p th:text="${m.menuDetails}"></p>
-					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
-						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+			<div>
+				<div class="column">
+					<h1 class="menu-text">Menu Items</h1>
+
 				</div>
 			</div>
-		</div>
 
-
-		<div>
-			<div class="column">
-				<h3>Dinner Menu</h3>
+			<div id="success_msg" style="display: none; margin-top: 20px"
+				class="alert alert-success alert-dismissible fade show sticky-top btn-lg">
+				<button type="button" style="display: none; margin-top: 20px"
+					class="close float-right sticky-top sticky-offset btn-lg"
+					data-dismiss="alert" onclick="close_successMsg();">&times;</button>
+				<strong>Success!</strong> Item added to order.
 			</div>
-		</div>
 
-
-		<div class="container" th:each="m : ${menu}"
-			th:if="${m.menuType} == 'Dinner'">
-			<div class="row">
-				<div class="col-sm">
-					<h5 th:text="${m.menuName}"></h5>
-					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
-				</div>
-				<div class="col-sm">
-					<p th:text="${m.menuDetails}"></p>
-					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
-						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+			<div>
+				<div class="column">
+					<h3>Lunch Menu</h3>
 				</div>
 			</div>
-		</div>
-
-		<div>
-			<div class="column">
-				<h3>Dessert Menu</h3>
-			</div>
-		</div>
-
-		<div class="container" th:each="m : ${menu}"
-			th:if="${m.menuType} == 'Dessert'">
-			<div class="row">
-				<div class="col-sm">
-					<h5 th:text="${m.menuName}"></h5>
-					<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
-				</div>
-
-				<div class="col-sm">
-					<p th:text="${m.menuDetails}"></p>
-					<button type="button" class="btn-success" th:inline="text" th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add to Order
-						- [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+			<!-- Display the menu by menu type -->
+			<div class="container" th:each="m : ${menu}"
+				th:if="${m.menuType} == 'Lunch'">
+				<div class="row">
+					<div class="col-sm">
+						<h5 th:text="${m.menuName}"></h5>
+						<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
+					</div>
+					<div class="col-sm">
+						<p th:text="${m.menuDetails}"></p>
+						<button type="button" class="btn-success" th:inline="text"
+							th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add
+							to Order - [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+					</div>
 				</div>
 			</div>
-		</div>
-			
+
+
+			<div>
+				<div class="column">
+					<h3>Dinner Menu</h3>
+				</div>
+			</div>
+
+
+			<div class="container" th:each="m : ${menu}"
+				th:if="${m.menuType} == 'Dinner'">
+				<div class="row">
+					<div class="col-sm">
+						<h5 th:text="${m.menuName}"></h5>
+						<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
+					</div>
+					<div class="col-sm">
+						<p th:text="${m.menuDetails}"></p>
+						<button type="button" class="btn-success" th:inline="text"
+							th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add
+							to Order - [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="column">
+					<h3>Dessert Menu</h3>
+				</div>
+			</div>
+
+			<div class="container" th:each="m : ${menu}"
+				th:if="${m.menuType} == 'Dessert'">
+				<div class="row">
+					<div class="col-sm">
+						<h5 th:text="${m.menuName}"></h5>
+						<img th:src="@{${'images/' + m.menuImgSrc}}" class="rounded" />
+					</div>
+
+					<div class="col-sm">
+						<p th:text="${m.menuDetails}"></p>
+						<button type="button" class="btn-success" th:inline="text"
+							th:onclick="'javascript:addToCart(\'' + ${m.menuId} + '\');'">Add
+							to Order - [[${#numbers.formatCurrency(m.menuPrice)}]]</button>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</form>
 </body>

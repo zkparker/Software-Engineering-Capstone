@@ -1,262 +1,254 @@
+<!-- UIS Avengers
+menu page - overview of entire menu that could be printed out if desired.  -->
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+
 <!-- This HTML page was generated via Google Docs*** -->
 
 <meta charset="UTF-8" />
 
 
 <!-- CSS link for google doc-->
-<link rel="stylesheet"
-	href="../static/css/googledoc.css"
-		th:href="@{/css/googledoc.css}"/>
-		
-		<!-- Boot strap link with thmyeleaf so that it is dynamic-->
-<link rel="stylesheet"
-	href="../static/css/bootstrap.min.css"
-		th:href="@{/css/bootstrap.min.css}"/>
-		
-<link rel="stylesheet"
-	href="../static/css/stylesheet.css"
-		th:href="@{/css/stylesheet.css}"/>
+<link rel="stylesheet" href="../static/css/googledoc.css"
+	th:href="@{/css/googledoc.css}" />
+
+<!-- Boot strap link with thmyeleaf so that it is dynamic-->
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+<link rel="stylesheet" href="../static/css/stylesheet.css"
+	th:href="@{/css/stylesheet.css}" />
 
 <meta content="text/html; charset=UTF-8" http-equiv="content-type">
 <style type="text/css">
 @import
 	url('https://themes.googleusercontent.com/fonts/css?kit=fpjTOVmNbO4Lz34iLyptLUXza5VhXqVC6o75Eld_V98')
 	;
-
-
 </style>
 </head>
 <body>
-<form th:action="@{/index}">
+	<form th:action="@{/index}">
 
 
-	<div class="container" >
-	<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
-			th:replace="fragments/navigator :: navigator">
-			
+		<div class="container">
+			<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+			<nav
+				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
+				th:replace="fragments/navigator :: navigator"></nav>
 
-		</nav>
-		
-		<button type="submit" id="continueToPlaceOrder" class="btn-success sticky-top sticky-offset btn-lg" 
-				style="margin-top:20px;">Start Ordering</button>
-		
-		
-	<p class="c28 c33">
-		<span class="c35"></span>
-	</p>
-	<a id="t.8550c89f70d1fa7e2764a81f3008d12e15989493"></a>
-	<a id="t.0"></a>
-	<table class="c31">
-		<tbody>
-			<tr class="c30">
-				<td class="c21" colspan="1" rowspan="1"><p class="c5 c28">
-						<span class="c4"></span>
-					</p></td>
-				<td class="c17" colspan="1" rowspan="1"><p class="c12 title">
-						<span class="c15">El</span>
-					</p>
-					<p class="c12 title">
-						<span class="c15">Espada</span>
-					</p>
-					<p class="c24 subtitle">
-						<span class="c18">Restaurant</span>
-					</p>
-					<p class="c16">
-						
-					</p>
-					
-					</td>
-			</tr>
-			
-			<tr>
-				<td class="c21" colspan="1" rowspan="1"><h1 class="c29">
-						<span class="c14">Lunch</span>
-					</h1>
-					<h3 class="c1">
-						<span>Las Noches Cheese Steak Taco&nbsp;&nbsp;</span><span
-							class="c8">$8.50</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">One grilled flour tortilla filled with
-							steak strips, onions, cheesy cream sauce, and topped with
-							lettuce.</span>
-					</p>
-					<h3 class="c1">
-						<span>Tacos de Azada&nbsp;&nbsp;</span><span class="c8">$9.50</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Two grilled corn tortillas filled with
-							grilled meat, onions, and cilantro.</span>
-					</p>
-					<h3 class="c1">
-						<span>Enchiladas blancas&nbsp;&nbsp;</span><span class="c8">$8.50</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">One chicken enchilada and one beef
-							enchilada topped with our cheese sauce, lettuce, sour cream,
-							tomatoes, and rice</span>
-					</p>
-					<h1 class="c26">
-						<span class="c14"></span>
-					</h1></td>
-				<td class="c10" colspan="1" rowspan="1"><h3 class="c13 c19">
-						<span class="c3"></span>
-					</h3>
-					<h3 class="c0">
-						<span>Tacos Cero&nbsp;&nbsp;</span><span class="c8">$10</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Two grilled flour tortilla filled with
-							grilled meat, fresh Pico de Gallo, avocado, and creamy chipotle
-							sauce.</span>
-					</p>
-					<h3 class="c1">
-						<span>Sonido&nbsp;&nbsp;</span><span class="c8">$7</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">One taco, one enchilada</span>
-					</p>
-					<h3 class="c1">
-						<span>Quesadilla deluxe&nbsp;&nbsp;</span><span class="c8">$8</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">One chicken quesadilla</span>
-					</p>
-					<h3 class="c1">
-						<span>Burrito specito&nbsp;&nbsp;</span><span class="c8">$6.50</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">A burrito filled with beef and
-							refried beans, topped with lettuce, tomatoes, and sour cream</span>
-					</p>
+			<button type="submit" id="continueToPlaceOrder"
+				class="btn-success sticky-top sticky-offset btn-lg"
+				style="margin-top: 20px;">Start Ordering</button>
 
-					<p class="c5 c28">
-						<span class="c4"></span>
-					</p>
-					<p class="c5 c28">
-						<span class="c4"></span>
-					</p></td>
-			</tr>
-			<tr >
-				<td class="c21" colspan="1" rowspan="1"><h1 class="c29">
-						<span class="c14">Dinner</span>
-					</h1>
-					<h3 class="c1">
-						<span>El arrancar&nbsp;&nbsp;</span><span class="c8">$13</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">A grilled flour tortilla shell in a shape
-							of a volcano filled with onions, bell peppers, tomatoes, steak
-							strips. Held together by a pepper ring and
-							topped with our homemade creamy cheese sauce.</span>
-					</p>
-					<h3 class="c1">
-						<span>Chimichanga&nbsp;&nbsp;</span><span class="c8">$10.50</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Two fried rolled up flour
-							tortillas filled with chicken. Topped with cheese sauce,
-							lettuce, tomato, sour cream and guacamole</span>
-					</p>
-					<h3 class="c1">
-						<span>Flautas&nbsp;&nbsp;</span><span class="c8">$11</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Three fried and rolled corn tortillas
-							filled with chicken, topped with Chipotle cream sauce, lettuce,
-							shredded cheese, Pico de Gallo, and rice</span>
-					</p>
-					<h3 class="c1">
-						<span>Huevos Con Chorizo&nbsp;&nbsp;</span><span class="c8">$9.50</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Three eggs scrambled with chorizo
-							(Homemade Mexican Sausage). Comes with flour
-							tortillas.</span>
-					</p>
-					<p class="c5 c28">
-						<span class="c4"></span>
-					</p>
-					<p class="c5 c28">
-						<span class="c4"></span>
-					</p>
-					<h1 class="c26">
-						<span class="c14"></span>
-					</h1></td>
-				<td class="c10" colspan="1" rowspan="1"><h3 class="c1">
-						<span>Nachos noches&nbsp;&nbsp;</span><span class="c8">$10</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Chips topped with ground beef, shredded
-							chicken, beans, cheese, lettuce, tomatoes, and sour cream.</span>
-					</p>
-					<h3 class="c1">
-						<span>Heuco Mundo Acp&nbsp;&nbsp;</span><span class="c8">$10</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Grilled chicken, steak strips, shrimp,
-							onions, bell peppers, and tomatoes over rice covered with cheese
-							sauce. Comes with flour tortillas.</span>
-					</p>
-			</tr>
-			<tr class="c11">
-				<td class="c21" colspan="1" rowspan="1"><h1 class="c29">
-						<span class="c14">Desserts</span>
-					</h1>
-					<h3 class="c1">
-						<span>Flan&nbsp;&nbsp;</span><span class="c8">$3.50</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Mexican Custard with whipped cream and
-							cherry on top</span>
-					</p>
-					<h3 class="c1">
-						<span>Churros&nbsp;&nbsp;</span><span class="c8">$4</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">Three flour dough sticks deep fried.
-							Covered with cinnamon, sugar, chocolate syrup, whipped cream and
-							cherry on top</span>
-					</p>
-					<h3 class="c1">
-						<span>Chimi Cheesecake&nbsp;&nbsp;</span><span class="c8">$5</span>
-					</h3>
-					<p class="c5">
-						<span class="c4">A rolled-up deep fried flour tortilla
-							filled with cheesecake. Cover with sugar cinnamon, chocolate
-							syrup, whipped cream and cherry on top</span>
-					</p>
-					<h3 class="c1">
-						<span>Fried Ice Cream&nbsp;&nbsp;</span><span class="c8">$4.50</span>
-					</h3>
-					<p class="c5" id="h.gjdgxs">
-						<span class="c4">A fried flour tortilla bowl filled with a
-							vanilla ice cream ball covered with cereal that&rsquo;s deep
-							fried. Covered with honey, cinnamon, whipped cream, chocolate
-							syrup and cherry on top.</span>
-					</p>
-					<p class="c5 c28">
-						<span class="c4"></span>
-					</p>
-					<p class="c5 c28">
-						<span class="c4"></span>
-					</p>
-					<h1 class="c26">
-						<span class="c14"></span>
-					</h1></td>
-				<td class="c10" colspan="1" rowspan="1"><h3 class="c1 c19">
-						<span class="c3"></span>
-					</h3></td>
-			</tr>
-		</tbody>
-	</table>
-	<p class="c5 c28">
-		<span class="c4"></span>
-	</p>
-	</div>
+
+			<p class="c28 c33">
+				<span class="c35"></span>
+			</p>
+			<a id="t.8550c89f70d1fa7e2764a81f3008d12e15989493"></a> <a id="t.0"></a>
+			<table class="c31">
+				<tbody>
+					<tr class="c30">
+						<td class="c21" colspan="1" rowspan="1"><p class="c5 c28">
+								<span class="c4"></span>
+							</p></td>
+						<td class="c17" colspan="1" rowspan="1"><p class="c12 title">
+								<span class="c15">El</span>
+							</p>
+							<p class="c12 title">
+								<span class="c15">Espada</span>
+							</p>
+							<p class="c24 subtitle">
+								<span class="c18">Restaurant</span>
+							</p>
+							<p class="c16"></p></td>
+					</tr>
+
+					<tr>
+						<td class="c21" colspan="1" rowspan="1"><h1 class="c29">
+								<span class="c14">Lunch</span>
+							</h1>
+							<h3 class="c1">
+								<span>Las Noches Cheese Steak Taco&nbsp;&nbsp;</span><span
+									class="c8">$8.50</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">One grilled flour tortilla filled with
+									steak strips, onions, cheesy cream sauce, and topped with
+									lettuce.</span>
+							</p>
+							<h3 class="c1">
+								<span>Tacos de Azada&nbsp;&nbsp;</span><span class="c8">$9.50</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Two grilled corn tortillas filled with
+									grilled meat, onions, and cilantro.</span>
+							</p>
+							<h3 class="c1">
+								<span>Enchiladas blancas&nbsp;&nbsp;</span><span class="c8">$8.50</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">One chicken enchilada and one beef
+									enchilada topped with our cheese sauce, lettuce, sour cream,
+									tomatoes, and rice</span>
+							</p>
+							<h1 class="c26">
+								<span class="c14"></span>
+							</h1></td>
+						<td class="c10" colspan="1" rowspan="1"><h3 class="c13 c19">
+								<span class="c3"></span>
+							</h3>
+							<h3 class="c0">
+								<span>Tacos Cero&nbsp;&nbsp;</span><span class="c8">$10</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Two grilled flour tortilla filled with
+									grilled meat, fresh Pico de Gallo, avocado, and creamy chipotle
+									sauce.</span>
+							</p>
+							<h3 class="c1">
+								<span>Sonido&nbsp;&nbsp;</span><span class="c8">$7</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">One taco, one enchilada</span>
+							</p>
+							<h3 class="c1">
+								<span>Quesadilla deluxe&nbsp;&nbsp;</span><span class="c8">$8</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">One chicken quesadilla</span>
+							</p>
+							<h3 class="c1">
+								<span>Burrito specito&nbsp;&nbsp;</span><span class="c8">$6.50</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">A burrito filled with beef and refried
+									beans, topped with lettuce, tomatoes, and sour cream</span>
+							</p>
+
+							<p class="c5 c28">
+								<span class="c4"></span>
+							</p>
+							<p class="c5 c28">
+								<span class="c4"></span>
+							</p></td>
+					</tr>
+					<tr>
+						<td class="c21" colspan="1" rowspan="1"><h1 class="c29">
+								<span class="c14">Dinner</span>
+							</h1>
+							<h3 class="c1">
+								<span>El arrancar&nbsp;&nbsp;</span><span class="c8">$13</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">A grilled flour tortilla shell in a
+									shape of a volcano filled with onions, bell peppers, tomatoes,
+									steak strips. Held together by a pepper ring and topped with
+									our homemade creamy cheese sauce.</span>
+							</p>
+							<h3 class="c1">
+								<span>Chimichanga&nbsp;&nbsp;</span><span class="c8">$10.50</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Two fried rolled up flour tortillas
+									filled with chicken. Topped with cheese sauce, lettuce, tomato,
+									sour cream and guacamole</span>
+							</p>
+							<h3 class="c1">
+								<span>Flautas&nbsp;&nbsp;</span><span class="c8">$11</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Three fried and rolled corn tortillas
+									filled with chicken, topped with Chipotle cream sauce, lettuce,
+									shredded cheese, Pico de Gallo, and rice</span>
+							</p>
+							<h3 class="c1">
+								<span>Huevos Con Chorizo&nbsp;&nbsp;</span><span class="c8">$9.50</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Three eggs scrambled with chorizo
+									(Homemade Mexican Sausage). Comes with flour tortillas.</span>
+							</p>
+							<p class="c5 c28">
+								<span class="c4"></span>
+							</p>
+							<p class="c5 c28">
+								<span class="c4"></span>
+							</p>
+							<h1 class="c26">
+								<span class="c14"></span>
+							</h1></td>
+						<td class="c10" colspan="1" rowspan="1"><h3 class="c1">
+								<span>Nachos noches&nbsp;&nbsp;</span><span class="c8">$10</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Chips topped with ground beef, shredded
+									chicken, beans, cheese, lettuce, tomatoes, and sour cream.</span>
+							</p>
+							<h3 class="c1">
+								<span>Heuco Mundo Acp&nbsp;&nbsp;</span><span class="c8">$10</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Grilled chicken, steak strips, shrimp,
+									onions, bell peppers, and tomatoes over rice covered with
+									cheese sauce. Comes with flour tortillas.</span>
+							</p>
+					</tr>
+					<tr class="c11">
+						<td class="c21" colspan="1" rowspan="1"><h1 class="c29">
+								<span class="c14">Desserts</span>
+							</h1>
+							<h3 class="c1">
+								<span>Flan&nbsp;&nbsp;</span><span class="c8">$3.50</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Mexican Custard with whipped cream and
+									cherry on top</span>
+							</p>
+							<h3 class="c1">
+								<span>Churros&nbsp;&nbsp;</span><span class="c8">$4</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">Three flour dough sticks deep fried.
+									Covered with cinnamon, sugar, chocolate syrup, whipped cream
+									and cherry on top</span>
+							</p>
+							<h3 class="c1">
+								<span>Chimi Cheesecake&nbsp;&nbsp;</span><span class="c8">$5</span>
+							</h3>
+							<p class="c5">
+								<span class="c4">A rolled-up deep fried flour tortilla
+									filled with cheesecake. Cover with sugar cinnamon, chocolate
+									syrup, whipped cream and cherry on top</span>
+							</p>
+							<h3 class="c1">
+								<span>Fried Ice Cream&nbsp;&nbsp;</span><span class="c8">$4.50</span>
+							</h3>
+							<p class="c5" id="h.gjdgxs">
+								<span class="c4">A fried flour tortilla bowl filled with
+									a vanilla ice cream ball covered with cereal that&rsquo;s deep
+									fried. Covered with honey, cinnamon, whipped cream, chocolate
+									syrup and cherry on top.</span>
+							</p>
+							<p class="c5 c28">
+								<span class="c4"></span>
+							</p>
+							<p class="c5 c28">
+								<span class="c4"></span>
+							</p>
+							<h1 class="c26">
+								<span class="c14"></span>
+							</h1></td>
+						<td class="c10" colspan="1" rowspan="1"><h3 class="c1 c19">
+								<span class="c3"></span>
+							</h3></td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="c5 c28">
+				<span class="c4"></span>
+			</p>
+		</div>
 	</form>
 </body>
 </html>
