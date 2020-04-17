@@ -1,3 +1,6 @@
+<!-- UIS Avengers
+about page  -->
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -7,43 +10,54 @@
 
 
 <!-- Boot strap link with thmyeleaf so that it is dynamic-->
-<link rel="stylesheet"
-	href="../static/css/bootstrap.min.css"
-		th:href="@{/css/bootstrap.min.css}"/>
-		
-<link rel="stylesheet"
-	href="../static/css/stylesheet.css"
-		th:href="@{/css/stylesheet.css}"/>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+<link rel="stylesheet" href="../static/css/stylesheet.css"
+	th:href="@{/css/stylesheet.css}" />
 </head>
 
 <body>
+	<form th:action="@{/index}">
+		<section class="header1 cid-qyvisAZ1Bw" id="header1-7"
+			data-rv-view="758">
 
-	<section class="header1 cid-qyvisAZ1Bw" id="header1-7" data-rv-view="758">
+			<div class="container">
+				<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+				<nav
+					class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
+					th:replace="fragments/navigator :: navigator"></nav>
 
-    
+				<button type="submit" id="continueToPlaceOrder"
+					class="btn-success sticky-top sticky-offset btn-lg"
+					style="margin-top: 20px;">Start Ordering</button>
+				<div class="row justify-content-md-center">
+					<div class="mbr-white col-md-10">
+						<h2
+							class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">
+							El Espada <br>Food Ordering System
+						</h2>
+						<p class="mbr-text text-center">
+							The El Espada food ordering system was created for the Software
+							Engineering Capstone at UIS from students; Avinash Moram, Daniel
+							Henderson, and Zach Parker. The system utilizes Spring Boot, JPA 
+							with Hibernate, Tomcat, Bootstrap, Thymeleaf, Maven, H2, CSS, 
+							and HTML. The purpose of this project is to create a system 
+							ready to take online orders	for a Mexican restaurant.<br> <br> 
+							<strong>Note that this application is best used in Google Chrome. 
+							Most functionality will work in other browsers, but only Chrome is
+							fully supported.</strong> <br> We are still working on making this 
+							application	available as an app in Apple Store and Google Play..
+						</p>
 
-    
+					</div>
 
-    <div class="container">
-    <!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
-			th:replace="fragments/navigator :: navigator">
 
-		</nav>
-        <div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h2 class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">El Espada 
-                <br>Food Ordering System</h2>
-                <p class="mbr-text text-center">
-                  The El Espada food ordering system was created for the Software Engineering Capstone at UIS from students; Avinash Moram, Daniel Henderson, and
-                  Zach Parker. The system utilizes Spring Boot, Bootstrap, Thymeleaf, Maven, H2, CSS, and HTML. The purpose of this project 
-                  is to create a system ready to take online orders for a Mexican restaurant.
-                </p>
-            </div>
-        </div>
-    </div>
 
-</section>
+				</div>
+			</div>
 
+		</section>
+	</form>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!-- UIS Avengers
+review order page - displays once items are added to cart 
+and 'Continue to Payment' button is selected. -->
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>El Espada</title>
+
+
+<!-- Boot strap link with thmyeleaf so that it is dynamic-->
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+<link rel="stylesheet" href="../static/css/stylesheet.css"
+	th:href="@{/css/stylesheet.css}" />
+
+</head>
+
+<body>
+	<form method="post" enctype="multipart/form-data" th:action="@{/payment}" >
+		<div class="container">
+
+			<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+			<nav
+				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
+				th:replace="fragments/navigator :: navigator"></nav>
+
+			<div>
+				<div class="column">
+					<h2 class="menu-text">Review Order</h2>
+
+				</div>
+			</div>
+
+			<div class="container" th:each="m : ${menu}">
+				<div class="row">
+					<div class="col-sm">
+						<h5 th:text="${m.menuName}"></h5>
+						<img th:src="@{${'/images/' + m.menuImgSrc}}" class="rounded" />
+
+					</div>
+
+					<div class="col-sm">
+						<p th:text="${m.menuDetails}"></p>
+						<p th:text="${#numbers.formatCurrency(m.menuPrice)}"></p>
+						<a class="btn-success btn" role="button"
+							th:href="@{/deleteItem/{menuId}(menuId=${m.menuId})}">Delete
+							Item</a>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="totals">
+				<div class="totals-item">
+					<label>Order ID</label>
+					<div class="totals-value" id="cart-subtotal">
+						<label th:text="${session.orderId}" th:unless="${session == null}"></label>
+					</div>
+				</div>
+
+				<div class="totals-item totals-item-total">
+					<label>Order Total</label>
+					<div class="totals-value" id="cart-total">
+						<label th:text="${#numbers.formatCurrency(session.orderTotal)}"
+							th:unless="${session == null}"></label>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="float-right sticky-top sticky-offset ">
+					<button type="submit"
+						class="btn-danger btn-lg sticky-top sticky-offset"
+						style="margin-top: 20px; margin-bottom: 20px"
+						th:formaction="@{/index}">Start Over</button>
+
+					<button type="submit"
+						class="btn-success btn-lg sticky-top sticky-offset"
+						style="margin-top: 20px; margin: 20px; margin-bottom: 20px">Continue
+						to Payment</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
