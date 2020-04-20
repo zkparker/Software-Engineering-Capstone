@@ -1,0 +1,49 @@
+<!-- UIS Avengers
+final page - displays once user inputs all information and hits 'Submit Order'
+button on payment page.  -->
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>El Espada</title>
+
+
+<!-- Boot strap link with thmyeleaf so that it is dynamic-->
+<link rel="stylesheet"
+	href="../static/css/bootstrap.min.css"
+		th:href="@{/css/bootstrap.min.css}"/>
+		
+<link rel="stylesheet"
+	href="../static/css/stylesheet.css"
+		th:href="@{/css/stylesheet.css}"/>
+</head>
+
+<body>
+
+	<section class="header1 cid-qyvisAZ1Bw" id="header1-7" data-rv-view="758">
+    
+
+    <div class="container">
+    <!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
+			th:replace="fragments/navigator :: navigator">
+
+		</nav>
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h2 class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">Order Received</h2>
+                <p class="mbr-text text-center">
+                  Payment Successful for <strong><label th:text="${#numbers.formatCurrency(session.orderTotal)}" th:unless="${session == null}"></label></strong>. Thank you for your order!
+                  <br>Your order id is: <strong><label th:text="${session.orderId}" th:unless="${session == null}"></label></strong>
+                  <br>Estimated wait time of order is 20 minutes. 
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

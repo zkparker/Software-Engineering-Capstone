@@ -1,3 +1,6 @@
+<!-- UIS Avengers
+hours page  -->
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
@@ -6,53 +9,66 @@
 <title>El Espada</title>
 
 <!-- Boot strap link with thmyeleaf so that it is dynamic-->
-<link rel="stylesheet"
-	href="../static/css/bootstrap.min.css"
-		th:href="@{/css/bootstrap.min.css}"/>
-		
-<link rel="stylesheet"
-	href="../static/css/stylesheet.css"
-		th:href="@{/css/stylesheet.css}"/>
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"
+	th:href="@{/css/bootstrap.min.css}" />
+
+<link rel="stylesheet" href="../static/css/stylesheet.css"
+	th:href="@{/css/stylesheet.css}" />
 </head>
 
 <body>
+	<form th:action="@{/index}">
+		<div class="container" th:action="@{/index}">
+			<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
+			<nav
+				class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
+				th:replace="fragments/navigator :: navigator"></nav>
 
-	<div class="container">
-	<!-- Utilize thymeleaf fragment for nav bar so the contents only need to be changed in one place -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top" 
-			th:replace="fragments/navigator :: navigator">
+			<button type="submit" id="continueToPlaceOrder"
+				class="btn-success sticky-top sticky-offset btn-lg"
+				style="margin-top: 20px;">Start Ordering</button>
 
-		</nav>
+			<div class="row justify-content-md-center">
+				<div class="mbr-white col-md-10">
+					<h2
+						class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">Our
+						Hours</h2>
+					<p class="mbr-text text-center">
+						Please take a look at our hours below. <br>We look forward to
+						serving the Springfield, Illinois area! 
+					</p>
+					<div class="container">
+						<div class="col-md-12 text-center">
+							<ul class="text-left hours"
+								style="display: inline-block; vertical-align: middle;">
+								<li>Sunday: 11am - 6pm</li>
+								<li>Monday: 11am - 9pm</li>
+								<li>Tuesday: 11am - 9pm</li>
+								<li>Wednesday: 11am - 9pm</li>
+								<li>Thursday: 11am - 9pm</li>
+								<li>Friday: 11am - 10pm</li>
+								<li>Saturday: 11am - 10pm</li>
+							</ul>
+						</div>
+					</div>
 
-		<div class="row justify-content-md-center">
-            <div class="mbr-white col-md-10">
-                <h2 class="mbr-section-subtitle text-center mbr-light pb-3 mbr-fonts-style display-2">Our Hours</h2>
-                <p class="mbr-text text-center">
-                  Please take a look at our hours below. Note that our lunch menu is only available from
-                  11am to 3pm daily. <br>We look forward to serving you!
-                </p>
-                <div class="container">
-				    <div class="col-md-12 text-center">
-				      <ul class="text-left hours" style="display:inline-block;vertical-align:middle;">
-				        <li>Sunday: 11am - 6pm</li>
-				        <li>Monday: 11am - 9pm</li>
-				        <li>Tuesday: 11am - 9pm</li>
-				        <li>Wednesday: 11am - 9pm</li>
-				        <li>Thursday: 11am - 9pm</li>
-				        <li>Friday: 11am - 10pm</li>
-				        <li>Saturday: 11am - 10pm</li>
-				      </ul>
-				    </div>
-				  </div>
+					<div class="container">
+						<div class="col-md-12 text-center">
+							<h3>Our Location:</h3>
+							We are located at One University Plaza,
+						Springfield, IL 62703
+							<!-- Snapshot of location in google maps -->
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.4234692857835!2d-89.62071558477086!3d39.73013757945082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88753c06c721a66d%3A0x23b59309f1fd4af5!2sUniversity%20of%20Illinois%20Springfield!5e0!3m2!1sen!2sus!4v1587067330681!5m2!1sen!2sus"
+								width="600" height="450" style="border: 0;"
+								 aria-hidden="false" tabindex="0"></iframe>
+						</div>
 
-            </div>
-        </div>
-		
+					</div>
+				</div>
+			</div>
 
-
-
-
-	</div>
-
+		</div>
+	</form>
 </body>
 </html>

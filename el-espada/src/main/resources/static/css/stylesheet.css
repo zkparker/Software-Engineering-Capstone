@@ -12,7 +12,8 @@ body{
 }
 
 .menu-text{
-	text-align: center;
+	text-align: left;
+	font-weight: bold;
 }
 
 .column{
@@ -24,5 +25,28 @@ img{
 	height: 225px;
 }
 
+.sticky-offset{
+	top:60px;
+}
 
-
+/* Totals section */
+.totals .totals-item {
+  float: right;
+  clear: both;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.totals .totals-item label {
+  float: left;
+  clear: both;
+  width: 79%;
+  text-align: right;
+}
+.totals .totals-item .totals-value {
+  float: right;
+  width: 21%;
+  text-align: right;
+}
+.totals .totals-item-total {
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
