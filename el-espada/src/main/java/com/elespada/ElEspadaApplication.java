@@ -18,27 +18,14 @@
  */
 package com.elespada;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
-import org.springframework.beans.factory.support.BeanDefinitionRegistry;
-import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.core.env.ConfigurableEnvironment;
-import org.springframework.core.env.MapPropertySource;
-import org.springframework.core.env.PropertySource;
-import org.springframework.core.io.ClassPathResource;
 
 import com.elespada.model.Menu;
 import com.elespada.repo.MenuRepository;
@@ -84,40 +71,6 @@ public class ElEspadaApplication extends SpringBootServletInitializer implements
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(ElEspadaApplication.class);
-	}
-
-	/**
-	 * This method makes the application.properties file available for spring
-	 * container when decrypting the database password
-	 *
-	 * @param env
-	 * @return
-	 */
-	@Bean
-	public static BeanDefinitionRegistryPostProcessor resourcesPathPropertySourcePostProcessor(
-			ConfigurableEnvironment env) {
-		return new BeanDefinitionRegistryPostProcessor() {
-			@Override
-			public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry)
-					throws BeansException {
-				Map<String, Object> map = new HashMap<>();
-				try {
-					map.put("resources-path", new ClassPathResource("./").getURL());
-				} catch (IOException e) {
-					e.printStackTrace();
-					logger.error("Exception while setting classpath", e);
-				}
-				@SuppressWarnings("rawtypes")
-				PropertySource ps = new MapPropertySource("resources-path", map);
-				env.getPropertySources().addLast(ps);
-			}
-
-			@Override
-			public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory)
-					throws BeansException {
-
-			}
-		};
 	}
 
 	/**
