@@ -1,6 +1,6 @@
 /*
  * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -19,7 +19,10 @@
 package com.elespada.VO;
 
 /**
- * Espada Value Object for capturing form data 
+ * <b>EspadaVO.java</b>
+ * <p>
+ * A plain old POJO, Espada Value Object for capturing form data. This is used
+ * for capturing items added to order by the user
  *
  */
 public class EspadaVO {
@@ -37,6 +40,45 @@ public class EspadaVO {
 	 */
 	public void setMenuIds(String menuIds) {
 		this.menuIds = menuIds;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = (prime * result) + ((menuIds == null) ? 0 : menuIds.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		EspadaVO other = (EspadaVO) obj;
+		if (menuIds == null) {
+			if (other.menuIds != null) {
+				return false;
+			}
+		} else if (!menuIds.equals(other.menuIds)) {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("EspadaVO [menuIds=");
+		builder.append(menuIds);
+		builder.append("]");
+		return builder.toString();
 	}
 
 }

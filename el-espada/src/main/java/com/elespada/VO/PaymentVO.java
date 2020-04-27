@@ -1,6 +1,6 @@
 /*
  * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -19,7 +19,10 @@
 package com.elespada.VO;
 
 /**
- * Payment Value Object for capturing the form data
+ * <b>PaymentVO.java</b>
+ * <p>
+ * A plain old POJO, Payment Value Object for capturing the form data. This
+ * captures payments details entered by the user.
  */
 public class PaymentVO {
 	private String firstName;
@@ -207,90 +210,117 @@ public class PaymentVO {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((addressCity == null) ? 0 : addressCity.hashCode());
-		result = prime * result + ((addressState == null) ? 0 : addressState.hashCode());
-		result = prime * result + ((addressStreet == null) ? 0 : addressStreet.hashCode());
-		result = prime * result + ((addressZip == null) ? 0 : addressZip.hashCode());
-		result = prime * result + ((cardExpiry == null) ? 0 : cardExpiry.hashCode());
-		result = prime * result + ((cardNumber == null) ? 0 : cardNumber.hashCode());
-		result = prime * result + ((cvv == null) ? 0 : cvv.hashCode());
-		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((firstName == null) ? 0 : firstName.hashCode());
-		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
-		result = prime * result + ((nameOnCard == null) ? 0 : nameOnCard.hashCode());
-		result = prime * result + ((paymentType == null) ? 0 : paymentType.hashCode());
+		result = (prime * result) + ((addressCity == null) ? 0 : addressCity.hashCode());
+		result = (prime * result) + ((addressState == null) ? 0 : addressState.hashCode());
+		result = (prime * result) + ((addressStreet == null) ? 0 : addressStreet.hashCode());
+		result = (prime * result) + ((addressZip == null) ? 0 : addressZip.hashCode());
+		result = (prime * result) + ((cardExpiry == null) ? 0 : cardExpiry.hashCode());
+		result = (prime * result) + ((cardNumber == null) ? 0 : cardNumber.hashCode());
+		result = (prime * result) + ((cvv == null) ? 0 : cvv.hashCode());
+		result = (prime * result) + ((email == null) ? 0 : email.hashCode());
+		result = (prime * result) + ((firstName == null) ? 0 : firstName.hashCode());
+		result = (prime * result) + ((lastName == null) ? 0 : lastName.hashCode());
+		result = (prime * result) + ((nameOnCard == null) ? 0 : nameOnCard.hashCode());
+		result = (prime * result) + ((paymentType == null) ? 0 : paymentType.hashCode());
 		return result;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		PaymentVO other = (PaymentVO) obj;
 		if (addressCity == null) {
-			if (other.addressCity != null)
+			if (other.addressCity != null) {
 				return false;
-		} else if (!addressCity.equals(other.addressCity))
+			}
+		} else if (!addressCity.equals(other.addressCity)) {
 			return false;
+		}
 		if (addressState == null) {
-			if (other.addressState != null)
+			if (other.addressState != null) {
 				return false;
-		} else if (!addressState.equals(other.addressState))
+			}
+		} else if (!addressState.equals(other.addressState)) {
 			return false;
+		}
 		if (addressStreet == null) {
-			if (other.addressStreet != null)
+			if (other.addressStreet != null) {
 				return false;
-		} else if (!addressStreet.equals(other.addressStreet))
+			}
+		} else if (!addressStreet.equals(other.addressStreet)) {
 			return false;
+		}
 		if (addressZip == null) {
-			if (other.addressZip != null)
+			if (other.addressZip != null) {
 				return false;
-		} else if (!addressZip.equals(other.addressZip))
+			}
+		} else if (!addressZip.equals(other.addressZip)) {
 			return false;
+		}
 		if (cardExpiry == null) {
-			if (other.cardExpiry != null)
+			if (other.cardExpiry != null) {
 				return false;
-		} else if (!cardExpiry.equals(other.cardExpiry))
+			}
+		} else if (!cardExpiry.equals(other.cardExpiry)) {
 			return false;
+		}
 		if (cardNumber == null) {
-			if (other.cardNumber != null)
+			if (other.cardNumber != null) {
 				return false;
-		} else if (!cardNumber.equals(other.cardNumber))
+			}
+		} else if (!cardNumber.equals(other.cardNumber)) {
 			return false;
+		}
 		if (cvv == null) {
-			if (other.cvv != null)
+			if (other.cvv != null) {
 				return false;
-		} else if (!cvv.equals(other.cvv))
+			}
+		} else if (!cvv.equals(other.cvv)) {
 			return false;
+		}
 		if (email == null) {
-			if (other.email != null)
+			if (other.email != null) {
 				return false;
-		} else if (!email.equals(other.email))
+			}
+		} else if (!email.equals(other.email)) {
 			return false;
+		}
 		if (firstName == null) {
-			if (other.firstName != null)
+			if (other.firstName != null) {
 				return false;
-		} else if (!firstName.equals(other.firstName))
+			}
+		} else if (!firstName.equals(other.firstName)) {
 			return false;
+		}
 		if (lastName == null) {
-			if (other.lastName != null)
+			if (other.lastName != null) {
 				return false;
-		} else if (!lastName.equals(other.lastName))
+			}
+		} else if (!lastName.equals(other.lastName)) {
 			return false;
+		}
 		if (nameOnCard == null) {
-			if (other.nameOnCard != null)
+			if (other.nameOnCard != null) {
 				return false;
-		} else if (!nameOnCard.equals(other.nameOnCard))
+			}
+		} else if (!nameOnCard.equals(other.nameOnCard)) {
 			return false;
+		}
 		if (paymentType == null) {
-			if (other.paymentType != null)
+			if (other.paymentType != null) {
 				return false;
-		} else if (!paymentType.equals(other.paymentType))
+			}
+		} else if (!paymentType.equals(other.paymentType)) {
 			return false;
+		}
 		return true;
 	}
 

@@ -18,7 +18,7 @@ button on reviewOrder page.  -->
 
 <script type="text/javascript">
 	/**
-	 * Toggles between Payment types Cash or Card 
+	 * Toggles between Payment types Cash or Card, hides the irrelevant fields on the form 
 	 */
 	function togglePayment() {
 		if (document.getElementById("card").checked == true) {
@@ -40,6 +40,7 @@ button on reviewOrder page.  -->
 	 * Form validations on submit
 	 */
 	function validate() {
+
 		// validate zip code
 		var zip = document.getElementById("zip").value;
 		if (zip.length != 5) {
@@ -47,6 +48,7 @@ button on reviewOrder page.  -->
 			document.getElementById("zip").focus();
 			return false;
 		}
+
 		// validate Payment type
 		var card = document.getElementById("card").checked;
 		var cash = document.getElementById("cash").checked;
@@ -55,8 +57,10 @@ button on reviewOrder page.  -->
 			document.getElementById("pay").focus();
 			return false;
 		}
+
 		//validate card type payment
 		if (document.getElementById("card").checked == true) {
+
 			// validate card number
 			var cardNum = document.getElementById("cc-number").value;
 			cardNum = cardNum.replace(/\s/g, '');
@@ -66,12 +70,14 @@ button on reviewOrder page.  -->
 				document.getElementById("cc-number").focus();
 				return false;
 			}
+
 			//validate for visa or master card
 			if (cardNum.charAt(0) != '4' && cardNum.charAt(0) != '5') {
 				alert('We are only accepting visa/mastercard at this time; \n visa starts with 4, mastercard starts with 5, please verify!');
 				document.getElementById("cc-number").focus();
 				return false;
 			}
+
 			//validate card expiration date and year
 			var cardExpiry = document.getElementById("cc-expiration").value;
 			if (cardExpiry.length != 7) {
@@ -81,6 +87,8 @@ button on reviewOrder page.  -->
 				document.getElementById("cc-expiration").focus();
 				return false;
 			}
+
+			// validate the expiry date to be in correct format
 			var pattern = /^(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
 			if (pattern.test(cardExpiry) == false) {
 				alert('Expiration Date: "'
@@ -89,6 +97,8 @@ button on reviewOrder page.  -->
 				document.getElementById("cc-expiration").focus();
 				return false;
 			}
+
+			// validate the month in the expiry date
 			var d = new Date();
 			var curr_month = d.getMonth();
 			var curr_year = d.getFullYear();
@@ -102,6 +112,8 @@ button on reviewOrder page.  -->
 					return false;
 				}
 			}
+
+			// validate the year in the expiry date
 			if (date[1] < curr_year) {
 				alert('Expiration Date: "'
 						+ cardExpiry
@@ -109,7 +121,8 @@ button on reviewOrder page.  -->
 				document.getElementById("cc-expiration").focus();
 				return false;
 			}
-			//validate cvv
+
+			//validate cvv length
 			var cvv = document.getElementById("cc-cvv").value;
 			if (cvv.length != 3) {
 				alert('CVV: "' + cvv + '" must be 3 digits, please verify!');
@@ -149,10 +162,10 @@ button on reviewOrder page.  -->
 								th:object="${paymentVO}" onsubmit="return validate();">
 								<div class="row">
 									<div class="col-sm">
-										<label for="firstName">First name</label> <input
-											type="text" class="form-control" id="firstName"
-											placeholder="John" th:value="${paymentVO.firstName}"
-											th:name="firstName" required>
+										<label for="firstName">First name</label> <input type="text"
+											class="form-control" id="firstName" placeholder="John"
+											th:value="${paymentVO.firstName}" th:name="firstName"
+											required>
 										<div class="invalid-feedback">Valid first name is
 											required.</div>
 									</div>

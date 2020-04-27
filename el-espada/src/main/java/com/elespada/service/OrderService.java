@@ -1,6 +1,6 @@
 /*
  * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -27,17 +27,69 @@ import com.elespada.model.Orders;
 
 @Component
 public interface OrderService {
+
+	/**
+	 * This method starts a new ORDER and returns the ORDER with orderId
+	 *
+	 * @return ORDERS a single new order
+	 * @throws Exception
+	 */
 	public Orders createOrder() throws Exception;
 
-	void createOrderDetails(String menuIds, Long orderId) throws Exception;
+	/**
+	 *
+	 * This method creates new order details, adds the menu items to the order and
+	 * persist items into ORDER_DETAILS table
+	 *
+	 * @param menuIds the menu items in the order
+	 * @param orderId the order the menu items need to be tagged with
+	 * @throws Exception
+	 */
+	public void createOrderDetails(String menuIds, Long orderId) throws Exception;
 
-	List<Long> deleteItemfromOrder(Long orderId, Long menuId) throws Exception;
+	/**
+	 * Deletes an item selected by the user from the user's order in ORDER_DETAILS
+	 * table
+	 *
+	 * @param orderId the order that menu item belongs to
+	 * @param menuId  the menu item that needs to be deleted
+	 * @return List<Long> the remaining items in the order
+	 * @throws Exception
+	 */
+	public List<Long> deleteItemfromOrder(Long orderId, Long menuId) throws Exception;
 
-	Orders updatePaymentDetails(Long orderId, PaymentVO paymentDetails) throws Exception;
+	/**
+	 * Populated the payment details from the VO to DB object Orders and saves in
+	 * the ORDERS table
+	 *
+	 *
+	 * @param orderId        the order for which the payment details need to be
+	 *                       updated
+	 * @param paymentDetails the VO that captured the form data
+	 * @return updated Orders with payment details
+	 * @throws Exception
+	 */
+	public Orders updatePaymentDetails(Long orderId, PaymentVO paymentDetails) throws Exception;
 
-	void deleteOrder(Long orderId);
+	/**
+	 * Deletes an order by id
+	 * @param orderId
+	 */
+	public void deleteOrder(Long orderId);
 
-	float computeOrderTotal(Orders order);
+	/**
+	 * Aggregates the order total by summing all the menu item prices
+	 *
+	 * @param order
+	 * @return float sum
+	 */
+	public float computeOrderTotal(Orders order);
 
-	Orders findOrderById(Long orderId);
+	/**
+	 * Fetches an order from ORDERS table by the primary key orderId
+	 *
+	 * @param orderId primary key orderId
+	 * @return Orders
+	 */
+	public Orders findOrderById(Long orderId);
 }

@@ -1,6 +1,6 @@
 /*
  * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
- * 
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -21,64 +21,69 @@ package com.elespada.controllers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.elespada.VO.PaymentVO;
-
+/**
+ * <b>CommonController.java</b> <blockquote>Controller in MVC pattern
+ * <p>
+ * This is a common web controller for handling the actions on ElEspada website
+ * menu. This controller class handles requests for About Us, Contact Us, Hours
+ * of Operation, Full Menu. These are mostly static pages and not relevant to
+ * the actual functionality of placing orders
+ */
 @Controller
 public class CommonController {
 
 	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
 
 	/**
-	 * Displays About Us page
-	 * @return view
+	 * This method handles requests coming to the application’s context path
+	 * (/about) by redirecting to the view named about.html. Displays About Us page
+	 * TODO Add requirements for all menu items
+	 *
+	 * @return view to display about.html
 	 */
 	@RequestMapping("/about")
 	public String getAbout() {
 		logger.debug("About Us");
 		return "about";
 	}
-	
+
 	/**
-	 * Displays Contact Us page
-	 * @return view
+	 * This method handles requests coming to the application’s context path
+	 * (/contact) by redirecting to the view named contact.html. Displays Contact Us
+	 * page
+	 *
+	 * @return view to display contact.html
 	 */
 	@RequestMapping("/contact")
 	public String getContact() {
 		logger.debug("Contact Us");
 		return "contact";
 	}
-	
+
 	/**
-	 * Displays Hours page
-	 * @return view
+	 * This method handles requests coming to the application’s context path
+	 * (/hours) by redirecting to the view named hours.html. Displays Hours page
+	 *
+	 * @return view to display hours.html
 	 */
 	@RequestMapping("/hours")
 	public String getHours() {
 		logger.debug("Hours of Operation");
 		return "hours";
 	}
-	
+
 	/**
-	 * Displays Full menu page
-	 * @return view
+	 * This method handles requests coming to the application’s context path (/menu)
+	 * by redirecting to the view named menu.html. Displays Full menu page
+	 *
+	 * @return view to display menu.html
 	 */
-	@RequestMapping("menu")
+	@RequestMapping("/menu")
 	public String getMenu() {
 		logger.debug("Full Menu");
 		return "menu";
 	}
-	
-	/**
-	 * Displays Payment page
-	 * @return view
-	 */
-	@RequestMapping("payment")
-	public String getPayment(Model model) {
-		logger.debug("Payment Details");
-		model.addAttribute("paymentVO", new PaymentVO());
-		return "payment";
-	}
+
 }
