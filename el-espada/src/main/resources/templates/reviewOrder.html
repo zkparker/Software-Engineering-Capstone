@@ -56,14 +56,14 @@ and 'Continue to Payment' button is selected. -->
 
 			<div class="totals">
 				<div class="totals-item">
-					<label>Order ID</label>
+					<label>Order ID:</label>
 					<div class="totals-value" id="cart-subtotal">
 						<label th:text="${session.orderId}" th:unless="${session == null}"></label>
 					</div>
 				</div>
 
 				<div class="totals-item totals-item-total">
-					<label>Order Total</label>
+					<label>Order Total:</label>
 					<div class="totals-value" id="cart-total">
 						<label th:text="${#numbers.formatCurrency(session.orderTotal)}"
 							th:unless="${session == null}"></label>

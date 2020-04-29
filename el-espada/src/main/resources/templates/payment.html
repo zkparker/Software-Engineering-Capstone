@@ -184,7 +184,7 @@ button on reviewOrder page.  -->
 										<input type="email" class="form-control" id="email"
 											th:value="${paymentVO.email}" th:name="email">
 										<div class="invalid-feedback">Please enter a valid email
-											address for shipping updates.</div>
+											address for order updates.</div>
 
 									</div>
 								</div>
@@ -193,7 +193,7 @@ button on reviewOrder page.  -->
 									<label for="address">Address</label> <input type="text"
 										class="form-control" id="address" required
 										th:value="${paymentVO.addressStreet}" th:name="addressStreet">
-									<div class="invalid-feedback">Please enter your shipping
+									<div class="invalid-feedback">Please enter your billing
 										address.</div>
 								</div>
 
@@ -262,7 +262,7 @@ button on reviewOrder page.  -->
 											<option value="WI">Wisconsin</option>
 											<option value="WY">Wyoming</option>
 										</select>
-										<div class="invalid-feedback">Please provide a valid
+										<div class="invalid-feedback">Please select a valid
 											state.</div>
 									</div>
 
@@ -315,7 +315,7 @@ button on reviewOrder page.  -->
 												type="number" class="form-control" id="cc-number"
 												placeholder="4444 4444 4444 4444"
 												th:value="${paymentVO.cardNumber}" th:name="cardNumber">
-											<div class="invalid-feedback">Credit card number is
+											<div class="invalid-feedback">Card number is
 												required</div>
 										</div>
 									</div>
@@ -341,7 +341,7 @@ button on reviewOrder page.  -->
 								<div class="totals sticky-top sticky-offset"
 									style="margin-top: 20px">
 									<div class="totals-item">
-										<label>Order ID</label>
+										<label>Order ID:</label>
 										<div class="totals-value" id="cart-subtotal">
 											<label th:text="${session.orderId}"
 												th:unless="${session == null}"></label>
@@ -349,7 +349,7 @@ button on reviewOrder page.  -->
 									</div>
 
 									<div class="totals-item totals-item-total">
-										<label>Order Total</label>
+										<label>Order Total:</label>
 										<div class="totals-value" id="cart-total">
 											<label
 												th:text="${#numbers.formatCurrency(session.orderTotal)}"
