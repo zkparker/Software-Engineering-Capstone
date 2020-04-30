@@ -1,6 +1,6 @@
 /*
- * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
- * 
+ * Copyright [2020] [ElEspada - Avengers-UIS Force - Software Engineering Capstone - Springfield, IL]
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -22,6 +22,16 @@ import java.util.List;
 
 import com.elespada.model.OrderDetails;
 
+/**
+ * <b>OrderDetailsRepositoryCustom.java</b><br>
+ * Custom Interface for CRUD operation findByOrderId on table ORDER_DETAILS
+ */
 public interface OrderDetailsRepositoryCustom {
+	/**
+	 * Custom query for finding orders by order id from ORDER_DETAILS <br>
+	 * As the default CRUD repository provides only findById for primary key, we use
+	 * this custom method <br>
+	 * <b>Query</b> SELECT * FROM ORDER_DETAILS WHERE ORDERID=?
+	 */
 	public List<OrderDetails> findByOrderId(Long orderId);
 }

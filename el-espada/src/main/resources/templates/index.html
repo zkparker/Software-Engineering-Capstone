@@ -1,4 +1,21 @@
-<!-- UIS Avengers
+<!-- 
+ * Copyright [2020] [ElEspada - Avengers-UIS Force - Software Engineering Capstone - Springfield, IL]
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ 
 index page - 'home page' displays all menu items
 and allows user to select what they would like to order.  -->
 
@@ -67,13 +84,17 @@ and allows user to select what they would like to order.  -->
 				style="display: none; margin-top: 20px;">Continue to Place
 				Order</button>
 
+			<!-- The website should display all menu items.
+			(Requirement 2.0.0)-->
 			<div>
 				<div class="column">
 					<h1 class="menu-text">Menu Items</h1>
 
 				</div>
 			</div>
-
+			
+			<!-- Customer should see a success message after adding an item to order.
+			(Requirement 2.4.5)-->
 			<div id="success_msg" style="display: none; margin-top: 20px"
 				class="alert alert-success alert-dismissible fade show sticky-top btn-lg">
 				<button type="button" style="display: none; margin-top: 20px"
@@ -87,14 +108,21 @@ and allows user to select what they would like to order.  -->
 					<h3>Lunch Menu</h3>
 				</div>
 			</div>
-			<!-- Display the menu by menu type -->
+			<!-- Lunch menu items should be provided.
+			(Requirement 2.2.1)-->
 			<div class="container" th:each="m : ${menu}"
 				th:if="${m.menuType} == 'Lunch'">
 				<div class="row">
+				
+				<!--Each menu item should display the menu item details next to it.
+					(Requirement 2.3.0)-->
 					<div class="col-sm">
 						<h5 th:text="${m.menuName}"></h5>
 						<img th:src="@{${'/images/' + m.menuImgSrc}}" class="rounded" />
 					</div>
+					
+					<!--Customer should be able to order food online.
+					(Requirement 2.1.0)-->
 					<div class="col-sm">
 						<p th:text="${m.menuDetails}"></p>
 						<button type="button" class="btn-success" th:inline="text"
@@ -111,14 +139,21 @@ and allows user to select what they would like to order.  -->
 				</div>
 			</div>
 
-
+			<!-- Dinner menu items should be provided.
+			(Requirement 2.2.2)-->
 			<div class="container" th:each="m : ${menu}"
 				th:if="${m.menuType} == 'Dinner'">
 				<div class="row">
+				
+				<!--Each menu item should display the menu item details next to it.
+					(Requirement 2.3.0)-->
 					<div class="col-sm">
 						<h5 th:text="${m.menuName}"></h5>
 						<img th:src="@{${'/images/' + m.menuImgSrc}}" class="rounded" />
 					</div>
+					
+					<!--Customer should be able to order food online.
+					(Requirement 2.1.0)-->
 					<div class="col-sm">
 						<p th:text="${m.menuDetails}"></p>
 						<button type="button" class="btn-success" th:inline="text"
@@ -134,14 +169,21 @@ and allows user to select what they would like to order.  -->
 				</div>
 			</div>
 
+			<!-- Lunch menu items should be provided.
+			(Requirement 2.2.3)-->
 			<div class="container" th:each="m : ${menu}"
 				th:if="${m.menuType} == 'Dessert'">
 				<div class="row">
+				
+				<!--Each menu item should display the menu item details next to it.
+					(Requirement 2.3.0)-->
 					<div class="col-sm">
 						<h5 th:text="${m.menuName}"></h5>
 						<img th:src="@{${'/images/' + m.menuImgSrc}}" class="rounded" />
 					</div>
 
+					<!--Customer should be able to order food online.
+					(Requirement 2.1.0)-->
 					<div class="col-sm">
 						<p th:text="${m.menuDetails}"></p>
 						<button type="button" class="btn-success" th:inline="text"

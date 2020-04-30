@@ -1,6 +1,6 @@
 /*
- * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
- * 
+ * Copyright [2020] [ElEspada - Avengers-UIS Force - Software Engineering Capstone - Springfield, IL]
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -26,11 +26,16 @@ import org.springframework.data.repository.query.Param;
 
 import com.elespada.model.OrderDetails;
 
-public interface OrderDetailsRepository extends CrudRepository<OrderDetails, Long> , OrderDetailsRepositoryCustom {
-	
-	// CRUD Repository for OrderDetails Entity 
-	
-	@Query("select OD from OrderDetails OD where OD.orderId=:orderId")
+/**
+ * <b>OrderDetailsRepository.java</b><br>
+ * Interface for CRUD operations on table ORDER_DETAILS
+ */
+public interface OrderDetailsRepository extends CrudRepository<OrderDetails, Long>, OrderDetailsRepositoryCustom {
+
+	// CRUD Repository for OrderDetails Entity
+
+	@Override
+	@Query("SELECT OD FROM OrderDetails OD WHERE OD.orderId=:orderId")
 	public List<OrderDetails> findByOrderId(@Param("orderId") Long orderId);
 
 }

@@ -1,4 +1,20 @@
-<!-- UIS Avengers
+<!-- * Copyright [2020] [ElEspada - Avengers-UIS Force - Software Engineering Capstone - Springfield, IL]
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ 
 payment page - displays once user hits 'Continue to Payment'
 button on reviewOrder page.  -->
 
@@ -18,7 +34,7 @@ button on reviewOrder page.  -->
 
 <script type="text/javascript">
 	/**
-	 * Toggles between Payment types Cash or Card 
+	 * Toggles between Payment types Cash or Card, hides the irrelevant fields on the form 
 	 */
 	function togglePayment() {
 		if (document.getElementById("card").checked == true) {
@@ -40,6 +56,7 @@ button on reviewOrder page.  -->
 	 * Form validations on submit
 	 */
 	function validate() {
+
 		// validate zip code
 		var zip = document.getElementById("zip").value;
 		if (zip.length != 5) {
@@ -47,6 +64,7 @@ button on reviewOrder page.  -->
 			document.getElementById("zip").focus();
 			return false;
 		}
+
 		// validate Payment type
 		var card = document.getElementById("card").checked;
 		var cash = document.getElementById("cash").checked;
@@ -55,8 +73,10 @@ button on reviewOrder page.  -->
 			document.getElementById("pay").focus();
 			return false;
 		}
+
 		//validate card type payment
 		if (document.getElementById("card").checked == true) {
+
 			// validate card number
 			var cardNum = document.getElementById("cc-number").value;
 			cardNum = cardNum.replace(/\s/g, '');
@@ -66,12 +86,14 @@ button on reviewOrder page.  -->
 				document.getElementById("cc-number").focus();
 				return false;
 			}
+
 			//validate for visa or master card
 			if (cardNum.charAt(0) != '4' && cardNum.charAt(0) != '5') {
 				alert('We are only accepting visa/mastercard at this time; \n visa starts with 4, mastercard starts with 5, please verify!');
 				document.getElementById("cc-number").focus();
 				return false;
 			}
+
 			//validate card expiration date and year
 			var cardExpiry = document.getElementById("cc-expiration").value;
 			if (cardExpiry.length != 7) {
@@ -81,6 +103,8 @@ button on reviewOrder page.  -->
 				document.getElementById("cc-expiration").focus();
 				return false;
 			}
+
+			// validate the expiry date to be in correct format
 			var pattern = /^(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
 			if (pattern.test(cardExpiry) == false) {
 				alert('Expiration Date: "'
@@ -89,27 +113,32 @@ button on reviewOrder page.  -->
 				document.getElementById("cc-expiration").focus();
 				return false;
 			}
+
+			// validate the month in the expiry date
 			var d = new Date();
 			var curr_month = d.getMonth();
 			var curr_year = d.getFullYear();
 			var date = cardExpiry.split("/");
 			if (date[1] == curr_year) {
 				if (date[0] <= curr_month) {
-					alert('Expiration month: "'
+					alert('Expiration date: "'
 							+ cardExpiry
-							+ '", must be greater than current month, please verify!');
+							+ '" is past date, card may be expired, please verify!');
 					document.getElementById("cc-expiration").focus();
 					return false;
 				}
 			}
+
+			// validate the year in the expiry date
 			if (date[1] < curr_year) {
 				alert('Expiration Date: "'
 						+ cardExpiry
-						+ '", year must be greater than or equal to current year, please verify!');
+						+ '" is past date, card may be expired, please verify!');
 				document.getElementById("cc-expiration").focus();
 				return false;
 			}
-			//validate cvv
+
+			//validate cvv length
 			var cvv = document.getElementById("cc-cvv").value;
 			if (cvv.length != 3) {
 				alert('CVV: "' + cvv + '" must be 3 digits, please verify!');
@@ -133,7 +162,8 @@ button on reviewOrder page.  -->
 			class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 			th:replace="fragments/navigator :: navigator"></nav>
 
-		<!-- Payment Details for user to input -->
+		<!-- The website should display a payment page.
+			(Requirement 4.0.0)-->
 		<div class="row justify-content-md-center" style="border-bottom: none">
 			<div class="mbr-white col-md-10">
 				<h2
@@ -145,14 +175,18 @@ button on reviewOrder page.  -->
 						<div class="row justify-content-md-center"
 							style="border-bottom: none">
 
+							<!-- Customer should be able to enter personal details.
+							(Requirement 4.2.0)-->
 							<form th:action="@{/final}" method="post" class="was-validated"
 								th:object="${paymentVO}" onsubmit="return validate();">
 								<div class="row">
 									<div class="col-sm">
-										<label for="firstName">First name</label> <input
-											type="text" class="form-control" id="firstName"
-											placeholder="John" th:value="${paymentVO.firstName}"
-											th:name="firstName" required>
+										<!--Validations on user fields.
+										(Requirement 4.7.0)-->
+										<label for="firstName">First name</label> <input type="text"
+											class="form-control" id="firstName" placeholder="John"
+											th:value="${paymentVO.firstName}" th:name="firstName"
+											required>
 										<div class="invalid-feedback">Valid first name is
 											required.</div>
 									</div>
@@ -171,16 +205,18 @@ button on reviewOrder page.  -->
 										<input type="email" class="form-control" id="email"
 											th:value="${paymentVO.email}" th:name="email">
 										<div class="invalid-feedback">Please enter a valid email
-											address for shipping updates.</div>
+											address for order updates.</div>
 
 									</div>
 								</div>
 
+								<!-- Customer should be able to enter address.
+								(Requirement 4.3.0)-->
 								<div class="col-sm">
 									<label for="address">Address</label> <input type="text"
 										class="form-control" id="address" required
 										th:value="${paymentVO.addressStreet}" th:name="addressStreet">
-									<div class="invalid-feedback">Please enter your shipping
+									<div class="invalid-feedback">Please enter your billing
 										address.</div>
 								</div>
 
@@ -249,7 +285,7 @@ button on reviewOrder page.  -->
 											<option value="WI">Wisconsin</option>
 											<option value="WY">Wyoming</option>
 										</select>
-										<div class="invalid-feedback">Please provide a valid
+										<div class="invalid-feedback">Please select a valid
 											state.</div>
 									</div>
 
@@ -283,7 +319,8 @@ button on reviewOrder page.  -->
 
 
 
-
+								<!--Validations on payment fields.
+										(Requirement 4.8.0)-->
 								<div id="cardDetails" style="display: none;">
 									<strong><label>*We are only accepting
 											visa/mastercard at this time, we apologize for any
@@ -302,10 +339,13 @@ button on reviewOrder page.  -->
 												type="number" class="form-control" id="cc-number"
 												placeholder="4444 4444 4444 4444"
 												th:value="${paymentVO.cardNumber}" th:name="cardNumber">
-											<div class="invalid-feedback">Credit card number is
+											<div class="invalid-feedback">Card number is
 												required</div>
 										</div>
 									</div>
+									
+									<!--Validations on payment fields.
+										(Requirement 4.8.0)-->
 									<div class="row" style="border-bottom: none">
 										<div class="col-sm">
 											<label for="cc-expiration">Expiration Date</label> <input
@@ -324,11 +364,12 @@ button on reviewOrder page.  -->
 									</div>
 								</div>
 
-								<!-- Order details to show the total and order id -->
+								<!-- Customer should see order details.
+								(Requirement 4.9.0)-->
 								<div class="totals sticky-top sticky-offset"
 									style="margin-top: 20px">
 									<div class="totals-item">
-										<label>Order ID</label>
+										<label>Order ID:</label>
 										<div class="totals-value" id="cart-subtotal">
 											<label th:text="${session.orderId}"
 												th:unless="${session == null}"></label>
@@ -336,7 +377,7 @@ button on reviewOrder page.  -->
 									</div>
 
 									<div class="totals-item totals-item-total">
-										<label>Order Total</label>
+										<label>Order Total:</label>
 										<div class="totals-value" id="cart-total">
 											<label
 												th:text="${#numbers.formatCurrency(session.orderTotal)}"
