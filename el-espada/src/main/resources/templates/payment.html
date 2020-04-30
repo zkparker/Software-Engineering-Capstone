@@ -121,9 +121,9 @@ button on reviewOrder page.  -->
 			var date = cardExpiry.split("/");
 			if (date[1] == curr_year) {
 				if (date[0] <= curr_month) {
-					alert('Expiration month: "'
+					alert('Expiration date: "'
 							+ cardExpiry
-							+ '", must be greater than current month, please verify!');
+							+ '" is past date, card may be expired, please verify!');
 					document.getElementById("cc-expiration").focus();
 					return false;
 				}
@@ -133,7 +133,7 @@ button on reviewOrder page.  -->
 			if (date[1] < curr_year) {
 				alert('Expiration Date: "'
 						+ cardExpiry
-						+ '", year must be greater than or equal to current year, please verify!');
+						+ '" is past date, card may be expired, please verify!');
 				document.getElementById("cc-expiration").focus();
 				return false;
 			}
