@@ -69,6 +69,8 @@ public interface MenuService {
 	 * <p>
 	 * <code>SELECT * FROM MENU</code>
 	 *
+	 * (Requirement 2.0.0)
+	 *
 	 * @return List<Menu>
 	 * @throws Exception
 	 */

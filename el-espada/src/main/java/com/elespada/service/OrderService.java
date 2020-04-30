@@ -31,6 +31,8 @@ public interface OrderService {
 	/**
 	 * This method starts a new ORDER and returns the ORDER with orderId
 	 *
+	 * (Requirement 3.4.0)
+	 *
 	 * @return ORDERS a single new order
 	 * @throws Exception
 	 */
@@ -41,6 +43,8 @@ public interface OrderService {
 	 * This method creates new order details, adds the menu items to the order and
 	 * persist items into ORDER_DETAILS table
 	 *
+	 * (Requirement 3.4.0)
+	 *
 	 * @param menuIds the menu items in the order
 	 * @param orderId the order the menu items need to be tagged with
 	 * @throws Exception
@@ -50,6 +54,8 @@ public interface OrderService {
 	/**
 	 * Deletes an item selected by the user from the user's order in ORDER_DETAILS
 	 * table
+	 *
+	 * (Requirement 3.5.0)
 	 *
 	 * @param orderId the order that menu item belongs to
 	 * @param menuId  the menu item that needs to be deleted
@@ -62,6 +68,7 @@ public interface OrderService {
 	 * Populated the payment details from the VO to DB object Orders and saves in
 	 * the ORDERS table
 	 *
+	 * (Requirement 4.0.0)
 	 *
 	 * @param orderId        the order for which the payment details need to be
 	 *                       updated
@@ -80,6 +87,8 @@ public interface OrderService {
 	/**
 	 * Aggregates the order total by summing all the menu item prices
 	 *
+	 * (Requirement 3.4.0)
+	 *
 	 * @param order
 	 * @return float sum
 	 */
@@ -87,6 +96,8 @@ public interface OrderService {
 
 	/**
 	 * Fetches an order from ORDERS table by the primary key orderId
+	 *
+	 * (Requirement 3.4.0)
 	 *
 	 * @param orderId primary key orderId
 	 * @return Orders

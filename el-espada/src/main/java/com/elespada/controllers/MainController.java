@@ -73,6 +73,7 @@ public class MainController {
 	 * This method will load all the menu items from database table MENU on the
 	 * starting page so that users can start adding items to order.
 	 *
+	 * (Requirements 1.2.6, 1.3.9, 1.4.9, 1.5.9, 2.0.0)
 	 *
 	 * @param model used for setting data from table to be used on view index.html
 	 * @param req   HttpServletRequest for handling http requests
@@ -98,6 +99,8 @@ public class MainController {
 	 * (/reviewOrder) by redirecting to the view named reviewOrder.html. Navigates
 	 * the user to "Review Order" page once they click on "Continue to Place Order".
 	 * Displays the items added to order, generates orderId and computes orderTotal
+	 *
+	 * (Requirement 3.0.0)
 	 *
 	 * @param espadaVO captures this object from the index.html page
 	 * @param model    used for setting the items added to order
@@ -149,9 +152,9 @@ public class MainController {
 			logger.error("Exception during Review Order:" + e);
 
 			// delete any stale data from DB
-						if ((orderId != null) && (orderId.longValue() != 0)) {
-							orderService.deleteOrder(orderId);
-						}
+			if ((orderId != null) && (orderId.longValue() != 0)) {
+				orderService.deleteOrder(orderId);
+			}
 
 			return navigateToHomePage(model, orderId, session);
 		}
@@ -163,6 +166,8 @@ public class MainController {
 	 * after deleting an item sent in PathVariable menuId. If all the items in the
 	 * order are deleted, the user is navigated to the index page to start ordering
 	 * again.
+	 *
+	 * (Requirement 3.5.0)
 	 *
 	 * @param menuId the menu item that needs to be deleted from the order
 	 * @param model  remaining items left in the order
@@ -239,6 +244,8 @@ public class MainController {
 	 * payment details entered by the user for placing the order. Order Id and total
 	 * are displayed on the payment page by retrieving from session
 	 *
+	 * (Requirement 4.0.0)
+	 *
 	 * @return view to display payment.html
 	 */
 	@RequestMapping("/payment")
@@ -253,6 +260,8 @@ public class MainController {
 	 * This method handles requests coming to the application’s context path
 	 * (/final) by redirecting to the view named final.html. This method will
 	 * process the payment and finalize the order
+	 *
+	 * (Requirement 5.0.0)
 	 *
 	 * @param paymentVO model attribute to hold the payment details from UI
 	 * @param model     to set attributes to show on UI

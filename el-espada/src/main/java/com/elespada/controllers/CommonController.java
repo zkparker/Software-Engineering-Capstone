@@ -41,6 +41,8 @@ public class CommonController {
 	 * (/about) by redirecting to the view named about.html. Displays About Us page
 	 * TODO Add requirements for all menu items
 	 *
+	 * (Requirement 1.2.1)
+	 *
 	 * @return view to display about.html
 	 */
 	@RequestMapping("/about")
@@ -54,6 +56,8 @@ public class CommonController {
 	 * (/contact) by redirecting to the view named contact.html. Displays Contact Us
 	 * page
 	 *
+	 * (Requirement 1.4.1)
+	 *
 	 * @return view to display contact.html
 	 */
 	@RequestMapping("/contact")
@@ -66,6 +70,8 @@ public class CommonController {
 	 * This method handles requests coming to the application’s context path
 	 * (/hours) by redirecting to the view named hours.html. Displays Hours page
 	 *
+	 * (Requirement 1.3.1)
+	 *
 	 * @return view to display hours.html
 	 */
 	@RequestMapping("/hours")
@@ -77,6 +83,8 @@ public class CommonController {
 	/**
 	 * This method handles requests coming to the application’s context path (/menu)
 	 * by redirecting to the view named menu.html. Displays Full menu page
+	 *
+	 * (Requirement 1.5.1)
 	 *
 	 * @return view to display menu.html
 	 */
