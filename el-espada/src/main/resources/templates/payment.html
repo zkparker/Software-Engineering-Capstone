@@ -1,4 +1,20 @@
-<!-- UIS Avengers
+<!-- * Copyright [2020] [ElEspada - Avengers-UIS Force - Software Engineering Capstone - Springfield, IL]
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ 
 payment page - displays once user hits 'Continue to Payment'
 button on reviewOrder page.  -->
 
@@ -146,7 +162,8 @@ button on reviewOrder page.  -->
 			class="navbar navbar-expand-md navbar-dark bg-dark navigation sticky-top"
 			th:replace="fragments/navigator :: navigator"></nav>
 
-		<!-- Payment Details for user to input -->
+		<!-- The website should display a payment page.
+			(Requirement 4.0.0)-->
 		<div class="row justify-content-md-center" style="border-bottom: none">
 			<div class="mbr-white col-md-10">
 				<h2
@@ -158,10 +175,14 @@ button on reviewOrder page.  -->
 						<div class="row justify-content-md-center"
 							style="border-bottom: none">
 
+							<!-- Customer should be able to enter personal details.
+							(Requirement 4.2.0)-->
 							<form th:action="@{/final}" method="post" class="was-validated"
 								th:object="${paymentVO}" onsubmit="return validate();">
 								<div class="row">
 									<div class="col-sm">
+										<!--Validations on user fields.
+										(Requirement 4.7.0)-->
 										<label for="firstName">First name</label> <input type="text"
 											class="form-control" id="firstName" placeholder="John"
 											th:value="${paymentVO.firstName}" th:name="firstName"
@@ -189,6 +210,8 @@ button on reviewOrder page.  -->
 									</div>
 								</div>
 
+								<!-- Customer should be able to enter address.
+								(Requirement 4.3.0)-->
 								<div class="col-sm">
 									<label for="address">Address</label> <input type="text"
 										class="form-control" id="address" required
@@ -296,7 +319,8 @@ button on reviewOrder page.  -->
 
 
 
-
+								<!--Validations on payment fields.
+										(Requirement 4.8.0)-->
 								<div id="cardDetails" style="display: none;">
 									<strong><label>*We are only accepting
 											visa/mastercard at this time, we apologize for any
@@ -319,6 +343,9 @@ button on reviewOrder page.  -->
 												required</div>
 										</div>
 									</div>
+									
+									<!--Validations on payment fields.
+										(Requirement 4.8.0)-->
 									<div class="row" style="border-bottom: none">
 										<div class="col-sm">
 											<label for="cc-expiration">Expiration Date</label> <input
@@ -337,7 +364,8 @@ button on reviewOrder page.  -->
 									</div>
 								</div>
 
-								<!-- Order details to show the total and order id -->
+								<!-- Customer should see order details.
+								(Requirement 4.9.0)-->
 								<div class="totals sticky-top sticky-offset"
 									style="margin-top: 20px">
 									<div class="totals-item">
