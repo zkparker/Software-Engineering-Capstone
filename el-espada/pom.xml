@@ -43,6 +43,11 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot</artifactId>
+			<version>3.0.2</version>
+		</dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>

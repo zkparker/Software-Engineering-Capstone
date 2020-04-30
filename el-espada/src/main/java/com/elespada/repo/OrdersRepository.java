@@ -1,6 +1,6 @@
 /*
- * Copyright [2020] [ElEspada - Software Engineering Capstone - Springfield, IL]
- * 
+ * Copyright [2020] [ElEspada - Avengers-UIS Force - Software Engineering Capstone - Springfield, IL]
+ *
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -22,6 +22,10 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.elespada.model.Orders;
 
+/**
+ * <b>OrdersRepository.java</b><br>
+ * Interface for CRUD operations on table ORDERS
+ */
 public interface OrdersRepository extends CrudRepository<Orders, Long> {
-	// CRUD Repository for Orders Entity 
+	// CRUD Repository for Orders Entity
 }
