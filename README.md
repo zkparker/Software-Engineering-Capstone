@@ -14,5 +14,5 @@
  * JavaScript
  * CSS
  
- Application: http://localhost:8080/
- DB: http://localhost:8080/h2-console/
+ Application: http://localhost:9090/
+ DB: http://localhost:9090/h2-console/
